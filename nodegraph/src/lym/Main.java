@@ -1,6 +1,7 @@
 package lym;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +14,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                myFrame frame = new myFrame();
+                MyFrame frame = new MyFrame();
                 frame.go();
             }
         });
@@ -21,9 +22,9 @@ public class Main {
 
 }
 
-class myFrame extends JFrame {
+class MyFrame extends JFrame {
 
-    public myFrame() {
+    public MyFrame() {
         //根据系统桌面的分辨路来设置大小，增强可移植性
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
@@ -47,38 +48,37 @@ class myFrame extends JFrame {
         //基础设置
         JFrame.setDefaultLookAndFeelDecorated(true);
         setFont();//设置字体
-        myFrame myframe = new myFrame();
-        myframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myframe.setVisible(true);
-        myframe.setTitle("数据可视化处理");
-        myframe.setBackground(SystemColor.window);
+        MyFrame MyFrame = new MyFrame();
+        MyFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        MyFrame.setVisible(true);
+        MyFrame.setTitle("数据可视化处理");
+        MyFrame.setBackground(SystemColor.window);
 
         //生成菜单
         myMenubar mymenubar = new myMenubar();
-        myframe.setJMenuBar(mymenubar.setMyJMenuBar());
+        MyFrame.setJMenuBar(mymenubar.setMyJMenuBar());
 
         //添加右边的编辑框
-        ProbabilityJPanle jp = new ProbabilityJPanle();
+        RightJPanle jp = new RightJPanle();
+        MyFrame.getContentPane().add(BorderLayout.EAST, jp);
 
-        myframe.getContentPane().add(BorderLayout.EAST, jp);
-
-        /*//test
+        //test
         JLabel jL = new JLabel("text");
         JPanel jp2 = new JPanel();
         jp2.add(jL);
-        myframe.getContentPane().add(BorderLayout.WEST,jp2);*/
+        MyFrame.getContentPane().add(BorderLayout.WEST, jp2);
 
         //添加左边的编辑框
-        leftJPanle lp = new leftJPanle();
-        myframe.getContentPane().add(BorderLayout.CENTER, lp.getJp());
+        LeftJPanle lp = new LeftJPanle();
+        MyFrame.getContentPane().add(BorderLayout.CENTER, lp.getJp());
     }
 }
 
-class ProbabilityJPanle extends JPanel implements ActionListener {
+class RightJPanle extends JPanel implements ActionListener {
     private JTextArea text1;
     private JTextArea text2;
 
-    public ProbabilityJPanle() {
+    public RightJPanle() {
         //jpanel基础设置
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         /*Color c1 = new Color(62,134,160);
@@ -103,11 +103,12 @@ class ProbabilityJPanle extends JPanel implements ActionListener {
         this.add(scroller2);
 
         //添加按钮
-        Color c2 = new Color(200, 200, 169);
         JButton button3 = new JButton("check probability!");
-        button3.setBackground(c2);
         button3.addActionListener(this);
-        this.add(button3);
+        JPanel temjp = new JPanel();
+        temjp.add(button3);
+        button3.setBounds((this.getWidth() - button3.getWidth())/2,(this.getHeight() - button3.getHeight())/2,button3.getWidth(),button3.getHeight());
+        this.add(temjp);
     }
 
     public void actionPerformed(ActionEvent ev) {
@@ -166,10 +167,10 @@ class MyJComponent extends JComponent {
     }
 }
 
-class leftJPanle extends JPanel {
+class LeftJPanle extends JPanel {
     private JTabbedPane jp;
 
-    public leftJPanle() {
+    public LeftJPanle() {
         jp = new JTabbedPane(JTabbedPane.NORTH);
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
