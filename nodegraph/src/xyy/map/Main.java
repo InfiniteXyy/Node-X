@@ -7,7 +7,7 @@ public class Main {
         nodeGraph.graphDemo();
         //先用demo创造一个图
         //在NodeGraph里面封装了 添加点的函数和添加边的函数，并且有错误提示
-        
+        int a;
         nodeGraph.addEdge(4, 6, 0.2);
         nodeGraph.addEdge(5, 0);
         nodeGraph.addEdge(4, 0);
