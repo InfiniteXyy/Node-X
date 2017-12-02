@@ -1,0 +1,49 @@
+package com.homework.lym;
+
+import javax.swing.*;
+import java.awt.*;
+
+class LeftJPanle extends JPanel{
+    private JTabbedPane jp;
+    private JTextArea text1;
+    private JTextArea text2;
+
+    public LeftJPanle() {
+
+        //设置整体布局
+        this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+
+        //添加选项卡
+        jp = new JTabbedPane(JTabbedPane.NORTH);
+        JPanel p1 = new JPanel();
+        JPanel p2 = new JPanel();
+        jp.add("Main", p1);
+        jp.add("main2", p2);
+
+        //添加绘画文本框1
+        p1.add(addScroller(this.text1));
+        p2.add(addScroller(this.text1));
+
+        //加入输入控件
+        this.add(jp);
+        this.addNodeJPanel();
+    }
+
+    public JScrollPane addScroller(JTextArea text){
+        text = new JTextArea(24, 70);
+        JScrollPane scroller = new JScrollPane(text);
+        text.setLineWrap(true);//启动自动换行
+        scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        return scroller;
+    }
+
+    public void addNodeJPanel(){
+        JPanel jp = new JPanel();
+        jp.setLayout(new BoxLayout(jp,BoxLayout.LINE_AXIS));
+        jp.add(new JLabel("NodeList"));
+        jp.add(new JTextField(8));
+        jp.add(new JButton("ADD"));
+        this.add(jp);
+    }
+}
