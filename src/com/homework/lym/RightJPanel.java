@@ -15,6 +15,8 @@ class RightJPanel extends NewJPanel implements ActionListener {
         //添加第一个文本框
         this.add(new MyJComponent("Console"));
         textShow = new JTextArea(10, 20);
+        textShow.setEditable(false);
+        //设置不可编辑
         JScrollPane scroller2 = new JScrollPane(textShow);
         textShow.setLineWrap(true);//启动自动换行
         scroller2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
