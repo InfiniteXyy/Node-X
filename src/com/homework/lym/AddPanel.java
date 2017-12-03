@@ -27,14 +27,16 @@ class AddPanel extends NewJPanel{
             try {
                 String[] data = nodeName.split(",");
                 for (String single : data) {
+
                     if (Pattern.matches("^\\d+$", single)) {
-                        nodeId = Integer.parseInt(nodeName);
+                        nodeId = Integer.parseInt(single);
                         showNodeAddInfo(nodeId);
-                    } else if (Pattern.matches("^\\d+:\\d+", single)) {
+                    } else if (Pattern.matches("^\\d+:\\d+(:0.\\d*)?$", single)) {
                         String[] nodes = single.split(":");
                         int a = Integer.parseInt(nodes[0]);
                         int b = Integer.parseInt(nodes[1]);
-                        double probability = nodes.length==2 ? -1 : Double.parseDouble(nodes[3]);
+                        System.out.println(nodes.length);
+                        double probability = nodes.length==2 ? -1 : Double.parseDouble(nodes[2]);
                         showEdgeAddInfo(a, b, probability);
                     }
                 }
