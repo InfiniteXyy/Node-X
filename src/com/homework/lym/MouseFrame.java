@@ -3,8 +3,8 @@ package com.homework.lym;
 import javax.swing.*;
 import java.awt.*;
 
-public class MouseFrame extends JFrame {
-    public MouseFrame(){
+class MouseFrame extends JFrame {
+    MouseFrame(){
 
         /*Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
