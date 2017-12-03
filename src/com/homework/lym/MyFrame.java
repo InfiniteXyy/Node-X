@@ -45,7 +45,6 @@ class MyFrame extends JFrame {
 
         //test
 
-
         //添加左边的编辑框
         LeftJPanel lp = new LeftJPanel();
         MyFrame.getContentPane().add(BorderLayout.CENTER,lp);
