@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84a048f3-874f-4929-9916-351bd385efea" name="Default" comment="为啥呢 测试一下">
+    <list default="true" id="84a048f3-874f-4929-9916-351bd385efea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/production/java_project/com/homework/lym/Main$1.class" afterPath="$PROJECT_DIR$/production/java_project/com/homework/lym/Main$1.class" />
       <change beforePath="$PROJECT_DIR$/production/java_project/com/homework/lym/Main.class" afterPath="$PROJECT_DIR$/production/java_project/com/homework/lym/Main.class" />
@@ -418,7 +418,7 @@
       <workItem from="1512285781955" duration="501000" />
       <workItem from="1512286765887" duration="3926000" />
       <workItem from="1512292643657" duration="1034000" />
-      <workItem from="1512293795904" duration="518000" />
+      <workItem from="1512293795904" duration="535000" />
     </task>
     <task id="LOCAL-00001" summary="尝试一下分支开发，给一鸣的add加了监听器">
       <created>1512284109759</created>
@@ -469,11 +469,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512286108552</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="修改好了">
+      <created>1512294329273</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512294329274</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8538000" />
+    <option name="totallyTimeSpent" value="8555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="207" y="94" width="1321" height="871" extended-state="0" />
@@ -517,7 +524,8 @@
     <MESSAGE value="尝试一下分支开发，给一鸣的add加了监听器" />
     <MESSAGE value="修改了拼写错误和权限问题" />
     <MESSAGE value="为啥呢 测试一下" />
-    <option name="LAST_COMMIT_MESSAGE" value="为啥呢 测试一下" />
+    <MESSAGE value="修改好了" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改好了" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
