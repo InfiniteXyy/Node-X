@@ -10,7 +10,6 @@ public class Main {
         
         nodeGraph.addEdge(4, 6, 0.2);
         nodeGraph.addEdge(5, 0);
-        int b;
 //        DFS dfs = new DFS();
 //        dfs.showDFS(nodeGraph, 0);
 //        //根据输入的图，给出从点id开始的遍历
