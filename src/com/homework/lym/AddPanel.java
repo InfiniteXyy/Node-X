@@ -1,8 +1,6 @@
 package com.homework.lym;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 class AddPanel extends NewJPanel{
@@ -31,6 +29,8 @@ class AddPanel extends NewJPanel{
                 nodeId = -1;
             } finally {
                 nodeField.setText("");
+                nodeField.grabFocus();
+                //将光标聚集到nodeField处
             }
         });
     }
