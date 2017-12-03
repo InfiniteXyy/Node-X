@@ -4,9 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class RightJPanel extends JPanel implements ActionListener {
-    private JTextArea text1;
-    private JTextArea text2;
+class RightJPanel extends NewJPanel implements ActionListener {
 
     RightJPanel() {
         //jPanel基础设置
@@ -15,25 +13,25 @@ class RightJPanel extends JPanel implements ActionListener {
         this.setBackground(c1);*/
 
         //添加第一个文本框
-        this.add(new MyJComponent("Probability"));
-        text2 = new JTextArea(10, 20);
-        JScrollPane scroller1 = new JScrollPane(text2);
-        text2.setLineWrap(true);//启动自动换行
-        scroller1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        scroller1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        this.add(scroller1);
-
-        //添加第二个文本框
-        this.add(new MyJComponent("please input your node"));
-        text1 = new JTextArea(10, 20);
-        JScrollPane scroller2 = new JScrollPane(text1);
-        text1.setLineWrap(true);//启动自动换行
+        this.add(new MyJComponent("Console"));
+        textShow = new JTextArea(10, 20);
+        JScrollPane scroller2 = new JScrollPane(textShow);
+        textShow.setLineWrap(true);//启动自动换行
         scroller2.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scroller2.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         this.add(scroller2);
 
+        //添加第二个文本框
+        this.add(new MyJComponent("Please input your node"));
+        textEdit = new JTextArea(10, 20);
+        JScrollPane scroller1 = new JScrollPane(textEdit);
+        textEdit.setLineWrap(true);//启动自动换行
+        scroller1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        scroller1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        this.add(scroller1);
+
         //添加按钮
-        JButton button3 = new JButton("check probability!");
+        JButton button3 = new JButton("check probability");
         button3.addActionListener(this);
         JPanel tempJ = new JPanel();
         tempJ.add(button3);
@@ -42,6 +40,6 @@ class RightJPanel extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        text1.append("just click me!\n");
+        textShow.append("just click me!\n");
     }
 }

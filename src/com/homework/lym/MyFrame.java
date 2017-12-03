@@ -10,8 +10,8 @@ class MyFrame extends JFrame {
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
-        int screenHeigh = screenSize.height;
-        setSize(screenWidth / 2, screenHeigh / 2);
+        int screenHeight = screenSize.height;
+        setSize(screenWidth / 2, screenHeight / 2);
         setLocationByPlatform(true);
         Image img = new ImageIcon("idea.ico").getImage();
         setIconImage(img);
