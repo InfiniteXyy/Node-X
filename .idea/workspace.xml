@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7407713c-ebaa-4aea-975b-c3a19df55bdc" name="Default" comment="清理一下文件结构">
+    <list default="true" id="7407713c-ebaa-4aea-975b-c3a19df55bdc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/AddPanel.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/AddPanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/NodeGraph.java" afterPath="$PROJECT_DIR$/src/com/homework/xyy/NodeGraph.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -321,7 +319,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512297378555</updated>
-      <workItem from="1512297381791" duration="1419000" />
+      <workItem from="1512297381791" duration="1431000" />
     </task>
     <task id="LOCAL-00001" summary="清理一下文件结构">
       <created>1512297448331</created>
@@ -337,11 +335,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512297551719</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="清理一下文件结构">
+      <created>1512298842102</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512298842102</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1419000" />
+    <option name="totallyTimeSpent" value="1431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="26" width="1680" height="944" extended-state="0" />
