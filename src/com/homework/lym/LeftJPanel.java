@@ -1,5 +1,7 @@
 package com.homework.lym;
 
+import com.homework.xyy.NodeGraph;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,6 +11,9 @@ class LeftJPanel extends NewJPanel{
     private JTextArea text2;
 
     LeftJPanel() {
+        nodeGraph = new NodeGraph();
+        nodeGraph.graphDemo();
+
         JTabbedPane jp;
 
         //设置整体布局

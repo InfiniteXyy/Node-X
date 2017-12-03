@@ -40,12 +40,12 @@ class NodeEdge {
         return nodeRight;
     }
 
-    double showEdge() {
+    double showEdge(StringBuilder out) {
         if (nodeLeft == null) {
-            System.out.println("从节点:"+nodeRight.getId());
+            out.append (nodeRight.getId());
             return 1;
         } else {
-            System.out.println("到节点:" + nodeRight.getId() + "   概率为：" + probability);
+            out.append("->" + nodeRight.getId() + "(" + probability + ")");
             return probability;
         }
     }

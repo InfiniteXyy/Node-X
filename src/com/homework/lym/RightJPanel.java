@@ -1,8 +1,12 @@
 package com.homework.lym;
 
+import com.homework.xyy.IdEdge;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 class RightJPanel extends NewJPanel implements ActionListener {
 
@@ -42,6 +46,17 @@ class RightJPanel extends NewJPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        textShow.append("just click me!\n");
+        ProbabilityListChecker p = new ProbabilityListChecker(textEdit.getText());
+        List<IdEdge> arrayList = p.getRequestList();
+        for (IdEdge i : arrayList) {
+
+            if (i != null) {
+                textShow.append(nodeGraph.showRoute(i));
+            } else {
+                textShow.append("没有找到路径\n\n");
+            }
+        }
+        textShow.append("\n");
     }
+
 }

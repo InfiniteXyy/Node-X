@@ -14,7 +14,7 @@ public class NodeGraph {
     }
 
     public String addNode(int id) {
-        if (findNode(id) != null) {
+        if (getNode(id) != null) {
             return("节点："+id+"已经存在");
         } else {
             Node node = new Node(id);
@@ -27,8 +27,8 @@ public class NodeGraph {
         Node nodeIn, nodeOut;
 
         //遍历图，找到对应id的node
-        nodeIn = findNode(in);
-        nodeOut = findNode(out);
+        nodeIn = getNode(in);
+        nodeOut = getNode(out);
 
         if (nodeIn == null) {
             return ("添加失败，没有找到节点："+in);
@@ -45,15 +45,21 @@ public class NodeGraph {
 
     }
 
+    public int[] getNodeIds() {
+        int[] data = new int[nodeList.size()];
+        for (int i = 0; i < nodeList.size(); i++) {
+            data[i] = nodeList.get(i).getId();
+        }
+        return data;
+    }
 
     //重载，带概率的增加边
-
     public String addEdge(int in, int out, double probability) {
         Node nodeIn, nodeOut;
 
         //遍历图，找到对应id的node
-        nodeIn = findNode(in);
-        nodeOut = findNode(out);
+        nodeIn = getNode(in);
+        nodeOut = getNode(out);
 
         if (nodeIn == null) {
             return ("添加失败，没有找到节点："+in);
@@ -88,22 +94,6 @@ public class NodeGraph {
         addEdge(5,6);
     }
 
-    Node getNode(int id) {
-        Node node = findNode(id);
-        if (node == null) {
-            System.out.println("没有找到node："+id);
-        }
-        return node;
-    }
-
-    private NodeEdge getEdge(int a, int b) {
-        Node nodeA = findNode(a);
-        if (nodeA == null) return null;
-        else {
-            return nodeA.getNodeEdge(b);
-        }
-    }
-
     public double getProbability(int a, int b) {
         NodeEdge nodeEdge = getEdge(a,b);
         if (nodeEdge == null) {
@@ -123,7 +113,20 @@ public class NodeGraph {
         }
     }
 
-    private Node findNode(int id) {
+    public boolean findNode(int id) {
+        Node node = getNode(id);
+        return node != null;
+    }
+
+    private NodeEdge getEdge(int a, int b) {
+        Node nodeA = getNode(a);
+        if (nodeA == null) return null;
+        else {
+            return nodeA.getNodeEdge(b);
+        }
+    }
+
+    Node getNode(int id) {
         for (Node i : nodeList) {
             if (i.getId() == id) {
                 return i;
@@ -142,28 +145,39 @@ public class NodeGraph {
         bfs.showDFS(this, id);
     }
 
-    public void showRoute(int in, int out) {
+    public String showRoute(IdEdge idEdge) {
+        StringBuilder output = new StringBuilder("从"+idEdge.in+"到"+idEdge.out+":");
+
+        int in = idEdge.in;
+        int out = idEdge.out;
+
         Node nodeIn, nodeOut;
 
         //遍历图，找到对应id的node
-        nodeIn = findNode(in);
-        nodeOut = findNode(out);
-
+        nodeIn = getNode(in);
+        nodeOut = getNode(out);
+//这里的算法结构需要重构！！！！
         if (nodeIn != null && nodeOut != null) {
             N2N temp = new N2N(nodeIn, nodeOut);
             int i = 1;
             double allProbability = 0;
             for (N2N.NodePath paths : temp.getNodePaths()) {
-                System.out.println("\n第"+i+"种可能");
+                output.append("\n");
                 double singleProbability = 1.0;
                 for (NodeEdge e : paths.path) {
-                    singleProbability *= e.showEdge();
+                    singleProbability *= e.showEdge(output);
                 }
-                System.out.println("概率为:"+singleProbability);
+                output.append("\n概率为:"+singleProbability);
                 i++;
                 allProbability += singleProbability;
             }
-            System.out.println("\n一共"+(i-1)+"种可能，总的概率是:"+allProbability);
+            output.append("\n一共"+(i-1)+"种可能，总的概率是:"+allProbability);
+            if (allProbability == 0) {
+                return "";
+            }
         }
+        output.append("\n------------------------\n");
+
+        return output.toString();
     }
 }
