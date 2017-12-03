@@ -9,8 +9,13 @@ class NewJPanel extends JPanel{
     NodeGraph nodeGraph;
     JTextArea textShow;
     JTextArea textEdit;
+    JButton addBtn;
     NewJPanel() {
         nodeGraph = new NodeGraph();
 
+    }
+    void showNodeId(int nodeId) {
+        String info = nodeGraph.addNode(nodeId);
+        textShow.append("info\n");
     }
 }

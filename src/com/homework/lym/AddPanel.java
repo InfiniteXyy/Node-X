@@ -15,29 +15,24 @@ class AddPanel extends NewJPanel{
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         add(new JLabel("NodeList"));
         add(nodeField);
-        add(setAddBtn());
+        add(addBtn);
     }
 
-    private JButton setAddBtn() {
-        JButton addBtn = new JButton("ADD");
+    private void setAddBtn() {
+        addBtn = new JButton("ADD");
         addBtn.addActionListener(e -> {
             String nodeName = nodeField.getText();
             try {
                 nodeId = Integer.parseInt(nodeName);
-                showNodeId();
+                showNodeId(nodeId);
             } catch (NumberFormatException e1) {
                 nodeId = -1;
             } finally {
                 nodeField.setText("");
             }
         });
-        return addBtn;
     }
 
-    private void showNodeId() {
-        String info = nodeGraph.addNode(nodeId);
-        textShow.append("12\n");
-    }
 }
 
 
