@@ -7,15 +7,12 @@ import javax.swing.*;
 
 class NewJPanel extends JPanel{
     NodeGraph nodeGraph;
-    JTextArea textShow;
-    JTextArea textEdit;
-    JButton addBtn;
+    static JTextArea textShow;
+    static JTextArea textEdit;
+
     NewJPanel() {
         nodeGraph = new NodeGraph();
+    }
 
-    }
-    void showNodeId(int nodeId) {
-        String info = nodeGraph.addNode(nodeId);
-        textShow.append("info\n");
-    }
+
 }
