@@ -1,5 +1,7 @@
 package com.homework.lym;
 
+import com.homework.xyy.NodeGraph;
+
 import javax.imageio.plugins.jpeg.JPEGHuffmanTable;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -22,6 +24,7 @@ public class Main {
 //                mouseFrame.setVisible(true);
 //                mouseFrame.setSize(1000,1000);
 //                mouseFrame.setLocationByPlatform(true);
+
             }
         });
     }

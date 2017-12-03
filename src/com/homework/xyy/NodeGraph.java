@@ -13,13 +13,13 @@ public class NodeGraph {
         }
     }
 
-    public void addNode(int id) {
+    public String addNode(int id) {
         if (findNode(id) != null) {
-            System.out.println("节点："+id+"已经存在");
+            return("节点："+id+"已经存在");
         } else {
             Node node = new Node(id);
             nodeList.add(node);
-            System.out.println("节点："+id+"添加成功");
+            return("节点："+id+"添加成功");
         }
     }
 

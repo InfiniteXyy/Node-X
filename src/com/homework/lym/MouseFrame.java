@@ -3,14 +3,14 @@ package com.homework.lym;
 import javax.swing.*;
 import java.awt.*;
 
-public class MouseFrame extends JFrame {
-    public MouseFrame(){
+class MouseFrame extends JFrame {
+    MouseFrame(){
 
         /*Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
-        int screenHeigh = screenSize.height;
-        this.setSize(screenWidth / 2, screenHeigh / 2);
+        int screenHeight = screenSize.height;
+        this.setSize(screenWidth / 2, screenHeight / 2);
         this.setLocationByPlatform(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
@@ -18,7 +18,7 @@ public class MouseFrame extends JFrame {
         this.setBackground(SystemColor.window);
         setVisible(true);*/
 
-        this.add(new MouseCompoent());
+        this.add(new MouseComponent());
         pack();
 
     }

@@ -5,26 +5,26 @@ import java.awt.*;
 
 class MyFrame extends JFrame {
 
-    public MyFrame() {
+    MyFrame() {
         //根据系统桌面的分辨路来设置大小，增强可移植性
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
-        int screenHeigh = screenSize.height;
-        setSize(screenWidth / 2, screenHeigh / 2);
+        int screenHeight = screenSize.height;
+        setSize(screenWidth / 2, screenHeight / 2);
         setLocationByPlatform(true);
         Image img = new ImageIcon("idea.ico").getImage();
         setIconImage(img);
     }
 
-    public void setFont() {//设置字体
+    private void setFont() {//设置字体
         Font font = new Font("console", Font.PLAIN, 15);
         UIManager.put("Button.font", font);
         UIManager.put("Menu.font", font);
         UIManager.put("MenuItem.font", font);
     }
 
-    public void go() {//用一个go函数来创建界面
+    void go() {//用一个go函数来创建界面
 
         //基础设置
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -40,14 +40,14 @@ class MyFrame extends JFrame {
         MyFrame.setJMenuBar(MyMenuBar.setMyJMenuBar());
 
         //添加右边的编辑框
-        RightJPanle jp = new RightJPanle();
+        RightJPanel jp = new RightJPanel();
         MyFrame.getContentPane().add(BorderLayout.EAST, jp);
 
         //test
 
 
         //添加左边的编辑框
-        LeftJPanle lp = new LeftJPanle();
+        LeftJPanel lp = new LeftJPanel();
         MyFrame.getContentPane().add(BorderLayout.CENTER,lp);
     }
 }
