@@ -1,22 +1,23 @@
-package com.homework.lym;
-
-import com.homework.xyy.IdEdge;
+package com.homework.xyy;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-class ProbabilityListChecker extends NewJPanel{
+//这个类的作用是根据输入的data信息，转成可以被识别的路径信息。
+public class ProbabilityListChecker {
     private String txt;
     private List<IdEdge> requestList;
+    private NodeGraph nodeGraph;
 
-    ProbabilityListChecker(String txt) {
+    public ProbabilityListChecker(String txt, NodeGraph nodeGraph) {
         this.txt = txt;
         requestList = new ArrayList<IdEdge>();
+        this.nodeGraph = nodeGraph;
         readData();
     }
 
-    void readData() {
+    private void readData() {
         String[] data = txt.split("\n");
         for (String single : data) {
             checkRequest(single);
@@ -24,7 +25,6 @@ class ProbabilityListChecker extends NewJPanel{
     }
 
     private void checkRequest(String single) {
-        System.out.println(single);
         if (Pattern.matches("^\\d+->\\d+$", single)) {
             //例如1->2
             String[] data =single.split("->");
@@ -61,7 +61,7 @@ class ProbabilityListChecker extends NewJPanel{
         }
     }
 
-    List<IdEdge> getRequestList() {
+    public List<IdEdge> getRequestList() {
         return requestList;
     }
 }
