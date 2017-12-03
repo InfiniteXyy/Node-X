@@ -12,7 +12,6 @@ class LeftJPanel extends NewJPanel{
 
     LeftJPanel() {
         nodeGraph = new NodeGraph();
-        nodeGraph.graphDemo();
 
         JTabbedPane jp;
 

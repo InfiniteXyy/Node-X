@@ -135,9 +135,11 @@ public class NodeGraph {
         return null;
     }
 
-    public void showBFS(int id) {
+    public String showBFS(int id) {
         BFS bfs = new BFS();
-        bfs.showBFS(this, id);
+        StringBuilder stringBuilder = new StringBuilder();
+        bfs.showBFS(this, id, stringBuilder);
+        return stringBuilder.toString();
     }
 
     public void showDFS(int id) {

@@ -25,14 +25,14 @@ public class ProbabilityListChecker {
     }
 
     private void checkRequest(String single) {
-        if (Pattern.matches("^\\d+->\\d+$", single)) {
+        if (Pattern.matches("^\\d+>\\d+$", single)) {
             //例如1->2
-            String[] data =single.split("->");
+            String[] data =single.split(">");
             IdEdge upload = new IdEdge(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
             requestList.add(upload);
-        } else if (Pattern.matches("^\\?->\\d+$", single)) {
+        } else if (Pattern.matches("^\\?>\\d+$", single)) {
             //例如?->2输出全部到2的节点的概率
-            String[] data =single.split("->");
+            String[] data =single.split(">");
             int thisId = Integer.parseInt(data[1]);
             if (!nodeGraph.findNode(thisId)) return;
             int[] NodeIds = nodeGraph.getNodeIds();
@@ -43,9 +43,9 @@ public class ProbabilityListChecker {
                     requestList.add(upload);
                 }
             }
-        } else if (Pattern.matches("^\\d+->\\?$", single)) {
+        } else if (Pattern.matches("^\\d+>\\?$", single)) {
             //例如2->?输出2到全部的节点的概率
-            String[] data =single.split("->");
+            String[] data =single.split(">");
             int thisId = Integer.parseInt(data[0]);
             if (!nodeGraph.findNode(thisId)) return;
             int[] NodeIds = nodeGraph.getNodeIds();

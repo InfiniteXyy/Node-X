@@ -8,26 +8,26 @@ import java.util.Queue;
 class BFS {
     private List<Node> visited = null;
 
-    void showBFS(NodeGraph nodeGraph, int id) {
+    void showBFS(NodeGraph nodeGraph, int id, StringBuilder out) {
         if (visited == null) {
             visited = new ArrayList<>();
         }
-        System.out.println("开始BFS");
+        out.append("开始BFS\n");
         try {
-            BFSearchNode(nodeGraph.getNode(id));
+            BFSearchNode(nodeGraph.getNode(id), out);
         } catch (Exception e) {
-            System.out.println("无法继续BFS");
+            out.append("无法继续BFS");
         }
     }
 
-    private void BFSearchNode(Node node) {
+    private void BFSearchNode(Node node, StringBuilder out) {
         Queue<Node> nodeQueue = new LinkedList<>();
         nodeQueue.offer(node);
         while (!nodeQueue.isEmpty()) {
             Node curNode = nodeQueue.poll();
             if (!visited.contains(curNode)) {
                 visited.add(curNode);
-                System.out.println("节点：" + curNode.getId());
+                out.append("节点：" + curNode.getId() + "\n");
                 for (int i = 0; i < curNode.getNodeEdgeList().size(); i++) {
                     nodeQueue.offer(curNode.getNodeEdgeList().get(i).getNodeRight());
                 }
