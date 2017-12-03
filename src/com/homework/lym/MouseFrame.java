@@ -18,7 +18,7 @@ public class MouseFrame extends JFrame {
         this.setBackground(SystemColor.window);
         setVisible(true);*/
 
-        this.add(new MouseCompoent());
+        this.add(new MouseComponent());
         pack();
 
     }

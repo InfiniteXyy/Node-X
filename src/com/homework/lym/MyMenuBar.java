@@ -12,7 +12,7 @@ class MyMenuBar {
         return jm;
     }
 
-    public JMenuBar setMyJMenuBar() {
+    JMenuBar setMyJMenuBar() {
         JMenuBar br1 = new JMenuBar();
         br1.add(getMymenu("File", "item 1", "item 2"));
         br1.add(getMymenu("Edit", "item 1", "item 2"));

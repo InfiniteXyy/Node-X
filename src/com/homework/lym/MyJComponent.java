@@ -9,7 +9,7 @@ import java.awt.geom.Rectangle2D;
 class MyJComponent extends JComponent {
     private String title;
 
-    public MyJComponent(String name) {
+    MyJComponent(String name) {
         this.title = name;
     }
 
