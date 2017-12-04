@@ -16,13 +16,14 @@ class BFS {
         try {
             BFSearchNode(nodeGraph.getNode(id), out);
         } catch (Exception e) {
-            out.append("无法继续BFS");
+            out.append("无法继续BFS\n");
         }
     }
 
     private void BFSearchNode(Node node, StringBuilder out) {
         Queue<Node> nodeQueue = new LinkedList<>();
         nodeQueue.offer(node);
+        if (node.getNodeEdgeList()==null) return;
         while (!nodeQueue.isEmpty()) {
             Node curNode = nodeQueue.poll();
             if (!visited.contains(curNode)) {

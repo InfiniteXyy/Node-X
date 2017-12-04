@@ -1,6 +1,7 @@
 package com.homework.lym;
 
 import javax.swing.*;
+import java.util.Arrays;
 
 
 class MyMenuBar extends NewJPanel{
@@ -33,7 +34,9 @@ class MyMenuBar extends NewJPanel{
         File.add(save);
         File.add(demo);
         demo.addActionListener((e -> {
-            nodeGraph.graphDemo();
+            int n = JOptionPane.showConfirmDialog(null,
+                    "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
+            if (n == 0) nodeGraph.graphDemo();
         }));
     }
 
@@ -54,7 +57,13 @@ class MyMenuBar extends NewJPanel{
 
         BFS.addActionListener((e) -> {
             if(nodeGraph.getNodeIds().length == 0)return;
-            String temp = nodeGraph.showBFS(nodeGraph.getNodeIds()[0]);
+            int[] nodes = nodeGraph.getNodeIds();
+            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
+            int s = (int) JOptionPane.showInputDialog(null,"请选择起始节点:\n",
+                    "BFS", JOptionPane.PLAIN_MESSAGE,
+                    null, nodeInts, nodeInts[0]);
+
+            String temp = nodeGraph.showBFS(nodeGraph.getNodeIds()[s]);
             textShow.append(temp + "\n");
         });
     }
