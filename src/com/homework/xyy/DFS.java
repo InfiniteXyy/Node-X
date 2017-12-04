@@ -6,24 +6,25 @@ import java.util.List;
 class DFS {
     private List<Node> visited = null;
 
-    void showDFS(NodeGraph nodeGraph, int id) {
+    void showDFS(NodeGraph nodeGraph, int id, StringBuilder out) {
         if (visited == null) {
             visited = new ArrayList<>();
         }
-        System.out.println("开始DFS");
+        out.append("开始DFS\n");
         try {
-            DFSearchNode(nodeGraph.getNode(id));
+            DFSearchNode(nodeGraph.getNode(id), out);
         } catch (Exception e) {
-            System.out.println("无法继续DFS");
+            out.append("无法继续DFS");
         }
     }
 
-    private void DFSearchNode(Node node) {
+    private void DFSearchNode(Node node, StringBuilder out) {
+        if (node.getNodeEdgeList()==null) return;
         if (!visited.contains(node)) {
             visited.add(node);
-            System.out.println("节点：" + node.getId());
+            out.append("节点：" + node.getId() + "\n");
             for (int i = 0; i < node.getNodeEdgeList().size(); i++) {
-                DFSearchNode(node.getNodeEdgeList().get(i).getNodeRight());
+                DFSearchNode(node.getNodeEdgeList().get(i).getNodeRight(), out);
             }
         }
     }

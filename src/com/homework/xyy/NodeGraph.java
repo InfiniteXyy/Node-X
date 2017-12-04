@@ -142,9 +142,11 @@ public class NodeGraph {
         return stringBuilder.toString();
     }
 
-    public void showDFS(int id) {
+    public String showDFS(int id) {
         DFS bfs = new DFS();
-        bfs.showDFS(this, id);
+        StringBuilder stringBuilder = new StringBuilder();
+        bfs.showDFS(this, id, stringBuilder);
+        return stringBuilder.toString();
     }
 
     public String showRoute(IdEdge idEdge) {

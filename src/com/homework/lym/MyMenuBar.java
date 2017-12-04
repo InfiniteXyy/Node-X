@@ -66,6 +66,18 @@ class MyMenuBar extends NewJPanel{
             String temp = nodeGraph.showBFS(nodeGraph.getNodeIds()[s]);
             textShow.append(temp + "\n");
         });
+
+        DFS.addActionListener((e) -> {
+            if(nodeGraph.getNodeIds().length == 0)return;
+            int[] nodes = nodeGraph.getNodeIds();
+            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
+            int s = (int) JOptionPane.showInputDialog(null,"请选择起始节点:\n",
+                    "DFS", JOptionPane.PLAIN_MESSAGE,
+                    null, nodeInts, nodeInts[0]);
+
+            String temp = nodeGraph.showDFS(nodeGraph.getNodeIds()[s]);
+            textShow.append(temp + "\n");
+        });
     }
 
     private void setHelp() {
