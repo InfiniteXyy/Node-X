@@ -7,7 +7,7 @@ import java.awt.*;
 
 class LeftJPanel extends NewJPanel{
 
-    private JTextArea text1;
+    private MouseComponent mouse1;
     private JTextArea text2;
 
     LeftJPanel() {
@@ -22,13 +22,13 @@ class LeftJPanel extends NewJPanel{
         jp = new JTabbedPane(SwingConstants.TOP);
         JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
-        jp.add("Main", p1);
-        jp.add("Main2", p2);
+        jp.add("painting", mouse1 = new MouseComponent());
+        jp.add("code", p2);
 
 
-        //添加绘画文本框1
-        p1.add(addScroller(this.text1));
-        p2.add(addScroller(this.text1));
+        //添加绘画框和文本框
+
+        p2.add(addScroller(this.text2));
 
         //加入输入控件
         this.add(jp);
@@ -36,7 +36,7 @@ class LeftJPanel extends NewJPanel{
     }
 
     private JScrollPane addScroller(JTextArea text){
-        text = new JTextArea(24, 70);
+        text = new JTextArea(25, 60);
         JScrollPane scroller = new JScrollPane(text);
         text.setLineWrap(true);//启动自动换行
         scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
