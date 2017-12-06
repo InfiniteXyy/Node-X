@@ -26,7 +26,7 @@ class MouseComponent extends JComponent{
 
     public void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
-            Ellipse2D ellipse2D = new Ellipse2D.Double(100+ node.pos*70 - SIDELENGTH/2,60+node.depth*50-SIDELENGTH/2,SIDELENGTH+25,SIDELENGTH);
+            Ellipse2D ellipse2D = new Ellipse2D.Double(100+ node.pos*70 - SIDELENGTH/2,60+node.depth*60-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
             squares.add(ellipse2D);
             System.out.println("Node" + node.getId() + "：" + "x=" + node.pos + "  y=" +node.depth);
         }
@@ -55,7 +55,7 @@ class MouseComponent extends JComponent{
         double x = p.getX();
         double y = p.getY();
 
-        current = new Ellipse2D.Double(x - SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+25,SIDELENGTH);
+        current = new Ellipse2D.Double(x - SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
         squares.add(current);
         repaint();
     }
@@ -94,7 +94,7 @@ class MouseComponent extends JComponent{
                 int x = event.getX();
                 int y = event.getY();
 
-                current.setFrame(x- SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+25,SIDELENGTH);
+                current.setFrame(x- SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
                 repaint();
             }
         }
