@@ -37,7 +37,7 @@ class LeftJPanel extends NewJPanel{
     }
 
     private JScrollPane addScroller(){
-        text2 = new JTextArea(25, 60);
+        text2 = new JTextArea(25, 58);
         JScrollPane scroller = new JScrollPane(text2);
         text2.setLineWrap(true);//启动自动换行
         scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);

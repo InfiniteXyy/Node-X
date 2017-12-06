@@ -10,7 +10,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 class MouseComponent extends JComponent{
-    private static final int SIDELENGTH = 30;
+    private static final int SIDELENGTH = 40;
     private ArrayList<Ellipse2D> squares;
     private Ellipse2D current;
     MouseComponent(){
