@@ -9,7 +9,8 @@ class LeftJPanel extends NewJPanel{
 
     private MouseComponent mouse1;
     private JTextArea text2;
-
+    final private int mouse_width = 400;
+    final private int mouse_height = 400;
     LeftJPanel() {
         nodeGraph = new NodeGraph();
 
@@ -20,25 +21,25 @@ class LeftJPanel extends NewJPanel{
 
         //添加选项卡
         jp = new JTabbedPane(SwingConstants.TOP);
-        JPanel p1 = new JPanel();
         JPanel p2 = new JPanel();
-        jp.add("painting", mouse1 = new MouseComponent());
+        mouse1 = new MouseComponent();
+        mouse1.setSize(mouse_width,mouse_height);
+        jp.add("painting", mouse1);
         jp.add("code", p2);
 
 
         //添加绘画框和文本框
-
-        p2.add(addScroller(this.text2));
+        p2.add(addScroller());
 
         //加入输入控件
         this.add(jp);
         this.addNodeJPanel();
     }
 
-    private JScrollPane addScroller(JTextArea text){
-        text = new JTextArea(25, 60);
-        JScrollPane scroller = new JScrollPane(text);
-        text.setLineWrap(true);//启动自动换行
+    private JScrollPane addScroller(){
+        text2 = new JTextArea(25, 60);
+        JScrollPane scroller = new JScrollPane(text2);
+        text2.setLineWrap(true);//启动自动换行
         scroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         return scroller;
@@ -54,5 +55,11 @@ class LeftJPanel extends NewJPanel{
 
         AddPanel addPanel = new AddPanel();
         add(addPanel);
+    }
+    int getMouse_width(){
+        return mouse_width;
+    }
+    int getMouse_height(){
+        return mouse_height;
     }
 }

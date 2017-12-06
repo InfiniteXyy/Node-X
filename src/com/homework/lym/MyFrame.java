@@ -50,7 +50,7 @@ class MyFrame extends JFrame {
         MyFrame.getContentPane().add(BorderLayout.CENTER,lp);
 
 
-        System.out.println("1");
+        System.out.println();
 
     }
 }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed5ebd11-29e5-4f28-ba62-69650bcf2f7d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/java_project.iml" />
+    <list default="true" id="ed5ebd11-29e5-4f28-ba62-69650bcf2f7d" name="Default" comment="可以画椭圆了">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/homework/Main.java" afterPath="$PROJECT_DIR$/src/com/homework/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
@@ -25,17 +26,156 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/Node.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="NodeEdge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/NodeEdge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IdEdge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/IdEdge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MouseFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="42" column="84" lean-forward="false" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1512569855134" expanded="true" signature="45362:45379" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45362:45397" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45362:45410" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45362:45425" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45460:48269" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45473:48254" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45527:45822" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45546:45807" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45609:45787" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45649:45753" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45670:45731" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45872:46199" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45891:46184" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="45986:46164" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46026:46130" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46047:46108" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46250:46515" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46269:46500" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46302:46480" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46342:46446" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46363:46424" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46558:46864" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46577:46849" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46651:46829" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46691:46795" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46712:46773" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46915:47269" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="46934:47254" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47017:47234" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47057:47200" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47078:47178" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47304:47610" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47323:47595" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47397:47575" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47437:47541" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47458:47519" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47662:47927" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47681:47912" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47714:47892" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47754:47858" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47775:47836" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47975:48240" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="47994:48225" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="48027:48205" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="48067:48171" ph="..." />
+                <marker date="1512569855134" expanded="true" signature="48088:48149" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftJPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+              <folding>
+                <element signature="e#1599#1600#0" expanded="true" />
+                <element signature="e#1633#1634#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1695#1696#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace>Ellipse2D</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +189,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/com/homework/Main.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" />
       </list>
     </option>
   </component>
@@ -59,8 +203,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="34" />
-    <option name="y" value="23" />
+    <option name="x" value="115" />
+    <option name="y" value="73" />
     <option name="width" value="1680" />
     <option name="height" value="943" />
   </component>
@@ -161,6 +305,116 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/homework/Main.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -319,26 +573,34 @@
       <option name="presentableId" value="Default" />
       <updated>1512565184908</updated>
       <workItem from="1512565186323" duration="154000" />
-      <workItem from="1512565515990" duration="149000" />
+      <workItem from="1512565515990" duration="4363000" />
     </task>
+    <task id="LOCAL-00001" summary="sdsdsd">
+      <created>1512565675915</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512565675915</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303000" />
+    <option name="totallyTimeSpent" value="4517000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="23" width="1680" height="943" extended-state="0" />
+    <frame x="115" y="73" width="1680" height="943" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -366,18 +628,69 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="sdsdsd" />
+    <MESSAGE value="可以画椭圆了" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以画椭圆了" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512569855134" expanded="true" signature="45362:45379" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45362:45397" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45362:45410" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45362:45425" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45460:48269" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45473:48254" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45527:45822" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45546:45807" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45609:45787" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45649:45753" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45670:45731" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45872:46199" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45891:46184" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="45986:46164" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46026:46130" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46047:46108" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46250:46515" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46269:46500" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46302:46480" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46342:46446" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46363:46424" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46558:46864" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46577:46849" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46651:46829" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46691:46795" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46712:46773" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46915:47269" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="46934:47254" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47017:47234" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47057:47200" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47078:47178" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47304:47610" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47323:47595" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47397:47575" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47437:47541" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47458:47519" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47662:47927" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47681:47912" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47714:47892" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47754:47858" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47775:47836" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47975:48240" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="47994:48225" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="48027:48205" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="48067:48171" ph="..." />
+            <marker date="1512569855134" expanded="true" signature="48088:48149" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -385,6 +698,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/NodeEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/IdEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="42" column="84" lean-forward="false" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding>
+            <element signature="e#1599#1600#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1695#1696#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding />
         </state>
       </provider>
