@@ -1,5 +1,8 @@
 package com.homework.lym;
 
+import com.homework.xyy.Node;
+import com.homework.xyy.NodeGraph;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -13,11 +16,23 @@ class MouseComponent extends JComponent{
     private static final int SIDELENGTH = 40;
     private ArrayList<Ellipse2D> squares;
     private Ellipse2D current;
+
     MouseComponent(){
         squares = new ArrayList<>();
         current = null;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
+    }
+
+    public void addCom(NodeGraph nodeGraph) {
+        for (Node node : nodeGraph.getNodeList()) {
+            Ellipse2D ellipse2D = new Ellipse2D.Double(100+ node.pos*70 - SIDELENGTH/2,60+node.depth*50-SIDELENGTH/2,SIDELENGTH+25,SIDELENGTH);
+            squares.add(ellipse2D);
+            System.out.println("Node" + node.getId() + "：" + "x=" + node.pos + "  y=" +node.depth);
+        }
+        repaint();
+
+
     }
 
     public void paintComponent(Graphics g){

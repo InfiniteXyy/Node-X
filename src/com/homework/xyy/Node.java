@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class Node {
+public class Node {
     //用来标注节点的唯一标识
     private int id;
     //用来标注从该节点出发的所有边的信息
     private List<NodeEdge> nodeEdgeList = null;
+
+    public int depth;
+    public int pos;
 
     Node (int id) {
         if (nodeEdgeList == null) {
@@ -70,7 +73,7 @@ class Node {
         return null;
     }
 
-    int getId() {
+    public int getId() {
         return id;
     }
 

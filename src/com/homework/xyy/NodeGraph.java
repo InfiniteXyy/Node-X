@@ -184,4 +184,8 @@ public class NodeGraph {
 
         return output.toString();
     }
+
+    public List<Node> getNodeList() {
+        return nodeList;
+    }
 }

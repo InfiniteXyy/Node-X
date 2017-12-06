@@ -1,6 +1,7 @@
 package com.homework.lym;
 
 import com.homework.xyy.NodeGraph;
+import com.homework.xyy.NodePositionChecker;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,7 +27,10 @@ class LeftJPanel extends NewJPanel{
         mouse1.setSize(mouse_width,mouse_height);
         jp.add("painting", mouse1);
         jp.add("code", p2);
-
+        nodeGraph.graphDemo();
+        NodePositionChecker nodePositionChecker = new NodePositionChecker(nodeGraph, mouse_height, mouse_width, 30);
+        nodePositionChecker.updateNodePosition(0);
+        mouse1.addCom(nodeGraph);
 
         //添加绘画框和文本框
         p2.add(addScroller());

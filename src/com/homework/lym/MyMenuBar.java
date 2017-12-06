@@ -36,7 +36,9 @@ class MyMenuBar extends NewJPanel{
         demo.addActionListener((e -> {
             int n = JOptionPane.showConfirmDialog(null,
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
-            if (n == 0) nodeGraph.graphDemo();
+            if (n == 0) {
+                nodeGraph.graphDemo();
+            }
         }));
     }
 
