@@ -9,25 +9,34 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Ellipse2D;
+
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 class MouseComponent extends JComponent{
+    private static final String[] JAPAN_COLOR = {
+            "#7B2A3B",
+            "#ES7661",
+            "#F8C58C",
+            "#F8E7A2",
+            "#86DD82"
+    };
     private static final int SIDELENGTH = 40;
-    private ArrayList<Ellipse2D> squares;
-    private Ellipse2D current;
+    private ArrayList<Ellipse2D.Double> nodes;
+    private Ellipse2D.Double current;
 
     MouseComponent(){
-        squares = new ArrayList<>();
+        nodes = new ArrayList<>();
         current = null;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
+        setBackground(Color.white);
     }
 
     public void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
-            Ellipse2D ellipse2D = new Ellipse2D.Double(100+ node.getPosX()*70 - SIDELENGTH/2,60+node.getPosY()*60-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
-            squares.add(ellipse2D);
+            Ellipse2D.Double ellipse2D = new Ellipse2D.Double(100+ node.getPosX()*70 - SIDELENGTH/2,60+node.getPosY()*60-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
+            nodes.add(ellipse2D);
             System.out.println("Node" + node.getId() + "：" + "x=" + node.getPosX() + "  y=" +node.getPosY());
         }
         repaint();
@@ -36,15 +45,24 @@ class MouseComponent extends JComponent{
     }
 
     public void paintComponent(Graphics g){
-        Graphics2D g2 = (Graphics2D) g;
-        for(Ellipse2D t :squares){
-            g2.draw(t);
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        Paint p = g2d.getPaint();
+        g2d.setPaint(Color.decode(JAPAN_COLOR[4]));
+        for (int i = 0; i < 10; i++) {
+
+            g2d.fill(nodes.get(i));
+
+        }
+        g2d.setPaint(p);
+        for(Ellipse2D.Double t : nodes){
+            g2d.draw(t);
         }
     }
 
     //找到第一个含有p的square
-    private Ellipse2D find(Point2D p){
-        for(Ellipse2D t :squares){
+    private Ellipse2D.Double find(Point2D p){
+        for(Ellipse2D.Double t : nodes){
             if(t.contains(p))return t;
         }
         return null;
@@ -56,15 +74,15 @@ class MouseComponent extends JComponent{
         double y = p.getY();
 
         current = new Ellipse2D.Double(x - SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
-        squares.add(current);
+        nodes.add(current);
         repaint();
     }
 
     //从collection中移动一个Suqares
-    private void remove(Ellipse2D s){
+    private void remove(Ellipse2D.Double s){
         if(s == null)return;
         if(s == current)current = null;
-        squares.remove(s);
+        nodes.remove(s);
         repaint();
     }
 
@@ -93,10 +111,10 @@ class MouseComponent extends JComponent{
             if(current != null){
                 int x = event.getX();
                 int y = event.getY();
-
                 current.setFrame(x- SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
                 repaint();
             }
         }
     }
+
 }
