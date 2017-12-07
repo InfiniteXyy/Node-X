@@ -10,8 +10,8 @@ public class Node {
     //用来标注从该节点出发的所有边的信息
     private List<NodeEdge> nodeEdgeList = null;
 
-    public int depth;
-    public int pos;
+    private int posX;
+    private int posY;
 
     Node (int id) {
         if (nodeEdgeList == null) {
@@ -28,9 +28,8 @@ public class Node {
                 return false;
             }
         }
-        //增加边的时候，要自动生成合适的概率。
+        //增加边的时候，自动生成合适的概率。
         //默认加入的边是不带概率的
-
         nodeEdgeList.add(nodeEdge);
         autoChangeProbability();
         return true;
@@ -75,6 +74,22 @@ public class Node {
 
     public int getId() {
         return id;
+    }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
     }
 
     List<NodeEdge> getNodeEdgeList() {

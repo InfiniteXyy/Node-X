@@ -6,13 +6,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class NodePositionChecker {
+public class PositionChecker {
     private NodeGraph nodeGraph;
     private List<Node> visited;
+    private List<Node> hasSetDepth;
 
-    public NodePositionChecker(NodeGraph nodeGraph) {
+    public PositionChecker(NodeGraph nodeGraph) {
         this.nodeGraph = nodeGraph;
         visited = new ArrayList<>();
+        hasSetDepth = new ArrayList<>();
     }
 
     public void updateNodePosition(int id) {
@@ -20,8 +22,9 @@ public class NodePositionChecker {
 
         Queue<Node> nodeQueue = new LinkedList<>();
         nodeQueue.offer(node);
-        node.pos = 0;
-        node.depth = 0;
+        node.setPosX(0);
+        node.setPosY(0);
+
         int maxDepth = 0;
         if (node.getNodeEdgeList()==null) return;
         while (!nodeQueue.isEmpty()) {
@@ -31,8 +34,11 @@ public class NodePositionChecker {
                 for (int i = 0; i < curNode.getNodeEdgeList().size(); i++) {
                     Node nodeTemp = curNode.getNodeEdgeList().get(i).getNodeRight();
                     nodeQueue.offer(nodeTemp);
-                    if (!visited.contains(nodeTemp)) nodeTemp.depth = curNode.depth+1;
-                    maxDepth = nodeTemp.depth;
+                    if (!hasSetDepth.contains(nodeTemp)) {
+                        nodeTemp.setPosY(curNode.getPosY()+1);
+                        hasSetDepth.add(nodeTemp);
+                    }
+                    maxDepth = nodeTemp.getPosY();
                 }
             }
         }
@@ -41,18 +47,15 @@ public class NodePositionChecker {
             pos[i] = 0;
         }
 
-
-
         //一共是j层，每一行的最大宽度是maxi
         int i = 1;
         for (Node node1 : nodeGraph.getNodeList()) {
-
             if (!visited.contains(node1)) {
                 i++;
-                node1.depth=0;
-                node1.pos=i;
+                node1.setPosY(0);
+                node1.setPosX(i);
             } else {
-                node1.pos = pos[node1.depth]++;
+                node1.setPosX(pos[node1.getPosY()]++);
             }
 
         }

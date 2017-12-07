@@ -1,11 +1,9 @@
 package com.homework.lym;
 
-import com.homework.xyy.InputChecker;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
+
 
 class RightJPanel extends NewJPanel implements ActionListener {
 
@@ -45,17 +43,8 @@ class RightJPanel extends NewJPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        InputChecker p = new InputChecker(textEdit.getText(), nodeGraph);
-        List<IdEdge> arrayList = p.getCheckList();
-        for (IdEdge i : arrayList) {
-
-            if (i != null) {
-                textShow.append(nodeGraph.showRoute(i));
-            } else {
-                textShow.append("没有找到路径\n\n");
-            }
-        }
-        textShow.append("\n");
+        String outPut = nodeGraph.getEdgeProbability(textEdit.getText());
+        textShow.append(outPut);
     }
 
 }

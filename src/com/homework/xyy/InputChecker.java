@@ -4,7 +4,7 @@ package com.homework.xyy;
 import java.util.regex.Pattern;
 
 //根据输入的data信息，增加点、边，查询概率。
-public class InputChecker {
+class InputChecker {
     private NodeGraph nodeGraph;
     private StringBuilder outPut;
 
@@ -14,7 +14,7 @@ public class InputChecker {
     private final int UNKNOWN_FIRST = 1;
     private final int UNKNOWN_SECOND = 0;
 
-    public InputChecker(NodeGraph nodeGraph) {
+    InputChecker(NodeGraph nodeGraph) {
         this.nodeGraph = nodeGraph;
         outPut = new StringBuilder();
     }

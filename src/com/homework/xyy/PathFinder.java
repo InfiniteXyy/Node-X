@@ -46,7 +46,7 @@ class PathFinder {
 
     private Node endNode;
     private Node inNode;
-    private  List<NodePath> nodePaths = null;
+    private  List<NodePath> nodePaths;
 
     PathFinder(Node in, Node out) {
         endNode = out;

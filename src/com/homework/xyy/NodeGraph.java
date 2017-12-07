@@ -30,18 +30,17 @@ public class NodeGraph {
     }
 
     //返回每一个Node的 id 和 位置的对应关系
-    public void getNodePosition() {
-
+    public List<Node> getNodeList() {
+        return nodeList;
     }
 
     //内置了图的样式，可以快速设置图
     public String graphDemo() {
         String demoRequest = "0,1,2,3,4,5,6,7,8,9,0:1,0:2,1:3,1:4,2:5,2:6,3:7,4:7,5:6";
 
-        StringBuilder out = new StringBuilder();
-        addNodeAndEdges(demoRequest, out);
+        String out = addNodeAndEdges(demoRequest);
 
-        return out.toString();
+        return out;
         /*
         节点路径关系如下
         0-1 0-2 1-3 1-4 2-5 2-6 3-7 4-7 5-6
@@ -63,61 +62,6 @@ public class NodeGraph {
         return stringBuilder.toString();
     }
 
-    String addNode(int id) {
-        if (getNode(id) != null) {
-            return("节点："+id+"已经存在\n");
-        } else {
-            Node node = new Node(id);
-            nodeList.add(node);
-            return("节点："+id+"添加成功\n");
-        }
-    }
-
-    String addEdge(int in, int out) {
-        Node nodeIn, nodeOut;
-
-        //遍历图，找到对应id的node
-        nodeIn = getNode(in);
-        nodeOut = getNode(out);
-
-        if (nodeIn == null) {
-            return ("添加失败，没有找到节点："+in);
-        } else if (nodeOut == null) {
-            return ("添加失败，没有找到节点："+out);
-        } else {
-            NodeEdge nodeEdge = new NodeEdge(nodeIn, nodeOut);
-            if (nodeIn.addNodeEdge(nodeEdge)) {
-                return (in +"->"+out+": 增加边成功");
-            } else {
-                return (in +"->"+out+": 增加边失败（边已存在）");
-            }
-        }
-
-    }
-
-    String addEdge(int in, int out, double probability) {
-        Node nodeIn, nodeOut;
-
-        //遍历图，找到对应id的node
-        nodeIn = getNode(in);
-        nodeOut = getNode(out);
-
-        if (nodeIn == null) {
-            return ("添加失败，没有找到节点："+in);
-        } else if (nodeOut == null) {
-            return ("添加失败，没有找到节点："+out);
-        } else {
-            NodeEdge nodeEdge = new NodeEdge(nodeIn, nodeOut);
-            nodeEdge.setProbability(probability, false);
-            if (nodeIn.addNodeEdge(nodeEdge)) {
-                return (in +"->"+out+": 增加边成功，概率为"+probability);
-            } else {
-                return (in +"->"+out+": 增加边失败（边已存在）");
-            }
-        }
-
-    }
-
     public int[] getNodeIds() {
         int[] data = new int[nodeList.size()];
         for (int i = 0; i < nodeList.size(); i++) {
@@ -125,9 +69,6 @@ public class NodeGraph {
         }
         return data;
     }
-
-    //重载，带概率的增加边
-
 
     public double getProbability(int a, int b) {
         NodeEdge nodeEdge = getEdge(a,b);
@@ -153,12 +94,64 @@ public class NodeGraph {
         return node != null;
     }
 
+    String addNode(int id) {
+        if (getNode(id) != null) {
+            return("节点："+id+"已经存在\n");
+        } else {
+            Node node = new Node(id);
+            nodeList.add(node);
+            return("节点："+id+"添加成功\n");
+        }
+    }
+
+    String addEdge(int in, int out) {
+        Node nodeIn, nodeOut;
+
+        //遍历图，找到对应id的node
+        nodeIn = getNode(in);
+        nodeOut = getNode(out);
+
+        if (nodeIn == null) {
+            return ("添加失败，没有找到节点："+in+"\n");
+        } else if (nodeOut == null) {
+            return ("添加失败，没有找到节点："+out+"\n");
+        } else {
+            NodeEdge nodeEdge = new NodeEdge(nodeIn, nodeOut);
+            if (nodeIn.addNodeEdge(nodeEdge)) {
+                return (in +"->"+out+": 增加边成功\n");
+            } else {
+                return (in +"->"+out+": 增加边失败（边已存在）\n");
+            }
+        }
+
+    }
+
+    String addEdge(int in, int out, double probability) {
+        Node nodeIn, nodeOut;
+
+        //遍历图，找到对应id的node
+        nodeIn = getNode(in);
+        nodeOut = getNode(out);
+
+        if (nodeIn == null) {
+            return ("添加失败，没有找到节点："+in+"\n");
+        } else if (nodeOut == null) {
+            return ("添加失败，没有找到节点："+out+"\n");
+        } else {
+            NodeEdge nodeEdge = new NodeEdge(nodeIn, nodeOut);
+            nodeEdge.setProbability(probability, false);
+            if (nodeIn.addNodeEdge(nodeEdge)) {
+                return (in +"->"+out+": 增加边成功，概率为"+probability+"\n");
+            } else {
+                return (in +"->"+out+": 增加边失败（边已存在）\n");
+            }
+        }
+
+    }
+
     private NodeEdge getEdge(int a, int b) {
         Node nodeA = getNode(a);
-        if (nodeA == null) return null;
-        else {
-            return nodeA.getNodeEdge(b);
-        }
+        return nodeA.getNodeEdge(b);
     }
 
     Node getNode(int id) {
@@ -195,8 +188,9 @@ public class NodeGraph {
                 return "";
             }
         }
-        output.append("--------------------------");
+        output.append("--------------------------\n");
 
         return output.toString();
     }
+
 }

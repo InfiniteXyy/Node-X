@@ -37,14 +37,6 @@ class NodeEdge {
         return nodeRight;
     }
 
-    int getInNodeId() {
-        return nodeLeft.getId();
-    }
-
-    int getOutNodeId() {
-        return nodeRight.getId();
-    }
-
     double showEdge(StringBuilder out) {
         if (nodeLeft == null) {
             out.append (nodeRight.getId());
