@@ -3,16 +3,17 @@ package com.homework.xyy;
 import java.util.ArrayList;
 import java.util.List;
 
-class N2N {
+class PathFinder {
     class NodePath{
-        List<NodeEdge> path;
+        List<NodeEdge> path = null;
 
         NodePath() {
-            path = new ArrayList<>();
+            if (path == null) {
+                path = new ArrayList<>();
+            }
         }
 
         void addPath(NodeEdge nodeEdge) {
-
             path.add(nodeEdge);
         }
 
@@ -47,7 +48,7 @@ class N2N {
     private Node inNode;
     private  List<NodePath> nodePaths = null;
 
-    N2N(Node in, Node out) {
+    PathFinder(Node in, Node out) {
         endNode = out;
         inNode = in;
         nodePaths = new ArrayList<>();
@@ -74,6 +75,7 @@ class N2N {
             }
         }
     }
+
 }
 //伪代码：
 //        if（走了重复的路径）{

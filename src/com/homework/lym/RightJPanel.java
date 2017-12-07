@@ -1,7 +1,6 @@
 package com.homework.lym;
 
-import com.homework.xyy.IdEdge;
-import com.homework.xyy.ProbabilityListChecker;
+import com.homework.xyy.InputChecker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -46,8 +45,8 @@ class RightJPanel extends NewJPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ev) {
-        ProbabilityListChecker p = new ProbabilityListChecker(textEdit.getText(), nodeGraph);
-        List<IdEdge> arrayList = p.getRequestList();
+        InputChecker p = new InputChecker(textEdit.getText(), nodeGraph);
+        List<IdEdge> arrayList = p.getCheckList();
         for (IdEdge i : arrayList) {
 
             if (i != null) {

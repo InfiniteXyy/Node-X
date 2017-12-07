@@ -20,53 +20,22 @@ class AddPanel extends NewJPanel{
         setAddBtn();
     }
 
-    //这里不仅可以增加点，还能设置边，甚至还能设置边的概率，厉害了
+    //为Add按钮设置监听器，用于增加点和边
     private void setAddBtn() {
         addBtn.addActionListener(e -> {
-            String nodeName = nodeField.getText();
-            try {
-                String[] data = nodeName.split(",");
-                for (String single : data) {
+            String requests = nodeField.getText();
+            StringBuilder outPut = new StringBuilder();
 
-                    if (Pattern.matches("^\\d+$", single)) {
-                        nodeId = Integer.parseInt(single);
-                        showNodeAddInfo(nodeId);
-                    } else if (Pattern.matches("^\\d+:\\d+(:0.\\d*)?$", single)) {
-                        String[] nodes = single.split(":");
-                        int a = Integer.parseInt(nodes[0]);
-                        int b = Integer.parseInt(nodes[1]);
-                        System.out.println(nodes.length);
-                        double probability = nodes.length==2 ? -1 : Double.parseDouble(nodes[2]);
-                        showEdgeAddInfo(a, b, probability);
-                    }
-                }
+            String info = nodeGraph.addNodeAndEdges(requests);
 
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            } finally {
-                nodeField.setText("");
-                nodeField.grabFocus();
-                //将光标聚集到nodeField处
-            }
+            //将输出结果显示到Console
+            textShow.append(info);
+
+            //将光标聚集到nodeField处
+            nodeField.setText("");
+            nodeField.grabFocus();
         });
     }
-
-    private void showNodeAddInfo(int nodeId) {
-        String info = nodeGraph.addNode(nodeId);
-        textShow.append(info+"\n");
-    }
-
-    private void showEdgeAddInfo(int a, int b, double probability) {
-        String info;
-        if (probability < 0) {
-            info = nodeGraph.addEdge(a, b);
-        } else {
-            info = nodeGraph.addEdge(a, b, probability);
-        }
-
-        textShow.append(info+"\n");
-    }
-
 }
 
 

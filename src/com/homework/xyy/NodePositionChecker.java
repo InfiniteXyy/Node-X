@@ -8,14 +8,10 @@ import java.util.Queue;
 
 public class NodePositionChecker {
     private NodeGraph nodeGraph;
-    private int maxHeight, maxWidth, r;
     private List<Node> visited;
 
-    public NodePositionChecker(NodeGraph nodeGraph, int maxHeight, int maxWidth, int r) {
-        this.maxHeight = maxHeight;
-        this.maxWidth = maxWidth;
+    public NodePositionChecker(NodeGraph nodeGraph) {
         this.nodeGraph = nodeGraph;
-        this.r = r;
         visited = new ArrayList<>();
     }
 

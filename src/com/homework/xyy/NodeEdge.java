@@ -4,9 +4,6 @@ class NodeEdge {
     private Node nodeLeft;
     private Node nodeRight;
 
-    //nodeLeft = 进入节点
-    //nodeRight = 指向节点
-
     private double probability;
     private boolean hasSetProbability;
 
@@ -38,6 +35,14 @@ class NodeEdge {
 
     Node getNodeRight() {
         return nodeRight;
+    }
+
+    int getInNodeId() {
+        return nodeLeft.getId();
+    }
+
+    int getOutNodeId() {
+        return nodeRight.getId();
     }
 
     double showEdge(StringBuilder out) {

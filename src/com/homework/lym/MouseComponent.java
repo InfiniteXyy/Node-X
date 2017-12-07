@@ -86,7 +86,7 @@ class MouseComponent extends JComponent{
     private class MouseMotionHandler implements MouseMotionListener {
         public void mouseMoved(MouseEvent event){
             if(find((event.getPoint()))==null)setCursor(Cursor.getDefaultCursor());
-            else setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+            else setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
 
         public void mouseDragged(MouseEvent event){
