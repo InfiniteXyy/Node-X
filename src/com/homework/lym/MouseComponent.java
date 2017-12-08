@@ -25,7 +25,7 @@ class MouseComponent extends JComponent{
     };
     private static final int SIDELENGTH = 40;
     private ArrayList<EllipseNode> nodes;
-    private Ellipse2D.Double current;
+    private EllipseNode current;
 
     MouseComponent(){
         nodes = new ArrayList<>();
@@ -69,24 +69,14 @@ class MouseComponent extends JComponent{
     }
 
     //找到第一个含有p的square
-    private Ellipse2D.Double find(Point2D p){
+    private EllipseNode find(Point2D p){
         for(EllipseNode t : nodes){
             if(t.contains(p))return t;
         }
         return null;
     }
 
-    /*//吧square添加到collection中去
-    public void add(Point2D p){
-        double x = p.getX();
-        double y = p.getY();
-
-        current = new Ellipse2D.Double(x - SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
-        nodes.add(current);
-        repaint();
-    }*/
-
-    //从collection中移动一个Suqares
+    //从collection中移动一个Node
     private void remove(Ellipse2D.Double s){
         if(s == null)return;
         if(s == current)current = null;
@@ -94,16 +84,12 @@ class MouseComponent extends JComponent{
         repaint();
     }
 
-    //square containing the mouse cursor
     private class MouseHandler extends MouseAdapter {
         public void mousePressed(MouseEvent event){
-            //add a new square if the cursor isn't inside a square
             current = find(event.getPoint());
-            if(current == null)/*add(event.getPoint())*/;
         }
 
         public void mouseClicked(MouseEvent event){
-            //remove the current square if double clicked
             current = find(event.getPoint());
             if(current != null&&event.getClickCount()>=2)remove(current);
         }
@@ -119,7 +105,7 @@ class MouseComponent extends JComponent{
             if(current != null){
                 int x = event.getX();
                 int y = event.getY();
-                current.setFrame(x- SIDELENGTH/2,y-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
+                current.updatePos(x, y);
                 repaint();
             }
         }
