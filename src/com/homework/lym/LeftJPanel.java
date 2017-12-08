@@ -49,13 +49,6 @@ class LeftJPanel extends NewJPanel{
     }
 
     private void addNodeJPanel(){
-//        JPanel jp = new JPanel();
-//        jp.setLayout(new BoxLayout(jp,BoxLayout.LINE_AXIS));
-//        jp.add(new JLabel("NodeList"));
-//        jp.add(new JTextField(8));
-//        jp.add(new JButton("ADD"));
-//        this.add(jp);
-
         AddPanel addPanel = new AddPanel();
         add(addPanel);
     }
