@@ -37,10 +37,24 @@ class MouseComponent extends JComponent{
 
     public void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
-            EllipseNode ellipseNode = new EllipseNode(node);
-            nodes.add(ellipseNode);
+            if (!isContainNode(node, nodes)) {
+                EllipseNode ellipseNode = new EllipseNode(node);
+                nodes.add(ellipseNode);
+            }
         }
+
+        for (EllipseNode ellipseNode : nodes) {
+            ellipseNode.gridPosUpdate();
+        }
+
         repaint();
+    }
+    private boolean isContainNode(Node node, ArrayList<EllipseNode> nodes) {
+        for (EllipseNode node1 : nodes) {
+            if (node1.getNodeId() == node.getId())
+                return true;
+        }
+        return false;
     }
 
     public void paintComponent(Graphics g){
@@ -48,11 +62,14 @@ class MouseComponent extends JComponent{
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
         Paint p = g2d.getPaint();
         g2d.setPaint(Color.decode(JAPAN_COLOR[4]));
-        for (int i = 0; i < 10; i++) {
-            g2d.fill(nodes.get(i));
+
+        for (EllipseNode t : nodes) {
+            g2d.fill(t);
         }
         g2d.setPaint(p);
+
         for(EllipseNode t : nodes){
+
             g2d.draw(t);
             String drawString = String.valueOf(t.getNodeId());
 
@@ -66,6 +83,7 @@ class MouseComponent extends JComponent{
 
             g2d.drawString(drawString,(float)x,(float)y);
         }
+
     }
 
     //找到第一个含有p的square

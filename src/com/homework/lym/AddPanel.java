@@ -31,6 +31,9 @@ class AddPanel extends NewJPanel{
             //将输出结果显示到Console
             textShow.append(info);
 
+            //更新图的显示
+            LeftJPanel.renewGraph();
+
             //将光标聚集到nodeField处
             nodeField.setText("");
             nodeField.grabFocus();

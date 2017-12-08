@@ -6,8 +6,6 @@ import com.homework.xyy.PositionChecker;
 import javax.swing.*;
 
 class LeftJPanel extends NewJPanel{
-
-    private MouseComponent mouse1;
     private JTextArea text2;
     final private int mouse_width = 400;
     final private int mouse_height = 400;
@@ -26,10 +24,7 @@ class LeftJPanel extends NewJPanel{
         mouse1.setSize(mouse_width,mouse_height);
         jp.add("painting", mouse1);
         jp.add("code", p2);
-        nodeGraph.graphDemo();
-        PositionChecker positionChecker = new PositionChecker(nodeGraph);
-        positionChecker.updateNodePosition(0);
-        mouse1.addCom(nodeGraph);
+        renewGraph();
 
         //添加绘画框和文本框
         p2.add(addScroller());
@@ -37,6 +32,14 @@ class LeftJPanel extends NewJPanel{
         //加入输入控件
         this.add(jp);
         this.addNodeJPanel();
+    }
+
+    static void renewGraph() {
+        if (!nodeGraph.isEmpty()) {
+            PositionChecker positionChecker = new PositionChecker(nodeGraph);
+            positionChecker.updateNodePosition(nodeGraph.getNodeIds()[0]);
+            mouse1.addCom(nodeGraph);
+        }
     }
 
     private JScrollPane addScroller(){

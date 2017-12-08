@@ -38,6 +38,7 @@ class MyMenuBar extends NewJPanel{
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
                 textShow.append(nodeGraph.graphDemo());
+                LeftJPanel.renewGraph();
             }
         }));
     }

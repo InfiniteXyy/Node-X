@@ -94,6 +94,10 @@ public class NodeGraph {
         return node != null;
     }
 
+    public boolean isEmpty() {
+        return nodeList.isEmpty();
+    }
+
     String addNode(int id) {
         if (getNode(id) != null) {
             return("节点："+id+"已经存在\n");
