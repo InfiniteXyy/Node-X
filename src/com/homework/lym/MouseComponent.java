@@ -37,14 +37,10 @@ class MouseComponent extends JComponent{
 
     public void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
-            Ellipse2D.Double ellipse2D = new Ellipse2D.Double(100+ node.getPosX()*70 - SIDELENGTH/2,60+node.getPosY()*60-SIDELENGTH/2,SIDELENGTH+12,SIDELENGTH);
-            EllipseNode ellipseNode = new EllipseNode(ellipse2D,node.getId());
+            EllipseNode ellipseNode = new EllipseNode(node);
             nodes.add(ellipseNode);
-            System.out.println("Node" + node.getId() + "：" + "x=" + node.getPosX() + "  y=" +node.getPosY());
         }
         repaint();
-
-
     }
 
     public void paintComponent(Graphics g){
@@ -53,22 +49,20 @@ class MouseComponent extends JComponent{
         Paint p = g2d.getPaint();
         g2d.setPaint(Color.decode(JAPAN_COLOR[4]));
         for (int i = 0; i < 10; i++) {
-
-            g2d.fill(nodes.get(i).getG2());
-
+            g2d.fill(nodes.get(i));
         }
         g2d.setPaint(p);
         for(EllipseNode t : nodes){
-            g2d.draw(t.getG2());
-            String drawString = new String("Node"+String.valueOf(t.getNodeid()));
+            g2d.draw(t);
+            String drawString = String.valueOf(t.getNodeId());
 
             //测量消息大小
             FontRenderContext context = g2d.getFontRenderContext();
             Rectangle2D bounds = g2d.getFont().getStringBounds(drawString, context);
 
             //set(x,y)
-            double x = (float)t.getG2().getX()+(SIDELENGTH+12 - bounds.getWidth()) / 2;
-            double y = (float)t.getG2().getY()+(SIDELENGTH- bounds.getHeight()) / 2;
+            double x = (float)t.getX()+(SIDELENGTH+12 - bounds.getWidth()) / 2;
+            double y = (float)t.getY()+(SIDELENGTH) / 2;
 
             g2d.drawString(drawString,(float)x,(float)y);
         }
@@ -77,7 +71,7 @@ class MouseComponent extends JComponent{
     //找到第一个含有p的square
     private Ellipse2D.Double find(Point2D p){
         for(EllipseNode t : nodes){
-            if(t.getG2().contains(p))return t.getG2();
+            if(t.contains(p))return t;
         }
         return null;
     }

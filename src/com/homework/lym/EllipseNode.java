@@ -1,20 +1,18 @@
 package com.homework.lym;
 
+import com.homework.xyy.Node;
+
+import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
-public class EllipseNode {
-    private Ellipse2D.Double g2;
-    private int nodeid;
-
-    public int getNodeid() {
-        return nodeid;
+class EllipseNode extends Ellipse2D.Double{
+    private int nodeId;
+    EllipseNode(Node node) {
+        super(80+ node.getPosX()*70,30+node.getPosY()*60,52,33);
+        nodeId = node.getId();
     }
 
-    public Ellipse2D.Double getG2() {
-        return g2;
-    }
-    public EllipseNode(Ellipse2D.Double g,int id){
-        g2 = g;
-        nodeid = id;
+    public int getNodeId() {
+        return nodeId;
     }
 }

@@ -84,11 +84,11 @@ public class Node {
         return posY;
     }
 
-    public void setPosX(int posX) {
+    void setPosX(int posX) {
         this.posX = posX;
     }
 
-    public void setPosY(int posY) {
+    void setPosY(int posY) {
         this.posY = posY;
     }
 
