@@ -1,9 +1,7 @@
 package com.homework.lym;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 class MyFrame extends JFrame {
 
@@ -21,12 +19,9 @@ class MyFrame extends JFrame {
     private void set() {//用一个go函数来创建界面
 
         //图标设置
-        try {
-            Image img = ImageIO.read(getClass().getResource("/img/d1.png"));
-            setIconImage(img);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        Image img = getToolkit().getImage(getClass().getResource("/img/d1.png"));
+        setIconImage(img);
 
         //基础设置
         JFrame.setDefaultLookAndFeelDecorated(true);
