@@ -22,7 +22,7 @@ class MyFrame extends JFrame {
 
         //图标设置
         try {
-            Image img = ImageIO.read(getClass().getResource("/img/ooopic_1512786383.ico"));
+            Image img = ImageIO.read(getClass().getResource("/img/d1.png"));
             setIconImage(img);
         } catch (IOException e) {
             e.printStackTrace();

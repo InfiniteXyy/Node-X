@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed5ebd11-29e5-4f28-ba62-69650bcf2f7d" name="Default" comment="大小问题">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/xyy.xml" />
+    <list default="true" id="ed5ebd11-29e5-4f28-ba62-69650bcf2f7d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +67,8 @@
       <file leaf-file-name="MyFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="156">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -212,8 +210,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="34" />
-    <option name="y" value="70" />
+    <option name="x" value="33" />
+    <option name="y" value="310" />
     <option name="width" value="1680" />
     <option name="height" value="943" />
   </component>
@@ -523,7 +521,7 @@
       <workItem from="1512799039066" duration="381000" />
       <workItem from="1512799662487" duration="69000" />
       <workItem from="1512799950327" duration="386000" />
-      <workItem from="1512800566388" duration="1275000" />
+      <workItem from="1512800566388" duration="2767000" />
     </task>
     <task id="LOCAL-00001" summary="haha">
       <created>1512565931965</created>
@@ -623,14 +621,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512796685204</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="icon">
+      <created>1512801941086</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512801941086</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37110000" />
+    <option name="totallyTimeSpent" value="38602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="70" width="1680" height="943" extended-state="0" />
+    <frame x="33" y="310" width="1680" height="943" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,7 +684,8 @@
     <MESSAGE value="更新了JFrame的构造函数，原来那样的话，会生成两个JFrame（只是一个没看到）" />
     <MESSAGE value="修复了BFS和DFS的空指针bug" />
     <MESSAGE value="大小问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="大小问题" />
+    <MESSAGE value="icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="icon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1087,8 +1093,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="156">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
