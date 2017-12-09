@@ -1,7 +1,9 @@
 package com.homework.lym;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 class MyFrame extends JFrame {
 
@@ -18,6 +20,14 @@ class MyFrame extends JFrame {
 
     private void set() {//用一个go函数来创建界面
 
+        //图标设置
+        try {
+            Image img = ImageIO.read(getClass().getResource("/img/ooopic_1512786383.ico"));
+            setIconImage(img);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         //基础设置
         JFrame.setDefaultLookAndFeelDecorated(true);
         setFont();//设置字体
@@ -32,9 +42,6 @@ class MyFrame extends JFrame {
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
         setSize(screenWidth/2, screenHeight/2);
-
-        //图标设置
-        setIconImage(kit.getImage(getClass().getResource("/img/ooopic_1512786383.ico")));
 
         //生成菜单
         setJMenuBar(new MyMenuBar().getJMenuBar());

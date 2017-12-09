@@ -66,7 +66,6 @@ class MouseComponent extends JComponent{
             g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
         }
-
         g2d.setColor(Color.white);
         for(EllipseNode t : nodes){
             String drawString = String.valueOf(t.getNodeId());
