@@ -98,7 +98,7 @@ class InputChecker {
                 if (i != thisId) {
                     if (UNKNOWN_FIRST == type) {
                         outPut.append(nodeGraph.showRoute(i, thisId));
-                    } else {
+                    } else if (UNKNOWN_SECOND == type){
                         outPut.append(nodeGraph.showRoute(thisId, i));
                     }
                 }
