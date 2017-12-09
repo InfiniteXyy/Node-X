@@ -1,7 +1,5 @@
 package com.homework.lym;
 
-import javafx.scene.control.TextInputDialog;
-
 import javax.swing.*;
 import java.util.Arrays;
 
@@ -54,6 +52,9 @@ class MyMenuBar extends NewJPanel{
     }
 
     private void setView() {
+        final int BFS_SET = 0;
+        final int DFS_SET = 1;
+
         View = new JMenu("View");
         JMenuItem BFS = new JMenuItem("BFS");
         JMenuItem DFS = new JMenuItem("DFS");
@@ -61,31 +62,37 @@ class MyMenuBar extends NewJPanel{
         View.add(DFS);
 
         BFS.addActionListener((e) -> {
-            if(nodeGraph.getNodeIds().length == 0)return;
-            int[] nodes = nodeGraph.getNodeIds();
-            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
-            Object s = JOptionPane.showInputDialog(null,"请选择起始节点:\n",
-                    "BFS", JOptionPane.PLAIN_MESSAGE,
-                    null, nodeInts, nodeInts[0]);
-            if (s != null) {
-                String temp = nodeGraph.showBFS(nodeGraph.getNodeIds()[(int)s]);
-                textShow.append(temp + "\n");
-            }
+            setFS(BFS_SET);
         });
 
         DFS.addActionListener((e) -> {
-            if(nodeGraph.getNodeIds().length == 0)return;
-            int[] nodes = nodeGraph.getNodeIds();
-            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
-            Object s = JOptionPane.showInputDialog(null,"请选择起始节点:\n",
-                    "DFS", JOptionPane.PLAIN_MESSAGE,
-                    null, nodeInts, nodeInts[0]);
-            if (s != null) {
-                String temp = nodeGraph.showDFS(nodeGraph.getNodeIds()[(int)s]);
-                textShow.append(temp + "\n");
-            }
+            setFS(DFS_SET);
 
         });
+    }
+
+    private void setFS(int type) {
+        if(nodeGraph.getNodeIds().length == 0)return;
+        int[] nodes = nodeGraph.getNodeIds();
+        String title;
+        if (type == 0) {
+            title = "BFS";
+        } else {
+            title = "DFS";
+        }
+        Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
+        Object s = JOptionPane.showInputDialog(null,"请选择起始节点:\n",
+                title, JOptionPane.PLAIN_MESSAGE,
+                null, nodeInts, nodeInts[0]);
+        if (s != null) {
+            String out;
+            if (type == 0) {
+                out = nodeGraph.showBFS(nodeGraph.getNodeIds()[(int)s]);
+            } else {
+                out = nodeGraph.showDFS(nodeGraph.getNodeIds()[(int)s]);
+            }
+            textShow.append(out + "\n");
+        }
     }
 
     private void setHelp() {
