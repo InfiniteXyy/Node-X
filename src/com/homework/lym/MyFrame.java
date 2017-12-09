@@ -27,11 +27,11 @@ class MyFrame extends JFrame {
         setResizable(false);
 
         //分辨率大小设置
-        Toolkit kit = getToolkit();
+        Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
-        setSize(screenWidth/2, 3*screenHeight/5);
+        setSize(screenWidth/2, screenHeight/2);
 
         //图标设置
         setIconImage(kit.getImage(getClass().getResource("/img/ooopic_1512786383.ico")));
