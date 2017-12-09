@@ -18,7 +18,7 @@ import java.util.ArrayList;
 class MouseComponent extends JComponent{
     private static final String[] JAPAN_COLOR = {
             "#7B2A3B",
-            "#ES7661",
+            "#EA7661",
             "#F8C58C",
             "#F8E7A2",
             "#86DD82"
@@ -32,10 +32,9 @@ class MouseComponent extends JComponent{
         current = null;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
-        setBackground(Color.white);
     }
 
-    public void addCom(NodeGraph nodeGraph) {
+    void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
             if (!isContainNode(node, nodes)) {
                 EllipseNode ellipseNode = new EllipseNode(node);
@@ -60,17 +59,16 @@ class MouseComponent extends JComponent{
     public void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-        Paint p = g2d.getPaint();
-        g2d.setPaint(Color.decode(JAPAN_COLOR[4]));
 
+        g2d.setColor(Color.white);
+        g2d.fillRect(0, 0, getWidth(), getHeight());
         for (EllipseNode t : nodes) {
+            g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
         }
-        g2d.setPaint(p);
 
+        g2d.setColor(Color.white);
         for(EllipseNode t : nodes){
-
-            g2d.draw(t);
             String drawString = String.valueOf(t.getNodeId());
 
             //测量消息大小
@@ -83,6 +81,7 @@ class MouseComponent extends JComponent{
 
             g2d.drawString(drawString,(float)x,(float)y);
         }
+
 
     }
 

@@ -31,7 +31,7 @@ class MyFrame extends JFrame {
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
-        setSize(screenWidth/2, screenHeight/2);
+        setSize(screenWidth/2, 3*screenHeight/5);
 
         //图标设置
         setIconImage(kit.getImage(getClass().getResource("/img/ooopic_1512786383.ico")));

@@ -4,6 +4,7 @@ import com.homework.xyy.NodeGraph;
 import com.homework.xyy.PositionChecker;
 
 import javax.swing.*;
+import java.awt.*;
 
 class LeftJPanel extends NewJPanel{
     final private int mouse_width = 400;
@@ -21,9 +22,12 @@ class LeftJPanel extends NewJPanel{
         JPanel p2 = new JPanel();
         mouse1 = new MouseComponent();
         mouse1.setSize(mouse_width,mouse_height);
+
         jp.add("painting", mouse1);
         jp.add("code", p2);
+
         renewGraph();
+
 
         //添加绘画框和文本框
         p2.add(addScroller());
@@ -31,6 +35,8 @@ class LeftJPanel extends NewJPanel{
         //加入输入控件
         this.add(jp);
         this.addNodeJPanel();
+
+
     }
 
     static void renewGraph() {

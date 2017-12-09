@@ -35,4 +35,7 @@ class EllipseNode extends Ellipse2D.Double{
         return 30+node.getPosY()*60;
     }
 
+    int getDepth() {
+        return node.getPosY();
+    }
 }
