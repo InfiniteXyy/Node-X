@@ -24,31 +24,26 @@ class MyFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("数据可视化处理");
-        setBackground(SystemColor.window);
         setResizable(false);
 
-        //图标设置
-        ImageIcon img = new ImageIcon(this.getClass().getResource("/img/ooopic_1512786383.ico"));
-        setIconImage(img.getImage());
-
         //分辨率大小设置
-        Toolkit kit = Toolkit.getDefaultToolkit();
+        Toolkit kit = getToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
         setSize(screenWidth/2, screenHeight/2);
 
+        //图标设置
+        setIconImage(kit.getImage(getClass().getResource("/img/ooopic_1512786383.ico")));
+
         //生成菜单
-        MyMenuBar MyMenuBar = new MyMenuBar();
-        setJMenuBar(MyMenuBar.setMyJMenuBar());
+        setJMenuBar(new MyMenuBar().getJMenuBar());
 
         //添加右边的编辑框
-        RightJPanel jp = new RightJPanel();
-        getContentPane().add(BorderLayout.EAST, jp);
+        getContentPane().add(BorderLayout.EAST, new RightJPanel());
 
         //添加左边的编辑框
-        LeftJPanel lp = new LeftJPanel();
-        getContentPane().add(BorderLayout.CENTER,lp);
+        getContentPane().add(BorderLayout.CENTER,new LeftJPanel());
 
 
     }
