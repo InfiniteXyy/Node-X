@@ -6,7 +6,6 @@ import com.homework.xyy.PositionChecker;
 import javax.swing.*;
 
 class LeftJPanel extends NewJPanel{
-    private JTextArea text2;
     final private int mouse_width = 400;
     final private int mouse_height = 400;
     LeftJPanel() {
@@ -43,6 +42,7 @@ class LeftJPanel extends NewJPanel{
     }
 
     private JScrollPane addScroller(){
+        JTextArea text2;
         text2 = new JTextArea(25, 58);
         JScrollPane scroller = new JScrollPane(text2);
         text2.setLineWrap(true);//启动自动换行

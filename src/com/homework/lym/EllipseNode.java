@@ -2,7 +2,6 @@ package com.homework.lym;
 
 import com.homework.xyy.Node;
 
-import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 class EllipseNode extends Ellipse2D.Double{

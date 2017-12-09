@@ -9,8 +9,7 @@ public class Main {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                MyFrame frame = new MyFrame();
-                frame.go();
+                new MyFrame();
             }
         });
     }
