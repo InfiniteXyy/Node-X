@@ -1,13 +1,14 @@
 package com.homework.lym;
 
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
 
 
 class AddPanel extends NewJPanel{
     private JTextField nodeField;
-    private int nodeId;
-    //nodeId用来传出得到的id
+
     private JButton addBtn;
     AddPanel() {
         addBtn = new JButton("ADD");
@@ -18,6 +19,7 @@ class AddPanel extends NewJPanel{
         add(nodeField);
         add(addBtn);
         setAddBtn();
+        setKeyPress();
     }
 
     //为Add按钮设置监听器，用于增加点和边
@@ -37,6 +39,17 @@ class AddPanel extends NewJPanel{
             //将光标聚集到nodeField处
             nodeField.setText("");
             nodeField.grabFocus();
+        });
+    }
+
+    private void setKeyPress() {
+        nodeField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyChar()==KeyEvent.VK_ENTER) {
+                    addBtn.doClick();
+                }
+            }
         });
     }
 }
