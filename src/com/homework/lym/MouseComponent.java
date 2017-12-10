@@ -37,7 +37,7 @@ class MouseComponent extends JComponent{
     void addCom(NodeGraph nodeGraph) {
         for (Node node : nodeGraph.getNodeList()) {
             if (!isContainNode(node, nodes)) {
-                EllipseNode ellipseNode = new EllipseNode(node);
+                EllipseNode ellipseNode = EllipseNode.FromNode(node);
                 nodes.add(ellipseNode);
             }
         }

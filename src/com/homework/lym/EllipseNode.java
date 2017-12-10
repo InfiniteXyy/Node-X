@@ -10,7 +10,7 @@ class EllipseNode extends Ellipse2D.Double{
 
     private Node node;
 
-    EllipseNode(Node node) {
+    private EllipseNode(Node node) {
         super(getPosX(node), getPosY(node), WIDTH, HEIGHT);
         this.node = node;
     }
@@ -37,5 +37,10 @@ class EllipseNode extends Ellipse2D.Double{
 
     int getDepth() {
         return node.getPosY();
+    }
+
+    //静态工厂方法
+    static EllipseNode FromNode(Node node) {
+        return new EllipseNode(node);
     }
 }
