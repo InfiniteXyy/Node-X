@@ -3,7 +3,6 @@ package com.homework.lym;
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.regex.Pattern;
 
 
 class AddPanel extends NewJPanel{
@@ -26,8 +25,6 @@ class AddPanel extends NewJPanel{
     private void setAddBtn() {
         addBtn.addActionListener(e -> {
             String requests = nodeField.getText();
-            StringBuilder outPut = new StringBuilder();
-
             String info = nodeGraph.addNodeAndEdges(requests);
 
             //将输出结果显示到Console
