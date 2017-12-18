@@ -187,7 +187,7 @@ public class NodeGraph {
                 i++;
                 allProbability += singleProbability;
             }
-            output.append("一共"+(i-1)+"种可能，总的概率是:"+allProbability+"\n");
+            output.append("一共"+(i-1)+"种可能，总的概率是:"+String.format("%.2f", allProbability)+"\n");
             if (allProbability == 0) {
                 return "";
             }

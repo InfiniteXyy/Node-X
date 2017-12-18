@@ -42,7 +42,7 @@ class NodeEdge {
             out.append (nodeRight.getId());
             return 1;
         } else {
-            out.append("->" + nodeRight.getId() + "(" + probability + ")");
+            out.append("->" + nodeRight.getId() + "(" + String.format("%.2f",probability) + ")");
             return probability;
         }
     }
