@@ -37,7 +37,8 @@ class MyMenuBar extends NewJPanel{
             int n = JOptionPane.showConfirmDialog(null,
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
-                textShow.append(nodeGraph.graphDemo());
+                history.add(nodeGraph.graphDemo(true));
+                textShow.append(nodeGraph.graphDemo(false));
                 LeftJPanel.renewGraph();
             }
         }));
@@ -49,6 +50,19 @@ class MyMenuBar extends NewJPanel{
         JMenuItem find = new JMenuItem("Find");
         Edit.add(undo);
         Edit.add(find);
+
+        //设置撤销功能
+        undo.addActionListener((e -> {
+            if (history.size() >= 1) {
+                history.remove(history.size()-1);
+                nodeGraph.empty();
+                for (String input : history) {
+                    nodeGraph.addNodeAndEdges(input);
+                }
+                LeftJPanel.renewGraph();
+            }
+        }));
+
     }
 
     private void setView() {

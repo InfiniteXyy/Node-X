@@ -27,6 +27,9 @@ class AddPanel extends NewJPanel{
             String requests = nodeField.getText();
             String info = nodeGraph.addNodeAndEdges(requests);
 
+            //将操作记录到history
+            history.add(requests);
+
             //将输出结果显示到Console
             textShow.append(info);
 

@@ -34,27 +34,31 @@ class MouseComponent extends JComponent{
         addMouseMotionListener(new MouseMotionHandler());
     }
 
-    void addCom(NodeGraph nodeGraph) {
-        for (Node node : nodeGraph.getNodeList()) {
-            if (!isContainNode(node, nodes)) {
-                EllipseNode ellipseNode = EllipseNode.FromNode(node);
-                nodes.add(ellipseNode);
-            }
-        }
+    void init() {
+        nodes.clear();
+        repaint();
+    }
 
+    //考虑撤销的问题
+    void updateCom(NodeGraph nodeGraph) {
+        nodes.clear();
+        for (Node node : nodeGraph.getNodeList()) {
+            EllipseNode ellipseNode = EllipseNode.FromNode(node);
+            nodes.add(ellipseNode);
+        }
         for (EllipseNode ellipseNode : nodes) {
             ellipseNode.gridPosUpdate();
         }
-
         repaint();
     }
-    private boolean isContainNode(Node node, ArrayList<EllipseNode> nodes) {
-        for (EllipseNode node1 : nodes) {
-            if (node1.getNodeId() == node.getId())
-                return true;
-        }
-        return false;
-    }
+//
+//    private boolean isContainNode(Node node, ArrayList<EllipseNode> nodes) {
+//        for (EllipseNode node1 : nodes) {
+//            if (node1.getNodeId() == node.getId())
+//                return true;
+//        }
+//        return false;
+//    }
 
     public void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D)g;

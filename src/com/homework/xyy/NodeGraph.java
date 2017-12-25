@@ -13,6 +13,9 @@ public class NodeGraph {
         }
     }
 
+    public void empty() {
+        nodeList.clear();
+    }
     //根据输入的Add语句，返回输出值
     public String addNodeAndEdges(String requests) {
         InputChecker inputChecker = new InputChecker(this);
@@ -35,12 +38,13 @@ public class NodeGraph {
     }
 
     //内置了图的样式，可以快速设置图
-    public String graphDemo() {
+    public String graphDemo(boolean onlyWord) {
+
         String demoRequest = "0,1,2,3,4,5,6,7,8,9,0:1,0:2,1:3,1:4,2:5,2:6,3:7,4:7,5:6";
+        if (onlyWord)
+            return demoRequest;
 
-        String out = addNodeAndEdges(demoRequest);
-
-        return out;
+        return addNodeAndEdges(demoRequest);
         /*
         节点路径关系如下
         0-1 0-2 1-3 1-4 2-5 2-6 3-7 4-7 5-6
