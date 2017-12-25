@@ -1,18 +1,24 @@
 package com.homework.lym;
 
+import com.homework.xyy.FileOpener;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
+import javax.swing.filechooser.FileFilter;
+import java.io.IOException;
 import java.util.Arrays;
 
 
 class MyMenuBar extends NewJPanel{
-    private JMenu File, Edit, View, Help;
+    private JMenu Files, Edit, View, Help;
 
     JMenuBar getJMenuBar() {
         JMenuBar br1 = new JMenuBar();
 
         setMenuItem();
 
-        br1.add(File);
+        br1.add(Files);
         br1.add(Edit);
         br1.add(View);
         br1.add(Help);
@@ -26,25 +32,66 @@ class MyMenuBar extends NewJPanel{
     }
 
     private void setFile() {
-        File = new JMenu("File");
+        Files = new JMenu("File");
         JMenuItem fileOpen = new JMenuItem("Open...");
         JMenuItem save = new JMenuItem("Save");
         JMenuItem demo = new JMenuItem("Use Demo");
-        File.add(fileOpen);
-        File.add(save);
-        File.add(demo);
+        Files.add(fileOpen);
+        Files.add(save);
+        Files.add(demo);
         demo.addActionListener((e -> {
             int n = JOptionPane.showConfirmDialog(null,
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
                 history.add(nodeGraph.graphDemo(true));
                 textShow.append(nodeGraph.graphDemo(false));
-                LeftJPanel.renewGraph();
+                LeftJPanel.renewGraph(true);
+            }
+        }));
+
+        fileOpen.addActionListener((e -> {
+            File directory = new File("");
+            JFileChooser fileChooser = new JFileChooser();
+            try {
+                fileChooser.setCurrentDirectory(directory.getCanonicalFile());//得到当前路径
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            fileChooser.setDialogTitle("请选择要读取的文件(.ndx)");
+            fileChooser.setApproveButtonText("确定");
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            fileChooser.setFileFilter(ndx);
+
+            if (JFileChooser.APPROVE_OPTION == fileChooser.showOpenDialog(null)) {
+                String path=fileChooser.getSelectedFile().getPath();
+                FileOpener fileOpener = new FileOpener(path);
+                //重置整个界面
+                history.clear();
+                nodeGraph.empty();
+                LeftJPanel.renewGraph(true);
+
+                history.addAll(fileOpener.renderFile());
+                for (String method : history) {
+                    textShow.append(nodeGraph.addNodeAndEdges(method));
+                }
+                LeftJPanel.renewGraph(false);
             }
         }));
     }
+//设置文件过滤器
+    private FileFilter ndx = new FileFilter() {
+        @Override
+        public boolean accept(File pathname) {
+            return (pathname.getPath().endsWith(".ndx"));
+        }
 
-    private void setEdit() {
+        @Override
+        public String getDescription() {
+            return ".ndx files";
+        }
+    };
+
+        private void setEdit() {
         Edit = new JMenu("Edit");
         JMenuItem undo  = new JMenuItem("Undo");
         JMenuItem find = new JMenuItem("Find");
@@ -59,7 +106,8 @@ class MyMenuBar extends NewJPanel{
                 for (String input : history) {
                     nodeGraph.addNodeAndEdges(input);
                 }
-                LeftJPanel.renewGraph();
+                //若history中没有元素，就initGraph
+                LeftJPanel.renewGraph(history.size()==0);
             }
         }));
 

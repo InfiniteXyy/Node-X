@@ -34,8 +34,8 @@ class LeftJPanel extends NewJPanel{
         this.addNodeJPanel();
     }
 
-    static void renewGraph() {
-        if (!nodeGraph.isEmpty()) {
+    static void renewGraph(boolean needInit) {
+        if (!needInit) {
             PositionChecker positionChecker = new PositionChecker(nodeGraph);
             positionChecker.updateNodePosition(nodeGraph.getNodeIds()[0]);
             mouse1.updateCom(nodeGraph);
