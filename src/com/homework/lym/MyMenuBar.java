@@ -97,7 +97,33 @@ class MyMenuBar extends NewJPanel{
 
     private void setHelp() {
         Help = new JMenu("Help");
-        JMenuItem about = new JMenuItem("About");
+        JMenuItem addNode = new JMenuItem("add node...");
+        JMenuItem checkProbability = new JMenuItem("check probability...");
+        JMenuItem about = new JMenuItem("About...");
+        Help.add(addNode);
+        Help.add(checkProbability);
         Help.add(about);
+        //设置说明文档
+        addNode.addActionListener((e -> {
+             JOptionPane.showMessageDialog(null,
+                    "Use 1,2,3 to add node1, node2, node3\n" +
+                            "Use 1:2 to add line between node1 and node2\n" +
+                            "(If you want to add 'probability', use a:b:p, 'p' for probability)",
+                     "Add nodes", JOptionPane.INFORMATION_MESSAGE);
+        }));
+
+        checkProbability.addActionListener((e -> {
+            JOptionPane.showMessageDialog(null,
+                    "Use 1>2 to check the probability of all the lines from node1 to node2\n" +
+                            "Use ?>2 to check view through all the nodes and drag them to node2\n" +
+                            "(2>? is the same)",
+                    "check path", JOptionPane.INFORMATION_MESSAGE);
+        }));
+
+        about.addActionListener((e -> {
+            JOptionPane.showMessageDialog(null,
+                    "Nodex made by xyy and lym 2017",
+                    "Nodex v1.0", JOptionPane.INFORMATION_MESSAGE);
+        }));
     }
 }
