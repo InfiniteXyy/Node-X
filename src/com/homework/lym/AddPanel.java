@@ -24,7 +24,9 @@ class AddPanel extends NewJPanel{
     //为Add按钮设置监听器，用于增加点和边
     private void setAddBtn() {
         addBtn.addActionListener(e -> {
+
             String requests = nodeField.getText();
+            if (requests.length()==0) return;
             String info = nodeGraph.addNodeAndEdges(requests);
 
             //将操作记录到history
