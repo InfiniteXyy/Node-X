@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/homework/xyy/FileOpener.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/AddPanel.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/AddPanel.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,7 +18,7 @@
       <file leaf-file-name="MyFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
+            <state relative-caret-position="443">
               <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="33" />
               <folding />
             </state>
@@ -41,14 +38,14 @@
       <file leaf-file-name="MyMenuBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+            <state relative-caret-position="379">
+              <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2672#2673#0" expanded="true" />
-                <element signature="e#2740#2741#0" expanded="true" />
-                <element signature="e#2800#2801#0" expanded="true" />
-                <element signature="e#2843#2844#0" expanded="true" />
+                <element signature="e#2750#2751#0" expanded="true" />
+                <element signature="e#2818#2819#0" expanded="true" />
+                <element signature="e#2878#2879#0" expanded="true" />
+                <element signature="e#2921#2922#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -435,7 +432,7 @@
       <workItem from="1514035852003" duration="158000" />
       <workItem from="1514036504435" duration="48000" />
       <workItem from="1514036602962" duration="112000" />
-      <workItem from="1514206298297" duration="6096000" />
+      <workItem from="1514206298297" duration="6549000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -493,11 +490,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514209922342</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="增加了文件读取的功能">
+      <created>1514212443785</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1514212443785</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10536000" />
+    <option name="totallyTimeSpent" value="10989000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -556,7 +560,8 @@
     <MESSAGE value="现在小数不会显示很多位了" />
     <MESSAGE value="设置说明信息" />
     <MESSAGE value="增加了撤销功能，但还不完善（不符合规范的输入也会加入撤销队列）" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加了撤销功能，但还不完善（不符合规范的输入也会加入撤销队列）" />
+    <MESSAGE value="增加了文件读取的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了文件读取的功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -910,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -973,16 +970,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="41" column="33" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="79" column="5" lean-forward="true" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        <state relative-caret-position="379">
+          <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2740#2741#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#2843#2844#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2818#2819#0" expanded="true" />
+            <element signature="e#2878#2879#0" expanded="true" />
+            <element signature="e#2921#2922#0" expanded="true" />
           </folding>
         </state>
       </provider>

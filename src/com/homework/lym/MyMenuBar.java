@@ -43,9 +43,11 @@ class MyMenuBar extends NewJPanel{
             int n = JOptionPane.showConfirmDialog(null,
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);
             if (n == JOptionPane.YES_OPTION) {
+                history.clear();
+                nodeGraph.empty();
                 history.add(nodeGraph.graphDemo(true));
                 textShow.append(nodeGraph.graphDemo(false));
-                LeftJPanel.renewGraph(true);
+                LeftJPanel.renewGraph(false);
             }
         }));
 
@@ -77,6 +79,7 @@ class MyMenuBar extends NewJPanel{
                 LeftJPanel.renewGraph(false);
             }
         }));
+
     }
 //设置文件过滤器
     private FileFilter ndx = new FileFilter() {
