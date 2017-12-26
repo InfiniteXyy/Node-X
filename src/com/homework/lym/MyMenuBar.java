@@ -1,6 +1,7 @@
 package com.homework.lym;
 
 import com.homework.xyy.FileOpener;
+import com.homework.xyy.FileSaver;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -34,7 +35,7 @@ class MyMenuBar extends NewJPanel{
     private void setFile() {
         Files = new JMenu("File");
         JMenuItem fileOpen = new JMenuItem("Open...");
-        JMenuItem save = new JMenuItem("Save");
+        JMenuItem save = new JMenuItem("Save As...");
         JMenuItem demo = new JMenuItem("Use Demo");
         Files.add(fileOpen);
         Files.add(save);
@@ -76,7 +77,37 @@ class MyMenuBar extends NewJPanel{
                 for (String method : history) {
                     textShow.append(nodeGraph.addNodeAndEdges(method));
                 }
-                LeftJPanel.renewGraph(false);
+                //若为空则initGraph否则 就不是计算圆圈的位置
+                LeftJPanel.renewGraph(history.isEmpty());
+            }
+        }));
+
+        save.addActionListener((e -> {
+            File directory = new File("");
+            JFileChooser fileChooser = new JFileChooser();
+            try {
+                fileChooser.setCurrentDirectory(directory.getCanonicalFile());//得到当前路径
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            fileChooser.setDialogTitle("请选择要保存的位置");
+            fileChooser.setApproveButtonText("确定");
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+            if (JFileChooser.APPROVE_OPTION == fileChooser.showSaveDialog(null)) {
+                String path=fileChooser.getSelectedFile().getPath();
+                if (!path.endsWith(".ndx")) {
+                    path += ".ndx";
+                }
+                FileSaver fileSaver = new FileSaver(path);
+                fileChooser.setFileFilter(ndx);
+                //如果已存在
+                if (fileSaver.saveHistory(history, true)) {
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog
+                            (null, "文件已存在，是否覆盖？", "", JOptionPane.YES_NO_OPTION)) {
+                        fileSaver.saveHistory(history, false);
+                    }
+                }
             }
         }));
 
