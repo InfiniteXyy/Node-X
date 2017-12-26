@@ -28,7 +28,7 @@ class MyFrame extends JFrame {
         setFont();//设置字体
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        setTitle("数据可视化处理");
+        setTitle("Node.X");
         setResizable(false);
 
         //分辨率大小设置

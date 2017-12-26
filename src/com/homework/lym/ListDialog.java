@@ -9,6 +9,7 @@ import java.util.SortedMap;
 public class ListDialog {
     private JList list;
     private JLabel label;
+    private JLabel plabel;
     private JTextField textField;
     private JOptionPane optionPane;
     private JButton setButton, cancelButton;
@@ -21,6 +22,7 @@ public class ListDialog {
         list = new JList(map.keySet().toArray());
         label = new JLabel(message);
         textField = new JTextField(8);
+        plabel = new JLabel("Probability: - ");
 
         createAndDisplayOptionPane();
     }
@@ -50,7 +52,7 @@ public class ListDialog {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 Object choose = list.getSelectedValue();
-                textField.setText(map.get(choose).toString());
+                plabel.setText("Probability: " + map.get(choose).toString());
             }
         });
 
@@ -60,7 +62,12 @@ public class ListDialog {
         centerListElements();
         JPanel panel = new JPanel(new BorderLayout(5,5));
         panel.add(label, BorderLayout.NORTH);
-        panel.add(textField, BorderLayout.CENTER);
+
+        JPanel jPanel = new JPanel(new BorderLayout());
+        jPanel.add(plabel, BorderLayout.WEST);
+        jPanel.add(textField, BorderLayout.EAST);
+
+        panel.add(jPanel, BorderLayout.CENTER);
         panel.add(list, BorderLayout.SOUTH);
         return panel;
     }
@@ -78,7 +85,6 @@ public class ListDialog {
 
     private void handleSetButtonClick(ActionEvent e){
         if(setEvent != null){ setEvent.actionPerformed(e); }
-        hide();
     }
 
     private void handleCancelButtonClick(ActionEvent e){
@@ -90,11 +96,10 @@ public class ListDialog {
 
     public void show(){ dialog.setVisible(true); }
 
-    private void hide(){ dialog.setVisible(false); }
+    public void hide(){ dialog.setVisible(false); }
 
     public Object getSelectedItem(){ return list.getSelectedValue(); }
 
     public String getInputValue(){ return textField.getText(); }
 
-    public void setInputValue(String value) {textField.setText(value);}
 }

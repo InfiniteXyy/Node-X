@@ -2,6 +2,7 @@ package com.homework.lym;
 
 import com.homework.xyy.FileOpener;
 import com.homework.xyy.FileSaver;
+import com.homework.xyy.NodeGraph;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -163,8 +164,23 @@ class MyMenuBar extends NewJPanel{
 
                 //设置确定按键的函数
                 dialog.setOnChange(e1 -> {
-
+                    String item = (String)dialog.getSelectedItem();
+                    String[] nodeInAndOut = item.split("->");
+                    String data = dialog.getInputValue();
+                    if (NodeGraph.isProbability(data)) {
+                        nodeGraph.setProbability(
+                                Integer.parseInt(nodeInAndOut[0]),
+                                Integer.parseInt(nodeInAndOut[1]),
+                                Double.parseDouble(data)
+                                );
+                        textShow.append("设置P("+item+") = "+ dialog.getInputValue()+"\n");
+                        dialog.hide();
+                    } else {
+                        JOptionPane.showMessageDialog(null,"请输入正确的概率值！", "Error", JOptionPane.PLAIN_MESSAGE);
+                    }
                 });
+
+
                 dialog.show();
             }
         }));

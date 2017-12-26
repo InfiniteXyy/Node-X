@@ -15,6 +15,19 @@ public class NodeGraph {
         }
     }
 
+    public static boolean isProbability(String data) {
+        boolean result = true;
+        try {
+            Double parseDouble = Double.parseDouble(data);
+            if (parseDouble > 1.0 || parseDouble <= 0) {
+                result = false;
+            }
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
+    }
+
     public void empty() {
         nodeList.clear();
     }
