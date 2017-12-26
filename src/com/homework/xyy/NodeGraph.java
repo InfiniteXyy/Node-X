@@ -2,7 +2,9 @@ package com.homework.xyy;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class NodeGraph {
     private List<Node> nodeList = null;
@@ -72,6 +74,39 @@ public class NodeGraph {
             data[i] = nodeList.get(i).getId();
         }
         return data;
+    }
+
+    public Map<String, Double> getNodeEdges(int a) {
+        Node node = getNode(a);
+        Map<String, Double> result = new HashMap<>();
+
+        //找到所有的出发边
+        List<NodeEdge> outEdges = node.getNodeEdgeList();
+        //找到所有的进入边
+        List<NodeEdge> inEdges = getInEdges(node);
+
+        for (NodeEdge outEdge : outEdges) {
+            result.put(a + "->" + outEdge.getNodeRight().getId(), outEdge.getProbability());
+        }
+        for (NodeEdge inEdge : inEdges) {
+            result.put(inEdge.getNodeLeft().getId()+"->"+a, inEdge.getProbability());
+        }
+        return result;
+    }
+
+    private List<NodeEdge> getInEdges(Node node) {
+        ArrayList<NodeEdge> inEdges = new ArrayList<>();
+        //遍历每个节点的每个边，找到所有进入node的边
+        for (Node thisNode : nodeList) {
+            if (thisNode!=node) {
+                for (NodeEdge edge : thisNode.getNodeEdgeList()) {
+                    if (edge.getNodeRight() == node) {
+                        inEdges.add(edge);
+                    }
+                }
+            }
+        }
+        return inEdges;
     }
 
     public double getProbability(int a, int b) {

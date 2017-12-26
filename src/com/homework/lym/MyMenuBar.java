@@ -4,11 +4,13 @@ import com.homework.xyy.FileOpener;
 import com.homework.xyy.FileSaver;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileSystemView;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Map;
 
 
 class MyMenuBar extends NewJPanel{
@@ -145,6 +147,28 @@ class MyMenuBar extends NewJPanel{
             }
         }));
 
+
+        //利用setProbability函数
+        find.addActionListener((e -> {
+            if(nodeGraph.getNodeIds().length == 0)return;
+            int[] nodes = nodeGraph.getNodeIds();
+            String title = "Find node";
+            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
+            Object s = JOptionPane.showInputDialog(null,"请选择节点:\n",
+                    title, JOptionPane.PLAIN_MESSAGE,
+                    null, nodeInts, nodeInts[0]);
+            if (s != null) {
+                Map<String, Double> map = nodeGraph.getNodeEdges((int)s);
+                ListDialog dialog = new ListDialog("Please select an 'Edge' From this list: ", map);
+
+                //设置确定按键的函数
+                dialog.setOnChange(e1 -> {
+
+                });
+                dialog.show();
+            }
+        }));
+
     }
 
     private void setView() {
@@ -183,9 +207,9 @@ class MyMenuBar extends NewJPanel{
         if (s != null) {
             String out;
             if (type == 0) {
-                out = nodeGraph.showBFS(nodeGraph.getNodeIds()[(int)s]);
+                out = nodeGraph.showBFS((int)s);
             } else {
-                out = nodeGraph.showDFS(nodeGraph.getNodeIds()[(int)s]);
+                out = nodeGraph.showDFS((int)s);
             }
             textShow.append(out + "\n");
         }
