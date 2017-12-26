@@ -164,9 +164,13 @@ class MyMenuBar extends NewJPanel{
 
                 //设置确定按键的函数
                 dialog.setOnChange(e1 -> {
-                    String item = (String)dialog.getSelectedItem();
-                    String[] nodeInAndOut = item.split("->");
-                    String data = dialog.getInputValue();
+                    Object item = dialog.getSelectedItem();
+                    if (item == null) return;
+                    //获取选取值
+                    String data = item.toString();
+                    String[] nodeInAndOut = data.split("->");
+                    //获取输入值
+                    data = dialog.getInputValue();
                     if (NodeGraph.isProbability(data)) {
                         nodeGraph.setProbability(
                                 Integer.parseInt(nodeInAndOut[0]),
