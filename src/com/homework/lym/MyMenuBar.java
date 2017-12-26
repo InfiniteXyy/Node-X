@@ -5,14 +5,11 @@ import com.homework.xyy.FileSaver;
 import com.homework.xyy.NodeGraph;
 
 import javax.swing.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
-
 
 class MyMenuBar extends NewJPanel{
     private JMenu Files, Edit, View, Help;

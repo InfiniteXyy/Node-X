@@ -101,10 +101,23 @@ public class NodeGraph {
         for (NodeEdge outEdge : outEdges) {
             result.put(a + "->" + outEdge.getNodeRight().getId(), outEdge.getProbability());
         }
+
         for (NodeEdge inEdge : inEdges) {
             result.put(inEdge.getNodeLeft().getId()+"->"+a, inEdge.getProbability());
         }
+
         return result;
+    }
+
+
+    public List<Integer> getOutPoints(int a) {
+        Node node = getNode(a);
+        List<Integer> list = new ArrayList<>();
+
+        for (NodeEdge edge : node.getNodeEdgeList()) {
+            list.add(edge.getNodeRight().getId());
+        }
+        return list;
     }
 
     private List<NodeEdge> getInEdges(Node node) {
