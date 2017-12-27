@@ -98,7 +98,7 @@ class MouseComponent extends JComponent{
                 for(Node tnode : list){
                     ex = nodes.get(tnode.getId()).getPoint();
                     g2d.setColor(LINECOLOR);
-                    drawAL((int)ex.getX()+26,(int)ex.getY()+16,(int)sx.getX()+26,(int)sx.getY()+16,g2d);
+                    drawAL((int)ex.getX()+26,(int)ex.getY()+24,(int)sx.getX()+26,(int)sx.getY()+8,g2d);
                 }
             }
         }
@@ -131,7 +131,7 @@ class MouseComponent extends JComponent{
         y4 = Y4.intValue();
         // 画线
         g2.drawLine(sx, sy, ex, ey);
-        //
+        g2.drawString("data",(sx+ex)/2,(sy+ey)/2);
         GeneralPath triangle = new GeneralPath();
         triangle.moveTo(ex, ey);
         triangle.lineTo(x3, y3);
