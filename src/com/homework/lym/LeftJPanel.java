@@ -21,7 +21,7 @@ class LeftJPanel extends NewJPanel{
         //添加选项卡
         JTabbedPane jp = new JTabbedPane(SwingConstants.TOP);
         JPanel p2 = new JPanel();
-        mouse1 = new MouseComponent();
+        mouse1 = new MouseComponent(nodeGraph);
         mouse1.setSize(mouse_width,mouse_height);
         jp.add("painting", mouse1);
         jp.add("code", p2);
