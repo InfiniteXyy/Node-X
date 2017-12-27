@@ -107,7 +107,7 @@ public class NodeGraph {
         return result;
     }
 
-    private List<NodeEdge> getInEdges(Node node) {
+    public List<NodeEdge> getInEdges(Node node) {
         ArrayList<NodeEdge> inEdges = new ArrayList<>();
         //遍历每个节点的每个边，找到所有进入node的边
         for (Node thisNode : nodeList) {
@@ -121,7 +121,20 @@ public class NodeGraph {
         }
         return inEdges;
     }
-
+    public ArrayList<Node> getInEdgesNode(Node node) {
+        ArrayList<Node> inEdges = new ArrayList<>();
+        //遍历每个节点的每个边，找到所有进入node的边
+        for (Node Node : nodeList) {
+            if (Node!=node) {
+                for (NodeEdge edge : Node.getNodeEdgeList()) {
+                    if (edge.getNodeRight() == node) {
+                        inEdges.add(edge.getNodeLeft());
+                    }
+                }
+            }
+        }
+        return inEdges;
+    }
     public double getProbability(int a, int b) {
         NodeEdge nodeEdge = getEdge(a,b);
         if (nodeEdge == null) {

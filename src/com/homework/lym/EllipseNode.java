@@ -2,6 +2,7 @@ package com.homework.lym;
 
 import com.homework.xyy.Node;
 
+import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 class EllipseNode extends Ellipse2D.Double{
@@ -9,9 +10,12 @@ class EllipseNode extends Ellipse2D.Double{
     private static final double HEIGHT = 32.24;
 
     private Node node;
+    private Point mypoint;
 
     private EllipseNode(Node node) {
         super(getPosX(node), getPosY(node), WIDTH, HEIGHT);
+        mypoint = new Point();
+        mypoint.setLocation(getPosX(node), getPosY(node)-HEIGHT/4);
         this.node = node;
     }
 
@@ -21,6 +25,7 @@ class EllipseNode extends Ellipse2D.Double{
 
     void updatePos(int x, int y) {
         setFrame(x-WIDTH/2, y-HEIGHT/2, WIDTH, HEIGHT);
+        mypoint.setLocation(x-WIDTH/2, y-HEIGHT/2-HEIGHT/4);
     }
 
     void gridPosUpdate() {
@@ -38,6 +43,10 @@ class EllipseNode extends Ellipse2D.Double{
     int getDepth() {
         return node.getPosY();
     }
+
+    Node getNode(){ return this.node; }
+
+    Point getPoint(){ return this.mypoint; }
 
     //静态工厂方法
     static EllipseNode FromNode(Node node) {
