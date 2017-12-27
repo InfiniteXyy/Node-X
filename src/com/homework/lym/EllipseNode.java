@@ -10,7 +10,7 @@ class EllipseNode extends Ellipse2D.Double{
     private static final double HEIGHT = 32.24;
 
     private Node node;
-    private Point mypoint;
+    private Point mypoint;;
 
     private EllipseNode(Node node) {
         super(getPosX(node), getPosY(node), WIDTH, HEIGHT);
@@ -52,4 +52,5 @@ class EllipseNode extends Ellipse2D.Double{
     static EllipseNode FromNode(Node node) {
         return new EllipseNode(node);
     }
+
 }

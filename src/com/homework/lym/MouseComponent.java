@@ -93,19 +93,26 @@ class MouseComponent extends JComponent{
         if(nodes.size()>=2){
             for(EllipseNode tp: nodes){
                 sx = tp.getPoint();
-                ArrayList<Node> list = new ArrayList();
-                list = nodeGraph.getInEdgesNode(tp.getNode());
+                ArrayList<Node> list = nodeGraph.getInEdgesNode(tp.getNode());
                 for(Node tnode : list){
-                    ex = nodes.get(tnode.getId()).getPoint();
+                    ex = getEllipseNodeByNodeID(tnode.getId()).getPoint();
                     g2d.setColor(LINECOLOR);
                     drawAL((int)ex.getX()+26,(int)ex.getY()+24,(int)sx.getX()+26,(int)sx.getY()+8,g2d);
                 }
             }
         }
     }
+
+    private EllipseNode getEllipseNodeByNodeID(int id) {
+        for (EllipseNode node : nodes) {
+            if (node.getNodeId() == id)
+                return node;
+        }
+        return null;
+    }
+
     public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
     {
-
         double H = 10; // 箭头高度
         double L = 4; // 底边的一半
         int x3 = 0;
@@ -121,13 +128,13 @@ class MouseComponent extends JComponent{
         double x_4 = ex - arrXY_2[0]; // (x4,y4)是第二端点
         double y_4 = ey - arrXY_2[1];
 
-        Double X3 = new Double(x_3);
+        Double X3 = x_3;
         x3 = X3.intValue();
-        Double Y3 = new Double(y_3);
+        Double Y3 = y_3;
         y3 = Y3.intValue();
-        Double X4 = new Double(x_4);
+        Double X4 = x_4;
         x4 = X4.intValue();
-        Double Y4 = new Double(y_4);
+        Double Y4 = y_4;
         y4 = Y4.intValue();
         // 画线
         g2.drawLine(sx, sy, ex, ey);

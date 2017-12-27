@@ -36,7 +36,7 @@ class AddPanel extends NewJPanel{
             textShow.append(info);
 
             //更新图的显示
-            LeftJPanel.renewGraph(false);
+            LeftJPanel.renewGraph(nodeGraph.isEmpty());
 
             //将光标聚集到nodeField处
             nodeField.setText("");
