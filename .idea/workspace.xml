@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/Main.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/Main.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/AddPanel$1.class" afterPath="" />
@@ -34,28 +33,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/PathFinder$NodePath.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/PathFinder.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/PositionChecker.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/Main.java" afterPath="$PROJECT_DIR$/src/com/homework/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/AddPanel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/EllipseNode.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/ListDialog.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/Main.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyFrame.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyJComponent.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/NewJPanel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/RightJPanel.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/BFS.java" afterPath="$PROJECT_DIR$/src/com/homework/core/BFS.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/DFS.java" afterPath="$PROJECT_DIR$/src/com/homework/core/DFS.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/FileOpener.java" afterPath="$PROJECT_DIR$/src/com/homework/core/FileOpener.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/FileSaver.java" afterPath="$PROJECT_DIR$/src/com/homework/core/FileSaver.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/InputChecker.java" afterPath="$PROJECT_DIR$/src/com/homework/core/InputChecker.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/Node.java" afterPath="$PROJECT_DIR$/src/com/homework/core/Node.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/NodeEdge.java" afterPath="$PROJECT_DIR$/src/com/homework/core/NodeEdge.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/NodeGraph.java" afterPath="$PROJECT_DIR$/src/com/homework/core/NodeGraph.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/PathFinder.java" afterPath="$PROJECT_DIR$/src/com/homework/core/PathFinder.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/PositionChecker.java" afterPath="$PROJECT_DIR$/src/com/homework/core/PositionChecker.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -530,7 +507,7 @@
       <workItem from="1514383194165" duration="306000" />
       <workItem from="1514383504804" duration="6886000" />
       <workItem from="1514426063324" duration="8012000" />
-      <workItem from="1514445773518" duration="327000" />
+      <workItem from="1514445773518" duration="352000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -665,11 +642,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514433338420</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="改个名字">
+      <created>1514446119075</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1514446119075</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40761000" />
+    <option name="totallyTimeSpent" value="40786000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -738,7 +722,8 @@
     <MESSAGE value="好想解决了这个bug" />
     <MESSAGE value="自动匹配入点和出点" />
     <MESSAGE value="设置了右键查询菜单，不过可以进行模块化封装" />
-    <option name="LAST_COMMIT_MESSAGE" value="设置了右键查询菜单，不过可以进行模块化封装" />
+    <MESSAGE value="改个名字" />
+    <option name="LAST_COMMIT_MESSAGE" value="改个名字" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
