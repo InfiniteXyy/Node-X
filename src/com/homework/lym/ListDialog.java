@@ -52,10 +52,9 @@ public class ListDialog {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 Object choose = list.getSelectedValue();
-                plabel.setText("Probability: " + map.get(choose).toString());
+                plabel.setText("Probability: " + String.format("%.2f",map.get(choose)));
             }
         });
-
     }
 
     private JPanel layoutComponents(){

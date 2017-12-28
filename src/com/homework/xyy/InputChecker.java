@@ -91,7 +91,7 @@ class InputChecker {
         int thisId = type == UNKNOWN_FIRST ? Integer.parseInt(data[1]) : Integer.parseInt(data[0]);
 
         if (!nodeGraph.findNode(thisId)){
-            outPut.append("没有找到节点"+thisId+"\n");
+            outPut.append("没有找到节点").append(thisId).append("\n");
         } else {
             int[] NodeIds = nodeGraph.getNodeIds();
             for (int i : NodeIds) {

@@ -25,6 +25,7 @@ public class FileSaver {
             for (String method : history) {
                 out.write(method+"\n");
             }
+
             out.flush();
             out.close();
         } catch (IOException e) {

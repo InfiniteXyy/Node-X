@@ -6,16 +6,13 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 class EllipseNode extends Ellipse2D.Double{
-    private static final double WIDTH = 52;
-    private static final double HEIGHT = 32.24;
+    public static final double WIDTH = 52;
+    public static final double HEIGHT = 32.24;
 
     private Node node;
-    private Point mypoint;;
 
     private EllipseNode(Node node) {
         super(getPosX(node), getPosY(node), WIDTH, HEIGHT);
-        mypoint = new Point();
-        mypoint.setLocation(getPosX(node), getPosY(node));
         this.node = node;
     }
 
@@ -25,7 +22,6 @@ class EllipseNode extends Ellipse2D.Double{
 
     void updatePos(int x, int y) {
         setFrame(x-WIDTH/2, y-HEIGHT/2, WIDTH, HEIGHT);
-        mypoint.setLocation(x-WIDTH/2, y-HEIGHT/2);
     }
 
     void gridPosUpdate() {
@@ -33,11 +29,11 @@ class EllipseNode extends Ellipse2D.Double{
     }
 
     static private double getPosX(Node node) {
-        return 80+ node.getPosX()*70;
+        return 80+ node.getPosX()*90;
     }
 
     static private double getPosY(Node node) {
-        return 30+node.getPosY()*60;
+        return 30+node.getPosY()*80;
     }
 
     int getDepth() {
@@ -45,8 +41,6 @@ class EllipseNode extends Ellipse2D.Double{
     }
 
     Node getNode(){ return this.node; }
-
-    Point getPoint(){ return this.mypoint; }
 
     //静态工厂方法
     static EllipseNode FromNode(Node node) {

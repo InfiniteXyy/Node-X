@@ -2,6 +2,7 @@ package com.homework.lym;
 
 import com.homework.xyy.Node;
 import com.homework.xyy.NodeGraph;
+import javafx.scene.shape.TriangleMesh;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,11 +10,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
-import java.awt.geom.Ellipse2D;
+import java.awt.geom.*;
 
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 
 class MouseComponent extends JComponent{
@@ -26,7 +24,7 @@ class MouseComponent extends JComponent{
     };
     private static final int SIDELENGTH = 40;
     private static final Color LINECOLOR = new Color(131,175,155);
-    private ArrayList<EllipseNode> nodes;
+    public ArrayList<EllipseNode> nodes;
     private EllipseNode current;
     private NodeGraph nodeGraph;
     private GeneralPath path = new GeneralPath();
@@ -70,11 +68,45 @@ class MouseComponent extends JComponent{
 
         g2d.setColor(Color.white);
         g2d.fillRect(0, 0, getWidth(), getHeight());
+        //画线
+        if(nodes.size()>=2){
+            for(EllipseNode thisNode: nodes){
+                Point2D outPoint = new Point2D.Double(thisNode.getCenterX(), thisNode.getCenterY());
+                ArrayList<Node> list = nodeGraph.getInEdgesNode(thisNode.getNode());
+                //设置线条粗细
+                g2d.setStroke(new BasicStroke(2.5f));
+                g2d.setColor(LINECOLOR);
+                for(Node inNode : list){
+                    EllipseNode ellipseNode = getEllipseNodeByNodeID(inNode.getId());
+                    Point2D inPoint = new Point2D.Double(ellipseNode.getCenterX(), ellipseNode.getCenterY());
+
+                    //判断斜率是否为-1~1
+                    double k = (outPoint.getY()-inPoint.getY()) / (outPoint.getX()-inPoint.getX());
+                    if (k >= -1 && k <= 1) {
+                        if (outPoint.getX() > inPoint.getX()) {
+                            drawAL((int)inPoint.getX()+26,(int)inPoint.getY(),(int)outPoint.getX()-26,(int)outPoint.getY(),g2d);
+                        } else {
+                            drawAL((int)inPoint.getX()-26,(int)inPoint.getY(),(int)outPoint.getX()+26,(int)outPoint.getY(),g2d);
+                        }
+                    } else {
+                        if (outPoint.getY() > inPoint.getY()) {
+                            drawAL((int)inPoint.getX(),(int)inPoint.getY()+14,(int)outPoint.getX(),(int)outPoint.getY()-18,g2d);
+                        } else {
+                            drawAL((int)inPoint.getX(),(int)inPoint.getY()-18,(int)outPoint.getX(),(int)outPoint.getY()+14,g2d);
+                        }
+                    }
+
+                }
+            }
+        }
+        //画椭圆
         for (EllipseNode t : nodes) {
             g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
         }
         g2d.setColor(Color.white);
+
+       //画字
         for(EllipseNode t : nodes){
             String drawString = String.valueOf(t.getNodeId());
 
@@ -88,19 +120,6 @@ class MouseComponent extends JComponent{
 
             g2d.drawString(drawString,(float)x,(float)y);
         }
-        Point sx;
-        Point ex;
-        if(nodes.size()>=2){
-            for(EllipseNode tp: nodes){
-                sx = tp.getPoint();
-                ArrayList<Node> list = nodeGraph.getInEdgesNode(tp.getNode());
-                for(Node tnode : list){
-                    ex = getEllipseNodeByNodeID(tnode.getId()).getPoint();
-                    g2d.setColor(LINECOLOR);
-                    drawAL((int)ex.getX()+26,(int)ex.getY()+24,(int)sx.getX()+26,(int)sx.getY()+8,g2d);
-                }
-            }
-        }
     }
 
     private EllipseNode getEllipseNodeByNodeID(int id) {
@@ -110,15 +129,11 @@ class MouseComponent extends JComponent{
         }
         return null;
     }
-
-    public static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
+    private static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
     {
-        double H = 10; // 箭头高度
-        double L = 4; // 底边的一半
-        int x3 = 0;
-        int y3 = 0;
-        int x4 = 0;
-        int y4 = 0;
+        double H = 8; // 箭头高度
+        double L = 5; // 底边的一半
+
         double awrad = Math.atan(L / H); // 箭头角度
         double arraow_len = Math.sqrt(L * L + H * H); // 箭头的长度
         double[] arrXY_1 = rotateVec(ex - sx, ey - sy, awrad, true, arraow_len);
@@ -127,29 +142,21 @@ class MouseComponent extends JComponent{
         double y_3 = ey - arrXY_1[1];
         double x_4 = ex - arrXY_2[0]; // (x4,y4)是第二端点
         double y_4 = ey - arrXY_2[1];
-
-        Double X3 = x_3;
-        x3 = X3.intValue();
-        Double Y3 = y_3;
-        y3 = Y3.intValue();
-        Double X4 = x_4;
-        x4 = X4.intValue();
-        Double Y4 = y_4;
-        y4 = Y4.intValue();
         // 画线
-        g2.drawLine(sx, sy, ex, ey);
-        g2.drawString("data",(sx+ex)/2,(sy+ey)/2);
+        double proportion = 1-4/Math.sqrt((ex-sx)*(ex-sx) + (ey-sy)*(ey-sy));
+        g2.drawLine(sx, sy, (int)(proportion*ex+(1-proportion)*sx), (int)(proportion*ey+(1-proportion)*sy));
+     //   g2.drawString("data",(sx+ex)/2,(sy+ey)/2);
         GeneralPath triangle = new GeneralPath();
         triangle.moveTo(ex, ey);
-        triangle.lineTo(x3, y3);
-        triangle.lineTo(x4, y4);
+        triangle.lineTo((int)x_3, (int)y_3);
+        triangle.lineTo((int)x_4, (int)y_4);
         triangle.closePath();
         //实心箭头
         g2.fill(triangle);
         //非实心箭头
         //g2.draw(triangle);
-
     }
+
 
     // 计算
     static double[] rotateVec(int px, int py, double ang, boolean isChLen, double newLen) {
@@ -190,7 +197,7 @@ class MouseComponent extends JComponent{
 
         public void mouseClicked(MouseEvent event){
             current = find(event.getPoint());
-            if(current != null&&event.getClickCount()>=2)remove(current);
+//            if(current != null&&event.getClickCount()>=2)remove(current);
         }
     }
 

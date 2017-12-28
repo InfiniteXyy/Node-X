@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.io.File;
 import javax.swing.filechooser.FileFilter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -34,12 +35,21 @@ class MyMenuBar extends NewJPanel{
 
     private void setFile() {
         Files = new JMenu("File");
+        JMenuItem newItem = new JMenuItem("new");
         JMenuItem fileOpen = new JMenuItem("Open...");
         JMenuItem save = new JMenuItem("Save As...");
         JMenuItem demo = new JMenuItem("Use Demo");
+        Files.add(newItem);
         Files.add(fileOpen);
         Files.add(save);
         Files.add(demo);
+        newItem.addActionListener((e -> {
+            nodeGraph.empty();
+            history.clear();
+            textShow.setText("");
+            LeftJPanel.renewGraph(true);
+
+        }));
         demo.addActionListener((e -> {
             int n = JOptionPane.showConfirmDialog(null,
                     "确定导入内置的图示例吗", "", JOptionPane.YES_NO_OPTION);

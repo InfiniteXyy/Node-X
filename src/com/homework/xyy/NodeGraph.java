@@ -107,7 +107,8 @@ public class NodeGraph {
         return result;
     }
 
-    public List<NodeEdge> getInEdges(Node node) {
+
+    private List<NodeEdge> getInEdges(Node node) {
         ArrayList<NodeEdge> inEdges = new ArrayList<>();
         //遍历每个节点的每个边，找到所有进入node的边
         for (Node thisNode : nodeList) {
@@ -135,6 +136,7 @@ public class NodeGraph {
         }
         return inEdges;
     }
+
     public double getProbability(int a, int b) {
         NodeEdge nodeEdge = getEdge(a,b);
         if (nodeEdge == null) {
@@ -144,13 +146,11 @@ public class NodeGraph {
         }
     }
 
-    public boolean setProbability(int a, int b, double probability) {
+    public void setProbability(int a, int b, double probability) {
         NodeEdge nodeEdge = getEdge(a,b);
         if (nodeEdge == null) {
-            return false;
         } else {
             nodeEdge.getNodeLeft().setProbability(b, probability);
-            return true;
         }
     }
 
@@ -248,11 +248,11 @@ public class NodeGraph {
                 for (NodeEdge e : paths.path) {
                     singleProbability *= e.showEdge(output);
                 }
-                output.append("概率为:"+singleProbability+"\n");
+                output.append("概率为:").append(String.format("%.2f",singleProbability)).append("\n");
                 i++;
                 allProbability += singleProbability;
             }
-            output.append("一共"+(i-1)+"种可能，总的概率是:"+String.format("%.2f", allProbability)+"\n");
+            output.append("一共").append(i - 1).append("种可能，总的概率是:").append(String.format("%.2f", allProbability)).append("\n");
             if (allProbability == 0) {
                 return "";
             }
