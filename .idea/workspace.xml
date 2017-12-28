@@ -8,19 +8,14 @@
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/ListDialog$1.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/ListDialog$1.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/ListDialog.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/ListDialog.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent$MouseHandler.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent$MouseHandler.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent$MouseMotionHandler.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent$MouseMotionHandler.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent$MouseMotionHandler.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MouseComponent.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MyMenuBar$1.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MyMenuBar$1.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MyMenuBar.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/lym/MyMenuBar.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/FileSaver.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/FileSaver.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/InputChecker.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/InputChecker.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/NodeGraph.class" afterPath="$PROJECT_DIR$/out/production/java_project/com/homework/xyy/NodeGraph.class" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/EllipseNode.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/EllipseNode.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/ListDialog.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/ListDialog.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java" afterPath="$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/FileSaver.java" afterPath="$PROJECT_DIR$/src/com/homework/xyy/FileSaver.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/InputChecker.java" afterPath="$PROJECT_DIR$/src/com/homework/xyy/InputChecker.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/xyy/NodeGraph.java" afterPath="$PROJECT_DIR$/src/com/homework/xyy/NodeGraph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,9 +30,22 @@
       <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="83" column="72" lean-forward="false" selection-start-line="83" selection-start-column="72" selection-end-line="83" selection-end-column="72" />
+            <state relative-caret-position="417">
+              <caret line="249" column="49" lean-forward="false" selection-start-line="249" selection-start-column="49" selection-end-line="249" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#214#215#0" expanded="true" />
+                <element signature="e#259#260#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,7 +73,7 @@
       <file leaf-file-name="EllipseNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/EllipseNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="305">
               <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#490#491#0" expanded="true" />
@@ -73,16 +81,6 @@
                 <element signature="e#854#855#0" expanded="true" />
                 <element signature="e#891#892#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewJPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/lym/NewJPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -118,7 +116,7 @@
       <file leaf-file-name="LeftJPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
+            <state relative-caret-position="449">
               <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding />
             </state>
@@ -128,8 +126,8 @@
       <file leaf-file-name="MyMenuBar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="176" column="31" lean-forward="false" selection-start-line="176" selection-start-column="27" selection-end-line="176" selection-end-column="31" />
+            <state relative-caret-position="369">
+              <caret line="195" column="13" lean-forward="true" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1336#1767#0" expanded="false" />
@@ -147,7 +145,7 @@
       <file leaf-file-name="ListDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/lym/ListDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1060">
+            <state relative-caret-position="-375">
               <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -212,8 +210,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-158" />
-    <option name="y" value="96" />
+    <option name="x" value="98" />
+    <option name="y" value="24" />
     <option name="width" value="1475" />
     <option name="height" value="913" />
   </component>
@@ -480,7 +478,7 @@
       <workItem from="1514297805575" duration="1116000" />
       <workItem from="1514383194165" duration="306000" />
       <workItem from="1514383504804" duration="6886000" />
-      <workItem from="1514426063324" duration="4161000" />
+      <workItem from="1514426063324" duration="7119000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -601,11 +599,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514385498328</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="自动匹配入点和出点">
+      <created>1514430309830</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1514430309831</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36583000" />
+    <option name="totallyTimeSpent" value="39541000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -617,19 +622,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-158" y="96" width="1475" height="913" extended-state="0" />
+    <frame x="98" y="24" width="1475" height="913" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14174253" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32396087" sideWeight="0.49476624" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32396087" sideWeight="0.48918355" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21026894" sideWeight="0.517097" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21026894" sideWeight="0.51988834" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21026894" sideWeight="0.482903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21026894" sideWeight="0.48011166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -672,7 +677,8 @@
     <MESSAGE value="增加了概率修改的功能，并且有了错误监测机制，和更人性化的界面" />
     <MESSAGE value="h" />
     <MESSAGE value="好想解决了这个bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="好想解决了这个bug" />
+    <MESSAGE value="自动匹配入点和出点" />
+    <option name="LAST_COMMIT_MESSAGE" value="自动匹配入点和出点" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -752,6 +758,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
           <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -759,6 +766,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -822,6 +830,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,6 +838,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -872,6 +882,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -949,17 +960,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1003,41 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="176" column="31" lean-forward="false" selection-start-line="176" selection-start-column="27" selection-end-line="176" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1336#1767#0" expanded="false" />
-            <element signature="e#1808#3014#0" expanded="false" />
-            <element signature="e#3051#4277#0" expanded="false" />
-            <element signature="e#4409#4410#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
-            <element signature="e#4537#4538#0" expanded="true" />
-            <element signature="e#4580#4581#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/ListDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/xyy/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1072,7 +1042,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/EllipseNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
+        <state relative-caret-position="305">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#490#491#0" expanded="true" />
@@ -1083,10 +1053,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/ListDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-375">
+          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/LeftJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="50" column="24" lean-forward="false" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MyMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="195" column="13" lean-forward="true" selection-start-line="195" selection-start-column="13" selection-end-line="195" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1336#1767#0" expanded="false" />
+            <element signature="e#1808#3014#0" expanded="false" />
+            <element signature="e#3051#4277#0" expanded="false" />
+            <element signature="e#4409#4410#0" expanded="true" />
+            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="e#4537#4538#0" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/lym/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/lym/MouseComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="83" column="72" lean-forward="false" selection-start-line="83" selection-start-column="72" selection-end-line="83" selection-end-column="72" />
+        <state relative-caret-position="417">
+          <caret line="249" column="49" lean-forward="false" selection-start-line="249" selection-start-column="49" selection-end-line="249" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -13,6 +13,7 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.*;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 class MouseComponent extends JComponent{
     private static final String[] JAPAN_COLOR = {
@@ -24,22 +25,64 @@ class MouseComponent extends JComponent{
     };
     private static final int SIDELENGTH = 40;
     private static final Color LINECOLOR = new Color(131,175,155);
-    public ArrayList<EllipseNode> nodes;
+    private ArrayList<EllipseNode> nodes;
     private EllipseNode current;
+    private ArrayList<Line2D> lines;
+    private Line2D currentLine;
     private NodeGraph nodeGraph;
     private GeneralPath path = new GeneralPath();
+
+    private JPopupMenu menu;
     MouseComponent(NodeGraph graph){
         nodes = new ArrayList<>();
         current = null;
         this.nodeGraph = graph;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
+        initMouseMenu();
     }
 
     void init() {
         nodes.clear();
         repaint();
     }
+
+    void initMouseMenu() {
+        menu = new JPopupMenu();
+        JMenuItem info = new JMenuItem("查看");
+        JMenuItem delete = new JMenuItem("删除");
+        menu.add(info);
+        menu.add(delete);
+        info.addActionListener((e -> {
+            Map<String, Double> map = nodeGraph.getNodeEdges(current.getNodeId());
+            ListDialog dialog = new ListDialog("Please select an 'Edge' From this list: ", map);
+
+            //设置确定按键的函数
+            dialog.setOnChange(e1 -> {
+                Object item = dialog.getSelectedItem();
+                if (item == null) return;
+                //获取选取值
+                String data = item.toString();
+                String[] nodeInAndOut = data.split("->");
+                //获取输入值
+                data = dialog.getInputValue();
+                if (NodeGraph.isProbability(data)) {
+                    nodeGraph.setProbability(
+                            Integer.parseInt(nodeInAndOut[0]),
+                            Integer.parseInt(nodeInAndOut[1]),
+                            Double.parseDouble(data)
+                    );
+                    dialog.hide();
+                } else {
+                    JOptionPane.showMessageDialog(null,"请输入正确的概率值！", "Error", JOptionPane.PLAIN_MESSAGE);
+                }
+            });
+
+
+            dialog.show();
+        }));
+    }
+
 
     //考虑撤销的问题
     void updateCom(NodeGraph nodeGraph) {
@@ -82,7 +125,7 @@ class MouseComponent extends JComponent{
 
                     //判断斜率是否为-1~1
                     double k = (outPoint.getY()-inPoint.getY()) / (outPoint.getX()-inPoint.getX());
-                    if (k >= -1 && k <= 1) {
+                    if (k >= -2 && k <= 2) {
                         if (outPoint.getX() > inPoint.getX()) {
                             drawAL((int)inPoint.getX()+26,(int)inPoint.getY(),(int)outPoint.getX()-26,(int)outPoint.getY(),g2d);
                         } else {
@@ -103,6 +146,10 @@ class MouseComponent extends JComponent{
         for (EllipseNode t : nodes) {
             g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
+            if (t == current) {
+                g2d.setColor(Color.gray);
+                g2d.draw(current);
+            }
         }
         g2d.setColor(Color.white);
 
@@ -191,15 +238,27 @@ class MouseComponent extends JComponent{
     }
 
     private class MouseHandler extends MouseAdapter {
-        public void mousePressed(MouseEvent event){
+        public void mousePressed(MouseEvent event) {
             current = find(event.getPoint());
+            repaint();
+            if (event.getButton() == MouseEvent.BUTTON3 && current != null) {
+                menu.show(MouseComponent.this, event.getX(), event.getY());
+            }
         }
 
-        public void mouseClicked(MouseEvent event){
-            current = find(event.getPoint());
-//            if(current != null&&event.getClickCount()>=2)remove(current);
+        @Override
+        public void mouseReleased(MouseEvent e) {
         }
+
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            //若移动到线上，显示概率
+            super.mouseMoved(e);
+        }
+
     }
+
+
 
     private class MouseMotionHandler implements MouseMotionListener {
         public void mouseMoved(MouseEvent event){
