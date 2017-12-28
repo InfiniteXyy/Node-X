@@ -2,6 +2,7 @@ package com.homework.front;
 
 import com.homework.core.Node;
 import com.homework.core.NodeGraph;
+import com.homework.utils.ProbabilityManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,15 +31,19 @@ class MouseComponent extends JComponent{
     private Line2D currentLine;
     private NodeGraph nodeGraph;
     private GeneralPath path = new GeneralPath();
+    private ProbabilityManager manager;
+    private Map<String, Double> probabilityMap;
 
     private JPopupMenu menu;
     MouseComponent(NodeGraph graph){
+        manager = new ProbabilityManager(graph);
         nodes = new ArrayList<>();
         current = null;
         this.nodeGraph = graph;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
         initMouseMenu();
+        probabilityMap = manager.getProbabilityMap();
     }
 
     void init() {
@@ -53,38 +58,13 @@ class MouseComponent extends JComponent{
         menu.add(info);
         menu.add(delete);
         info.addActionListener((e -> {
-            Map<String, Double> map = nodeGraph.getNodeEdges(current.getNodeId());
-            ListDialog dialog = new ListDialog("Please select an 'Edge' From this list: ", map);
-
-            //设置确定按键的函数
-            dialog.setOnChange(e1 -> {
-                Object item = dialog.getSelectedItem();
-                if (item == null) return;
-                //获取选取值
-                String data = item.toString();
-                String[] nodeInAndOut = data.split("->");
-                //获取输入值
-                data = dialog.getInputValue();
-                if (NodeGraph.isProbability(data)) {
-                    nodeGraph.setProbability(
-                            Integer.parseInt(nodeInAndOut[0]),
-                            Integer.parseInt(nodeInAndOut[1]),
-                            Double.parseDouble(data)
-                    );
-                    dialog.hide();
-                } else {
-                    JOptionPane.showMessageDialog(null,"请输入正确的概率值！", "Error", JOptionPane.PLAIN_MESSAGE);
-                }
-            });
-
-
-            dialog.show();
+            manager.showDialog(current.getNodeId());
+            updateCom();
         }));
     }
-
-
     //考虑撤销的问题
-    void updateCom(NodeGraph nodeGraph) {
+    void updateCom() {
+        probabilityMap = manager.getProbabilityMap();
         nodes.clear();
         for (Node node : nodeGraph.getNodeList()) {
             EllipseNode ellipseNode = EllipseNode.FromNode(node);
@@ -95,14 +75,6 @@ class MouseComponent extends JComponent{
         }
         repaint();
     }
-//
-//    private boolean isContainNode(Node node, ArrayList<EllipseNode> nodes) {
-//        for (EllipseNode node1 : nodes) {
-//            if (node1.getNodeId() == node.getId())
-//                return true;
-//        }
-//        return false;
-//    }
 
     public void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
@@ -118,6 +90,7 @@ class MouseComponent extends JComponent{
                 //设置线条粗细
                 g2d.setStroke(new BasicStroke(2.5f));
                 g2d.setColor(LINECOLOR);
+
                 for(Node inNode : list){
                     EllipseNode ellipseNode = getEllipseNodeByNodeID(inNode.getId());
                     Point2D inPoint = new Point2D.Double(ellipseNode.getCenterX(), ellipseNode.getCenterY());
@@ -126,15 +99,15 @@ class MouseComponent extends JComponent{
                     double k = (outPoint.getY()-inPoint.getY()) / (outPoint.getX()-inPoint.getX());
                     if (k >= -2 && k <= 2) {
                         if (outPoint.getX() > inPoint.getX()) {
-                            drawAL((int)inPoint.getX()+26,(int)inPoint.getY(),(int)outPoint.getX()-26,(int)outPoint.getY(),g2d);
+                            drawAL((int)inPoint.getX()+26,(int)inPoint.getY(),(int)outPoint.getX()-26,(int)outPoint.getY(),String.format("%.2f", probabilityMap.get(inNode.getId()+"->"+thisNode.getNodeId())),g2d);
                         } else {
-                            drawAL((int)inPoint.getX()-26,(int)inPoint.getY(),(int)outPoint.getX()+26,(int)outPoint.getY(),g2d);
+                            drawAL((int)inPoint.getX()-26,(int)inPoint.getY(),(int)outPoint.getX()+26,(int)outPoint.getY(),String.format("%.2f", probabilityMap.get(inNode.getId()+"->"+thisNode.getNodeId())),g2d);
                         }
                     } else {
                         if (outPoint.getY() > inPoint.getY()) {
-                            drawAL((int)inPoint.getX(),(int)inPoint.getY()+14,(int)outPoint.getX(),(int)outPoint.getY()-19,g2d);
+                            drawAL((int)inPoint.getX(),(int)inPoint.getY()+14,(int)outPoint.getX(),(int)outPoint.getY()-19,String.format("%.2f", probabilityMap.get(inNode.getId()+"->"+thisNode.getNodeId())),g2d);
                         } else {
-                            drawAL((int)inPoint.getX(),(int)inPoint.getY()-19,(int)outPoint.getX(),(int)outPoint.getY()+14,g2d);
+                            drawAL((int)inPoint.getX(),(int)inPoint.getY()-19,(int)outPoint.getX(),(int)outPoint.getY()+14,String.format("%.2f", probabilityMap.get(inNode.getId()+"->"+thisNode.getNodeId())),g2d);
                         }
                     }
 
@@ -175,7 +148,7 @@ class MouseComponent extends JComponent{
         }
         return null;
     }
-    private static void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2)
+    private static void drawAL(int sx, int sy, int ex, int ey, String p, Graphics2D g2)
     {
         double H = 8; // 箭头高度
         double L = 5; // 底边的一半
@@ -191,7 +164,7 @@ class MouseComponent extends JComponent{
         // 画线
         double proportion = 1-7/Math.sqrt((ex-sx)*(ex-sx) + (ey-sy)*(ey-sy));
         g2.drawLine(sx, sy, (int)(proportion*ex+(1-proportion)*sx), (int)(proportion*ey+(1-proportion)*sy));
-     //   g2.drawString("data",(sx+ex)/2,(sy+ey)/2);
+        g2.drawString(p,(sx+ex)/2,(sy+ey)/2);
         GeneralPath triangle = new GeneralPath();
         triangle.moveTo(ex, ey);
         triangle.lineTo((int)x_3, (int)y_3);

@@ -1,4 +1,4 @@
-package com.homework.core;
+package com.homework.utils;
 
 import java.io.*;
 import java.util.ArrayList;

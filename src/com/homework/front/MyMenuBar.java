@@ -1,8 +1,9 @@
 package com.homework.front;
 
-import com.homework.core.FileOpener;
-import com.homework.core.FileSaver;
+import com.homework.utils.FileOpener;
+import com.homework.utils.FileSaver;
 import com.homework.core.NodeGraph;
+import com.homework.utils.ProbabilityManager;
 
 import javax.swing.*;
 import java.io.File;
@@ -165,33 +166,8 @@ class MyMenuBar extends NewJPanel{
                     title, JOptionPane.PLAIN_MESSAGE,
                     null, nodeInts, nodeInts[0]);
             if (s != null) {
-                Map<String, Double> map = nodeGraph.getNodeEdges((int)s);
-                ListDialog dialog = new ListDialog("Please select an 'Edge' From this list: ", map);
-
-                //设置确定按键的函数
-                dialog.setOnChange(e1 -> {
-                    Object item = dialog.getSelectedItem();
-                    if (item == null) return;
-                    //获取选取值
-                    String data = item.toString();
-                    String[] nodeInAndOut = data.split("->");
-                    //获取输入值
-                    data = dialog.getInputValue();
-                    if (NodeGraph.isProbability(data)) {
-                        nodeGraph.setProbability(
-                                Integer.parseInt(nodeInAndOut[0]),
-                                Integer.parseInt(nodeInAndOut[1]),
-                                Double.parseDouble(data)
-                                );
-                        textShow.append("设置P("+item+") = "+ dialog.getInputValue()+"\n");
-                        dialog.hide();
-                    } else {
-                        JOptionPane.showMessageDialog(null,"请输入正确的概率值！", "Error", JOptionPane.PLAIN_MESSAGE);
-                    }
-                });
-
-
-                dialog.show();
+                ProbabilityManager manager = new ProbabilityManager(nodeGraph);
+                textShow.append(manager.showDialog((int)s));
             }
         }));
 
