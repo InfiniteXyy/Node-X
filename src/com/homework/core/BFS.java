@@ -1,4 +1,4 @@
-package com.homework.xyy;
+package com.homework.core;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

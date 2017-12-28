@@ -1,4 +1,4 @@
-package com.homework.xyy;
+package com.homework.core;
 
 class NodeEdge {
     private Node nodeLeft;
