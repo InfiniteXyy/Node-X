@@ -12,6 +12,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.*;
 
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Map;
 

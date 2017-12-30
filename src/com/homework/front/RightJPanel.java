@@ -33,13 +33,30 @@ class RightJPanel extends NewJPanel implements ActionListener {
         scroller1.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         this.add(scroller1);
 
-        //添加按钮
+        //添加check probability按钮
         JButton button3 = new JButton("check probability");
         button3.addActionListener(this);
         JPanel tempJ = new JPanel();
         tempJ.add(button3);
         button3.setBounds((this.getWidth() - button3.getWidth())/2,(this.getHeight() - button3.getHeight())/2,button3.getWidth(),button3.getHeight());
         this.add(tempJ);
+        //添加生成图片的按钮
+        JButton button4 = new JButton("guicamera");
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuiCamera cam = new GuiCamera("C:\\Users\\ASUS\\Desktop\\Node.X_Camera","png");
+                if(cam.genericImage(mouse1)==1){
+                    JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        JPanel tempJ1 = new JPanel();
+        tempJ1.add(button4);
+        button4.setBounds((this.getWidth() - button4.getWidth())/2,(this.getHeight() - button4.getHeight())/2,button4.getWidth(),button4.getHeight());
+        this.add(tempJ1);
     }
 
     public void actionPerformed(ActionEvent ev) {
