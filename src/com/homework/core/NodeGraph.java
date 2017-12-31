@@ -47,6 +47,18 @@ public class NodeGraph {
         return outPut.toString();
     }
 
+    public boolean deleteNode(int i) {
+        boolean result = false;
+        Node node = getNode(i);
+        if (node != null) {
+            nodeList.remove(node);
+            for (Node otherNode : nodeList) {
+                otherNode.getNodeEdgeList().removeIf((x)->x.getNodeRight() == node);
+            }
+            result = true;
+        }
+        return  result;
+    }
     //返回每一个Node的 id 和 位置的对应关系
     public List<Node> getNodeList() {
         return nodeList;

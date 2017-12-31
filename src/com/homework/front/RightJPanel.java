@@ -42,15 +42,12 @@ class RightJPanel extends NewJPanel implements ActionListener {
         this.add(tempJ);
         //添加生成图片的按钮
         JButton button4 = new JButton("guicamera");
-        button4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                GuiCamera cam = new GuiCamera("C:\\Users\\ASUS\\Desktop\\Node.X_Camera","png");
-                if(cam.genericImage(mouse1)==1){
-                    JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
-                }else{
-                    JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
-                }
+        button4.addActionListener(e -> {
+            GuiCamera cam = new GuiCamera("Node.X_Camera","png");
+            if(cam.genericImage(mouse1)==1){
+                JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
             }
         });
         JPanel tempJ1 = new JPanel();

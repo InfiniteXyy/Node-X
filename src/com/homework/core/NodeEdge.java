@@ -46,4 +46,5 @@ class NodeEdge {
             return probability;
         }
     }
+
 }

@@ -28,10 +28,7 @@ class MouseComponent extends JComponent{
     private static final Color LINECOLOR = new Color(131,175,155);
     private ArrayList<EllipseNode> nodes;
     private EllipseNode current;
-    private ArrayList<Line2D> lines;
-    private Line2D currentLine;
     private NodeGraph nodeGraph;
-    private GeneralPath path = new GeneralPath();
     private ProbabilityManager manager;
     private Map<String, Double> probabilityMap;
 
@@ -62,6 +59,11 @@ class MouseComponent extends JComponent{
             manager.showDialog(current.getNodeId());
             updateCom();
         }));
+
+        delete.addActionListener(e -> {
+            nodeGraph.deleteNode(current.getNodeId());
+            updateCom();
+        });
     }
     //考虑撤销的问题
     void updateCom() {
