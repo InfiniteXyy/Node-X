@@ -244,7 +244,7 @@ class MyMenuBar extends NewJPanel{
 
         about.addActionListener((e -> {
             JOptionPane.showMessageDialog(null,
-                    "Nodex made by core and front 2017",
+                    "Nodex made by xyy and lym 2017",
                     "Nodex v1.0", JOptionPane.INFORMATION_MESSAGE);
         }));
     }
