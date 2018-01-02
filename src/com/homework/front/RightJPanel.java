@@ -1,8 +1,14 @@
 package com.homework.front;
 
+import com.homework.utils.FileSaver;
+
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
 
 class RightJPanel extends NewJPanel implements ActionListener {
@@ -42,29 +48,33 @@ class RightJPanel extends NewJPanel implements ActionListener {
         this.add(tempJ);
 
         //添加生成图片的按钮
-        JButton button4 = new JButton("guicamera");
+        JButton button4 = new JButton("Gui Camera");
         button4.addActionListener(e -> {
-            int res = JOptionPane.showConfirmDialog(null, "是否使用默认图片储存路径？", "是否继续", JOptionPane.YES_NO_OPTION);
-            if(res ==JOptionPane.YES_OPTION){
-                GuiCamera cam = new GuiCamera("Node.X_Camera","png");
-                if(cam.genericImage(mouse1)==1){
-                    JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
-                }else{
-                    JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+            File directory = new File("");
+            JFileChooser fileChooser = new JFileChooser();
+            try {
+                fileChooser.setCurrentDirectory(directory.getCanonicalFile());//得到当前路径
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            fileChooser.setDialogTitle("保存为...");
+            fileChooser.setApproveButtonText("确定");
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            fileChooser.setSelectedFile(new File(FileSaver.dateFormat.format(new Date())+".png"));
+            if (JFileChooser.APPROVE_OPTION == fileChooser.showSaveDialog(null)) {
+                String path=fileChooser.getSelectedFile().getPath();
+                if (!path.endsWith(".png")) {
+                    path += ".png";
                 }
-            }else{
-                try{
-                    JFileChooser jfc = new JFileChooser();
-                    jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                    jfc.showDialog(new JLabel(),"选择截图存放的位置");
-                    GuiCamera cam = new GuiCamera(jfc.getSelectedFile().getAbsolutePath(),"png");
-                    if(cam.genericImage(mouse1)==1){
-                        JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+                FileSaver fileSaver = new FileSaver(path);
+                fileChooser.setFileFilter(png);
+
+                //如果已存在
+                if (fileSaver.saveImg(GuiCamera.getImg(mouse1), true)) {
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog
+                            (null, "文件已存在，是否覆盖？", "", JOptionPane.YES_NO_OPTION)) {
+                        fileSaver.saveImg(GuiCamera.getImg(mouse1), false);
                     }
-                }catch (Exception ex){
-                    System.out.println(ex.getStackTrace());
                 }
             }
         });
@@ -73,6 +83,18 @@ class RightJPanel extends NewJPanel implements ActionListener {
         button4.setBounds((this.getWidth() - button4.getWidth())/2,(this.getHeight() - button4.getHeight())/2,button4.getWidth(),button4.getHeight());
         this.add(tempJ1);
     }
+    //设置文件过滤器
+    private FileFilter png = new FileFilter() {
+        @Override
+        public boolean accept(File pathname) {
+            return (pathname.getPath().endsWith(".png"));
+        }
+
+        @Override
+        public String getDescription() {
+            return ".png files";
+        }
+    };
 
     public void actionPerformed(ActionEvent ev) {
         String outPut = nodeGraph.getEdgeProbability(textEdit.getText());

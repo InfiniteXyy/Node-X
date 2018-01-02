@@ -10,6 +10,7 @@ import java.io.File;
 import javax.swing.filechooser.FileFilter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
 class MyMenuBar extends NewJPanel{
@@ -100,10 +101,10 @@ class MyMenuBar extends NewJPanel{
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            fileChooser.setDialogTitle("请选择要保存的位置");
+            fileChooser.setDialogTitle("另存为...");
             fileChooser.setApproveButtonText("确定");
             fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
+            fileChooser.setSelectedFile(new File(FileSaver.dateFormat.format(new Date())+".ndx"));
             if (JFileChooser.APPROVE_OPTION == fileChooser.showSaveDialog(null)) {
                 String path=fileChooser.getSelectedFile().getPath();
                 if (!path.endsWith(".ndx")) {
