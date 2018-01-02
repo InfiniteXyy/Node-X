@@ -121,4 +121,8 @@ public class GuiCamera {
             return ERROR;
         }
     }
+
+    public void setFileName(String fileName){
+        this.fileName = fileName;
+    }
 }

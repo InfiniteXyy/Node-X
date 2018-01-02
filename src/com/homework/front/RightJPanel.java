@@ -40,14 +40,32 @@ class RightJPanel extends NewJPanel implements ActionListener {
         tempJ.add(button3);
         button3.setBounds((this.getWidth() - button3.getWidth())/2,(this.getHeight() - button3.getHeight())/2,button3.getWidth(),button3.getHeight());
         this.add(tempJ);
+
         //添加生成图片的按钮
         JButton button4 = new JButton("guicamera");
         button4.addActionListener(e -> {
-            GuiCamera cam = new GuiCamera("Node.X_Camera","png");
-            if(cam.genericImage(mouse1)==1){
-                JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
+            int res = JOptionPane.showConfirmDialog(null, "是否使用默认图片储存路径？", "是否继续", JOptionPane.YES_NO_OPTION);
+            if(res ==JOptionPane.YES_OPTION){
+                GuiCamera cam = new GuiCamera("Node.X_Camera","png");
+                if(cam.genericImage(mouse1)==1){
+                    JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
+                }else{
+                    JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+                }
             }else{
-                JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+                try{
+                    JFileChooser jfc = new JFileChooser();
+                    jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                    jfc.showDialog(new JLabel(),"选择截图存放的位置");
+                    GuiCamera cam = new GuiCamera(jfc.getSelectedFile().getAbsolutePath(),"png");
+                    if(cam.genericImage(mouse1)==1){
+                        JOptionPane.showMessageDialog(null, "截图成功", "GUI_CAMERA", JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "出现错误", "GUI_CAMERA", JOptionPane.ERROR_MESSAGE);
+                    }
+                }catch (Exception ex){
+                    System.out.println(ex.getStackTrace());
+                }
             }
         });
         JPanel tempJ1 = new JPanel();
