@@ -2,7 +2,9 @@ package com.homework.front;
 
 import com.homework.core.Node;
 
+import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
 
 class EllipseNode extends Ellipse2D.Double{
     public static final double WIDTH = 52;
@@ -21,8 +23,8 @@ class EllipseNode extends Ellipse2D.Double{
         return node.getId();
     }
 
-    void updatePos(int x, int y) {
-        setFrame(x-deltaX, y-deltaY, WIDTH, HEIGHT);
+    void updatePos(Point mouse) {
+        setFrame(mouse.x-deltaX, mouse.y-deltaY, WIDTH, HEIGHT);
     }
 
     void gridPosUpdate() {
@@ -43,10 +45,10 @@ class EllipseNode extends Ellipse2D.Double{
 
     Node getNode(){ return this.node; }
 
-    void move(double x, double y) {
-        setFrame(x+this.getCenterX(), y+this.getCenterY(), WIDTH, HEIGHT);
-    }
 
+    Point2D getCenter() {
+        return new Point2D.Double(getX()+ WIDTH/2, getY()+HEIGHT/2);
+    }
     //静态工厂方法
     static EllipseNode FromNode(Node node) {
         return new EllipseNode(node);

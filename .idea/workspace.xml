@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="可以拖动画布了，并且设置为只有左键可以移动，下一步是矩形选框">
+    <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/homework/front/ChooseRect.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" afterPath="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" />
@@ -73,9 +74,21 @@
       <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+            <state relative-caret-position="302">
+              <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChooseRect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/ChooseRect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,21 +108,21 @@
       <file leaf-file-name="EllipseNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="344">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
-                <element signature="e#502#503#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#750#751#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#843#844#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
+                <element signature="e#550#551#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#649#650#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#858#859#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#1031#1032#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
                 <element signature="e#1164#1165#0" expanded="true" />
+                <element signature="e#1208#1209#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/com/homework/front/GuiCamera.java" />
         <option value="$PROJECT_DIR$/src/com/homework/utils/ProbabilityManager.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" />
+        <option value="$PROJECT_DIR$/src/com/homework/front/ChooseRect.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" />
       </list>
     </option>
@@ -189,10 +203,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="126" />
-    <option name="y" value="136" />
-    <option name="width" value="1322" />
-    <option name="height" value="821" />
+    <option name="x" value="-22" />
+    <option name="y" value="22" />
+    <option name="width" value="1680" />
+    <option name="height" value="944" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -601,7 +615,7 @@
       <workItem from="1514897570069" duration="67000" />
       <workItem from="1514897672803" duration="3943000" />
       <workItem from="1514901994017" duration="1783000" />
-      <workItem from="1514955602343" duration="9579000" />
+      <workItem from="1514955602343" duration="14278000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -799,11 +813,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514964196626</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="可以拖动画布了，并且设置为只有左键可以移动，下一步是矩形选框">
+      <created>1514965366214</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1514965366214</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64478000" />
+    <option name="totallyTimeSpent" value="69177000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -815,7 +836,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="126" y="136" width="1322" height="821" extended-state="0" />
+    <frame x="-22" y="22" width="1680" height="944" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14174253" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -826,11 +848,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15426998" sideWeight="0.53125" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264463" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3030303" sideWeight="0.46875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2591284" sideWeight="0.46875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21875" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17094018" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -864,7 +886,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="all" />
     <MESSAGE value="节点的设置改为静态工厂方法" />
     <MESSAGE value="增加回车监听" />
     <MESSAGE value="没改什么" />
@@ -889,31 +910,19 @@
     <MESSAGE value="保存截图和ndx文件有了默认的名字" />
     <MESSAGE value="可以设置图的根节点，可以设置是否开启概率显示" />
     <MESSAGE value="现在，移动的时候不会自动聚焦到中点去了" />
-    <option name="LAST_COMMIT_MESSAGE" value="现在，移动的时候不会自动聚焦到中点去了" />
+    <MESSAGE value="可以拖动画布了，并且设置为只有左键可以移动，下一步是矩形选框" />
+    <option name="LAST_COMMIT_MESSAGE" value="可以拖动画布了，并且设置为只有左键可以移动，下一步是矩形选框" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/RightJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#4012#4013#0" expanded="true" />
-            <element signature="e#4080#4081#0" expanded="true" />
-            <element signature="e#4140#4141#0" expanded="true" />
-            <element signature="e#4183#4184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/MyFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -1282,16 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/utils/ProbabilityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/RightJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="980">
@@ -1306,31 +1305,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/utils/ProbabilityManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="37" column="20" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="344">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#843#844#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1031#1032#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
             <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/ChooseRect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="247" column="37" lean-forward="true" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+        <state relative-caret-position="302">
+          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="24" />
           <folding />
         </state>
       </provider>

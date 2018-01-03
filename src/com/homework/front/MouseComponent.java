@@ -26,22 +26,30 @@ class MouseComponent extends JComponent{
     private static final Color LINECOLOR = new Color(131,175,155);
     private ArrayList<EllipseNode> nodes;
     private EllipseNode current;
+    private ArrayList<EllipseNode> currents;
     private NodeGraph nodeGraph;
     private ProbabilityManager manager;
     private Map<String, Double> probabilityMap;
 
     private JPopupMenu menu;
+    private JPopupMenu menu2;
     public boolean displayProbability;
+
+
+    private ChooseRect chooseRect;
+    private Point mousePos;
 
     MouseComponent(NodeGraph graph){
         manager = new ProbabilityManager(graph);
         nodes = new ArrayList<>();
+        currents = new ArrayList<>();
         current = null;
         this.nodeGraph = graph;
         addMouseListener(new MouseHandler());
         addMouseMotionListener(new MouseMotionHandler());
         initMouseMenu();
         probabilityMap = manager.getProbabilityMap();
+        chooseRect = new ChooseRect();
     }
 
     void init() {
@@ -64,6 +72,16 @@ class MouseComponent extends JComponent{
             nodeGraph.deleteNode(current.getNodeId());
             updateCom();
         });
+
+        menu2 = new JPopupMenu();
+        delete = new JMenuItem("全部删除");
+        delete.addActionListener(e -> {
+            for (EllipseNode node : currents) {
+                nodeGraph.deleteNode(node.getNodeId());
+            }
+            updateCom();
+        });
+        menu2.add(delete);
     }
     //考虑撤销的问题
     void updateCom() {
@@ -85,6 +103,7 @@ class MouseComponent extends JComponent{
 
         g2d.setColor(Color.white);
         g2d.fillRect(0, 0, getWidth(), getHeight());
+
         //画线
         if(nodes.size()>=2){
             for(EllipseNode thisNode: nodes){
@@ -121,9 +140,9 @@ class MouseComponent extends JComponent{
         for (EllipseNode t : nodes) {
             g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
-            if (t == current) {
+            if (t == current || currents.contains(t)) {
                 g2d.setColor(Color.gray);
-                g2d.draw(current);
+                g2d.draw(t);
             }
         }
         g2d.setColor(Color.white);
@@ -141,6 +160,14 @@ class MouseComponent extends JComponent{
             double y = (float)t.getY()+(SIDELENGTH) / 2;
 
             g2d.drawString(drawString,(float)x,(float)y);
+        }
+
+        //画矩形选框
+        if (chooseRect.isDragging) {
+            g2d.setStroke(new BasicStroke(1.5f));
+            g2d.setColor(new Color(11,52,110));
+            chooseRect.update(mousePos);
+            g2d.draw(chooseRect);
         }
     }
 
@@ -199,13 +226,14 @@ class MouseComponent extends JComponent{
     }
     //找到第一个含有p的square
     private EllipseNode find(Point2D p) {
+        EllipseNode result = null;
         //找到每个节点的相对位置
         for(EllipseNode t : nodes){
             t.deltaX = p.getX()-t.getX();
             t.deltaY = p.getY()-t.getY();
-            if (t.contains(p)) return t;
+            if (t.contains(p)) result = t;
         }
-        return null;
+        return result;
     }
 
     //从collection中移动一个Node
@@ -219,14 +247,33 @@ class MouseComponent extends JComponent{
     private class MouseHandler extends MouseAdapter {
         public void mousePressed(MouseEvent event) {
             current = find(event.getPoint());
-            repaint();
-            if (event.getButton() == MouseEvent.BUTTON3 && current != null) {
-                menu.show(MouseComponent.this, event.getX(), event.getY());
+            //若点击到空白处或者点击到别的节点，取消选区
+            if (current == null || !currents.contains(current)) {
+                chooseRect.isSelected = false;
+                currents.clear();
             }
+
+            if (event.getButton() == MouseEvent.BUTTON3 && current != null) {
+                //单个节点的菜单（查看、删除）
+                if (!chooseRect.isSelected)
+                    menu.show(MouseComponent.this, event.getX(), event.getY());
+                //多个节点的菜单（删除）
+                else
+                    menu2.show(MouseComponent.this, event.getX(), event.getY());
+
+            } else if (event.getButton() == MouseEvent.BUTTON2 && !chooseRect.isDragging) {
+                chooseRect.isSelected = false;
+                currents.clear();
+                mousePos = event.getPoint();
+                chooseRect.setDrag(event.getPoint());
+            }
+            repaint();
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
+            chooseRect.isDragging = false;
+            repaint();
         }
 
         @Override
@@ -244,22 +291,38 @@ class MouseComponent extends JComponent{
         }
 
         public void mouseDragged (MouseEvent event) {
+            mousePos = event.getPoint();
             if (event.getButton() == MouseEvent.BUTTON1) {
-                int x = event.getX();
-                int y = event.getY();
-                if (current != null) {
-                    current.updatePos(x, y);
-                    repaint();
-                } else {
-                    //移动所有的node
-                    for (EllipseNode node : nodes) {
-                        node.updatePos(x, y);
+                //若选框状态，移动一群，否则，移动一个、或移动画布
+                if (chooseRect.isSelected) {
+                    for (EllipseNode node : currents) {
+                        node.updatePos(mousePos);
                     }
-                    repaint();
+                } else {
+                    if (current != null) {
+                        current.updatePos(mousePos);
+                    } else {
+                        //移动所有的node
+                        for (EllipseNode node : nodes) {
+                            node.updatePos(mousePos);
+                        }
+                    }
                 }
+            }
+            if (event.getButton() == MouseEvent.BUTTON2) {
+                //拖动选框
+                checkNodes();
+            }
+            repaint();
+        }
+    }
+    private void checkNodes() {
+        for (EllipseNode node : nodes) {
+            if (chooseRect.contains(node.getCenter())) {
+                currents.add(node);
+            } else {
+                currents.remove(node);
             }
         }
     }
-
-
 }
