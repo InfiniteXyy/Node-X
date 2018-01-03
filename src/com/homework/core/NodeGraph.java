@@ -56,7 +56,7 @@ public class NodeGraph {
         if (node != null) {
             nodeList.remove(node);
             for (Node otherNode : nodeList) {
-                otherNode.getNodeEdgeList().removeIf((x)->x.getNodeRight() == node);
+                otherNode.removeNodeOut(node);
             }
             result = true;
         }

@@ -20,6 +20,11 @@ public class Node {
         this.id = id;
     }
 
+    void removeNodeOut(Node node) {
+        nodeEdgeList.removeIf((x)->x.getNodeRight() == node);
+        autoChangeProbability();
+    }
+
     boolean addNodeEdge(NodeEdge nodeEdge) {
         for (NodeEdge x : nodeEdgeList) {
             if (x.getNodeLeft() == nodeEdge.getNodeLeft() &&

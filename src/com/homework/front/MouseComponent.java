@@ -65,12 +65,15 @@ class MouseComponent extends JComponent{
         menu.add(delete);
         info.addActionListener((e -> {
             manager.showDialog(current.getNodeId());
-            updateCom();
+            probabilityMap = manager.getProbabilityMap();
+            repaint();
         }));
 
         delete.addActionListener(e -> {
             nodeGraph.deleteNode(current.getNodeId());
-            updateCom();
+            nodes.remove(current);
+            probabilityMap = manager.getProbabilityMap();
+            repaint();
         });
 
         menu2 = new JPopupMenu();
@@ -78,8 +81,10 @@ class MouseComponent extends JComponent{
         delete.addActionListener(e -> {
             for (EllipseNode node : currents) {
                 nodeGraph.deleteNode(node.getNodeId());
+                nodes.remove(node);
             }
-            updateCom();
+            probabilityMap = manager.getProbabilityMap();
+            repaint();
         });
         menu2.add(delete);
     }
