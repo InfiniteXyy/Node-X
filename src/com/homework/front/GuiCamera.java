@@ -124,6 +124,7 @@ public class GuiCamera {
     public void setFileName(String fileName){
         this.fileName = fileName;
     }
+
     static BufferedImage getImg(JComponent ta){
         BufferedImage img = new BufferedImage(ta.getWidth(),ta.getHeight(),BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = img.createGraphics();

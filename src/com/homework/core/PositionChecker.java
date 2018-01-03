@@ -18,8 +18,9 @@ public class PositionChecker {
     }
 
     public void updateNodePosition(int id) {
-        Node node = nodeGraph.getNode(id);
-
+        Node node;
+        //id默认为-1
+        node = id<0? nodeGraph.getNode(nodeGraph.getNodeIds()[0]) : nodeGraph.getNode(id);
         Queue<Node> nodeQueue = new LinkedList<>();
         nodeQueue.offer(node);
         node.setPosX(0);

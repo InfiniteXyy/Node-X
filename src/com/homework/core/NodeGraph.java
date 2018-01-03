@@ -7,12 +7,15 @@ import java.util.List;
 import java.util.Map;
 
 public class NodeGraph {
+    public int root;
+    //用来记录图的根节点（列表中的第几个元素）
     private List<Node> nodeList = null;
 
     public NodeGraph() {
         if (nodeList == null) {
             nodeList = new ArrayList<>();
         }
+        root = -1;
     }
 
     public static boolean isProbability(String data) {

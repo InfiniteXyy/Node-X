@@ -6,9 +6,7 @@ import com.homework.utils.ProbabilityManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.*;
 
@@ -33,6 +31,8 @@ class MouseComponent extends JComponent{
     private Map<String, Double> probabilityMap;
 
     private JPopupMenu menu;
+    public boolean displayProbability;
+
     MouseComponent(NodeGraph graph){
         manager = new ProbabilityManager(graph);
         nodes = new ArrayList<>();
@@ -49,7 +49,7 @@ class MouseComponent extends JComponent{
         repaint();
     }
 
-    void initMouseMenu() {
+    private void initMouseMenu() {
         menu = new JPopupMenu();
         JMenuItem info = new JMenuItem("查看");
         JMenuItem delete = new JMenuItem("删除");
@@ -151,7 +151,7 @@ class MouseComponent extends JComponent{
         }
         return null;
     }
-    private static void drawAL(int sx, int sy, int ex, int ey, String p, Graphics2D g2)
+    private void drawAL(int sx, int sy, int ex, int ey, String p, Graphics2D g2)
     {
         double H = 8; // 箭头高度
         double L = 5; // 底边的一半
@@ -167,7 +167,8 @@ class MouseComponent extends JComponent{
         // 画线
         double proportion = 1-7/Math.sqrt((ex-sx)*(ex-sx) + (ey-sy)*(ey-sy));
         g2.drawLine(sx, sy, (int)(proportion*ex+(1-proportion)*sx), (int)(proportion*ey+(1-proportion)*sy));
-        g2.drawString(p,(sx+ex)/2,(sy+ey)/2);
+        if (displayProbability)
+            g2.drawString(p,(sx+ex)/2,(sy+ey)/2);
         GeneralPath triangle = new GeneralPath();
         triangle.moveTo(ex, ey);
         triangle.lineTo((int)x_3, (int)y_3);
@@ -227,28 +228,28 @@ class MouseComponent extends JComponent{
 
         @Override
         public void mouseMoved(MouseEvent e) {
-            //若移动到线上，显示概率
+            //若移动到线上，显示概率（暂未实现）
             super.mouseMoved(e);
         }
 
     }
 
-
-
     private class MouseMotionHandler implements MouseMotionListener {
-        public void mouseMoved(MouseEvent event){
+        public void mouseMoved (MouseEvent event) {
             if(find((event.getPoint()))==null)setCursor(Cursor.getDefaultCursor());
             else setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         }
 
-        public void mouseDragged(MouseEvent event){
-            if(current != null){
-                int x = event.getX();
-                int y = event.getY();
+        public void mouseDragged (MouseEvent event) {
+            int x = event.getX();
+            int y = event.getY();
+            if (current != null) {
                 current.updatePos(x, y);
                 repaint();
             }
+
         }
     }
+
 
 }

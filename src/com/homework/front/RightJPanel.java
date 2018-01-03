@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -78,8 +79,15 @@ class RightJPanel extends NewJPanel implements ActionListener {
                 }
             }
         });
+        //添加显示概率的checkbox
+        JCheckBox probabilityCheckBox = new JCheckBox("Display probability");
+        probabilityCheckBox.addItemListener(e -> {
+            mouse1.displayProbability = probabilityCheckBox.isSelected();
+            mouse1.repaint();
+        });
         JPanel tempJ1 = new JPanel();
         tempJ1.add(button4);
+        tempJ1.add(probabilityCheckBox);
         button4.setBounds((this.getWidth() - button4.getWidth())/2,(this.getHeight() - button4.getHeight())/2,button4.getWidth(),button4.getHeight());
         this.add(tempJ1);
     }

@@ -181,17 +181,29 @@ class MyMenuBar extends NewJPanel{
         View = new JMenu("View");
         JMenuItem BFS = new JMenuItem("BFS");
         JMenuItem DFS = new JMenuItem("DFS");
+        JMenuItem setRoot = new JMenuItem("Set Root...");
         View.add(BFS);
         View.add(DFS);
-
+        View.add(setRoot);
         BFS.addActionListener((e) -> {
             setFS(BFS_SET);
         });
 
         DFS.addActionListener((e) -> {
             setFS(DFS_SET);
-
         });
+
+        setRoot.addActionListener((e -> {
+            if(nodeGraph.getNodeIds().length == 0)return;
+            int[] nodes = nodeGraph.getNodeIds();
+            String title = "Set root";
+            Integer[] nodeInts = Arrays.stream( nodes ).boxed().toArray( Integer[]::new );
+            Object s = JOptionPane.showInputDialog(null,"请选择节点:\n",
+                    title, JOptionPane.PLAIN_MESSAGE,
+                    null, nodeInts, nodeInts[0]);
+            nodeGraph.root = (int)s;
+            LeftJPanel.renewGraph(false);
+        }));
     }
 
     private void setFS(int type) {

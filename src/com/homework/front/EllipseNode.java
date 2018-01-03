@@ -23,6 +23,7 @@ class EllipseNode extends Ellipse2D.Double{
         setFrame(x-WIDTH/2, y-HEIGHT/2, WIDTH, HEIGHT);
     }
 
+
     void gridPosUpdate() {
         setFrame(getPosX(node), getPosY(node), WIDTH, HEIGHT);
     }
@@ -40,6 +41,10 @@ class EllipseNode extends Ellipse2D.Double{
     }
 
     Node getNode(){ return this.node; }
+
+    void move(double x, double y) {
+        setFrame(x+this.getCenterX(), y+this.getCenterY(), WIDTH, HEIGHT);
+    }
 
     //静态工厂方法
     static EllipseNode FromNode(Node node) {
