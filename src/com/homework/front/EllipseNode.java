@@ -8,6 +8,8 @@ class EllipseNode extends Ellipse2D.Double{
     public static final double WIDTH = 52;
     public static final double HEIGHT = 32.24;
 
+    double deltaX, deltaY;
+
     private Node node;
 
     private EllipseNode(Node node) {
@@ -19,7 +21,7 @@ class EllipseNode extends Ellipse2D.Double{
         return node.getId();
     }
 
-    void updatePos(int x, int y, double deltaX, double deltaY) {
+    void updatePos(int x, int y) {
         setFrame(x-deltaX, y-deltaY, WIDTH, HEIGHT);
     }
 
