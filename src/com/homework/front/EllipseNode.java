@@ -19,10 +19,9 @@ class EllipseNode extends Ellipse2D.Double{
         return node.getId();
     }
 
-    void updatePos(int x, int y) {
-        setFrame(x-WIDTH/2, y-HEIGHT/2, WIDTH, HEIGHT);
+    void updatePos(int x, int y, double deltaX, double deltaY) {
+        setFrame(x-deltaX, y-deltaY, WIDTH, HEIGHT);
     }
-
 
     void gridPosUpdate() {
         setFrame(getPosX(node), getPosY(node), WIDTH, HEIGHT);
@@ -33,7 +32,7 @@ class EllipseNode extends Ellipse2D.Double{
     }
 
     static private double getPosY(Node node) {
-        return 30+node.getPosY()*80;
+        return 30 + node.getPosY()*80;
     }
 
     int getDepth() {

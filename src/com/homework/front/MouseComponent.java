@@ -198,9 +198,16 @@ class MouseComponent extends JComponent{
         return mathstr;
     }
     //找到第一个含有p的square
-    private EllipseNode find(Point2D p){
+    private double deltaX, deltaY;
+    private EllipseNode find(Point2D p) {
         for(EllipseNode t : nodes){
-            if(t.contains(p))return t;
+            if(t.contains(p)) {
+                //找到节点的相对位置
+                deltaX = p.getX()-t.getX();
+                deltaY = p.getY()-t.getY();
+
+                return t;
+            }
         }
         return null;
     }
@@ -212,6 +219,7 @@ class MouseComponent extends JComponent{
         nodes.remove(s);
         repaint();
     }
+
 
     private class MouseHandler extends MouseAdapter {
         public void mousePressed(MouseEvent event) {
@@ -244,8 +252,10 @@ class MouseComponent extends JComponent{
             int x = event.getX();
             int y = event.getY();
             if (current != null) {
-                current.updatePos(x, y);
+                current.updatePos(x, y, deltaX, deltaY);
                 repaint();
+            } else {
+                //移动所有的node
             }
 
         }

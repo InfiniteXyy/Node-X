@@ -1,6 +1,5 @@
 package com.homework.utils;
 
-import com.homework.core.Node;
 import com.homework.core.NodeGraph;
 import com.homework.front.ListDialog;
 
@@ -9,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProbabilityManager {
-    NodeGraph nodeGraph;
+    private NodeGraph nodeGraph;
     public ProbabilityManager(NodeGraph nodeGraph) {
         this.nodeGraph = nodeGraph;
     }
