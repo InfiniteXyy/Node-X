@@ -37,12 +37,15 @@ class LeftJPanel extends NewJPanel{
     static void renewGraph(boolean needInit) {
         if (!needInit) {
             PositionChecker positionChecker = new PositionChecker(nodeGraph);
+
             positionChecker.updateNodePosition(nodeGraph.root);
             mouse1.updateCom();
         } else {
             mouse1.init();
         }
     }
+
+
 
     private JScrollPane addScroller(){
         JTextArea text2;

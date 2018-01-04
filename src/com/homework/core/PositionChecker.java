@@ -10,7 +10,7 @@ public class PositionChecker {
     private NodeGraph nodeGraph;
     private List<Node> visited;
     private List<Node> hasSetDepth;
-
+    public int maxDepth;
     public PositionChecker(NodeGraph nodeGraph) {
         this.nodeGraph = nodeGraph;
         visited = new ArrayList<>();
@@ -26,7 +26,7 @@ public class PositionChecker {
         node.setPosX(0);
         node.setPosY(0);
 
-        int maxDepth = 0;
+        maxDepth = 0;
         if (node.getNodeEdgeList()==null) return;
         while (!nodeQueue.isEmpty()) {
             Node curNode = nodeQueue.poll();
@@ -39,7 +39,7 @@ public class PositionChecker {
                         nodeTemp.setPosY(curNode.getPosY()+1);
                         hasSetDepth.add(nodeTemp);
                     }
-                    maxDepth = nodeTemp.getPosY();
+                    maxDepth = maxDepth > nodeTemp.getPosY() ? maxDepth : nodeTemp.getPosY();
                 }
             }
         }

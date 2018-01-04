@@ -266,7 +266,7 @@ class MouseComponent extends JComponent{
                 else
                     menu2.show(MouseComponent.this, event.getX(), event.getY());
 
-            } else if (event.getButton() == MouseEvent.BUTTON2 && !chooseRect.isDragging) {
+            } else if (event.getButton() == MouseEvent.BUTTON1 && current == null && !chooseRect.isDragging) {
                 chooseRect.isSelected = false;
                 currents.clear();
                 mousePos = event.getPoint();
@@ -298,25 +298,20 @@ class MouseComponent extends JComponent{
         public void mouseDragged (MouseEvent event) {
             mousePos = event.getPoint();
             if (event.getButton() == MouseEvent.BUTTON1) {
-                //若选框状态，移动一群，否则，移动一个、或移动画布
-                if (chooseRect.isSelected) {
-                    for (EllipseNode node : currents) {
-                        node.updatePos(mousePos);
-                    }
+                if (current == null) {
+                    checkNodes();
                 } else {
-                    if (current != null) {
-                        current.updatePos(mousePos);
-                    } else {
-                        //移动所有的node
-                        for (EllipseNode node : nodes) {
+                    if (chooseRect.isSelected) {
+                        for (EllipseNode node : currents)
                             node.updatePos(mousePos);
-                        }
+                    } else {
+                        current.updatePos(mousePos);
                     }
                 }
-            }
-            if (event.getButton() == MouseEvent.BUTTON2) {
-                //拖动选框
-                checkNodes();
+            } else if (event.getButton() == MouseEvent.BUTTON2) {
+                for (EllipseNode node : nodes) {
+                    node.updatePos(mousePos);
+                }
             }
             repaint();
         }
