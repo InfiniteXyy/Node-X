@@ -1,6 +1,7 @@
 package com.homework.front;
 
 import com.homework.core.NodeGraph;
+import com.homework.utils.TextAreaPlaceHolder;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ class NewJPanel extends JPanel{
     static MouseComponent mouse1;
     static NodeGraph nodeGraph;
     static JTextArea textShow;
-    static JTextArea textEdit;
+    static TextAreaPlaceHolder textEdit;
 
     //用一个列表记录每一步的操作，用来撤销和保存
     static ArrayList<String> history;

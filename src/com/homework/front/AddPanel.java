@@ -1,17 +1,20 @@
 package com.homework.front;
 
+import com.homework.utils.TextFieldPlaceHolder;
+
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
 class AddPanel extends NewJPanel{
-    private JTextField nodeField;
+    private TextFieldPlaceHolder nodeField;
 
     private JButton addBtn;
     AddPanel() {
         addBtn = new JButton("ADD");
-        nodeField = new JTextField(8);
+        nodeField = new TextFieldPlaceHolder(8);
+        nodeField.setPlaceholder("e.g. 1,2,1:2");
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         add(new JLabel("NodeList"));
 

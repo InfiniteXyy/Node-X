@@ -1,6 +1,7 @@
 package com.homework.front;
 
 import com.homework.utils.FileSaver;
+import com.homework.utils.TextAreaPlaceHolder;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -33,7 +34,8 @@ class RightJPanel extends NewJPanel implements ActionListener {
 
         //添加第二个文本框
         this.add(new MyJComponent("Please input your node"));
-        textEdit = new JTextArea(10, 20);
+        textEdit = new TextAreaPlaceHolder(10, 20);
+        textEdit.setPlaceholder("e.g. 1>?");
         JScrollPane scroller1 = new JScrollPane(textEdit);
         textEdit.setLineWrap(true);//启动自动换行
         scroller1.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
