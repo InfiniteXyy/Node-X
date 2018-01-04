@@ -26,7 +26,6 @@ class MouseComponent extends JComponent{
     private static final Color LINECOLOR = new Color(131,175,155);
     private ArrayList<EllipseNode> nodes;
     private EllipseNode current;
-    private ArrayList<EllipseNode> currents;
     private NodeGraph nodeGraph;
     private ProbabilityManager manager;
     private Map<String, Double> probabilityMap;
@@ -42,7 +41,6 @@ class MouseComponent extends JComponent{
     MouseComponent(NodeGraph graph){
         manager = new ProbabilityManager(graph);
         nodes = new ArrayList<>();
-        currents = new ArrayList<>();
         current = null;
         this.nodeGraph = graph;
         addMouseListener(new MouseHandler());
@@ -79,9 +77,11 @@ class MouseComponent extends JComponent{
         menu2 = new JPopupMenu();
         delete = new JMenuItem("全部删除");
         delete.addActionListener(e -> {
-            for (EllipseNode node : currents) {
-                nodeGraph.deleteNode(node.getNodeId());
-                nodes.remove(node);
+            for (EllipseNode node : nodes) {
+                if (node.isSeleted) {
+                    nodeGraph.deleteNode(node.getNodeId());
+                    nodes.remove(node);
+                }
             }
             probabilityMap = manager.getProbabilityMap();
             repaint();
@@ -145,7 +145,7 @@ class MouseComponent extends JComponent{
         for (EllipseNode t : nodes) {
             g2d.setColor(Color.decode(JAPAN_COLOR[t.getDepth()%5]));
             g2d.fill(t);
-            if (t == current || currents.contains(t)) {
+            if (t == current || t.isSeleted) {
                 g2d.setColor(Color.gray);
                 g2d.draw(t);
             }
@@ -249,13 +249,19 @@ class MouseComponent extends JComponent{
         repaint();
     }
 
+    private void clearSelect() {
+        for (EllipseNode node : nodes) {
+            node.isSeleted = false;
+        }
+    }
+
     private class MouseHandler extends MouseAdapter {
         public void mousePressed(MouseEvent event) {
             current = find(event.getPoint());
             //若点击到空白处或者点击到别的节点，取消选区
-            if (current == null || !currents.contains(current)) {
+            if (current == null || !current.isSeleted) {
                 chooseRect.isSelected = false;
-                currents.clear();
+                clearSelect();
             }
 
             if (event.getButton() == MouseEvent.BUTTON3 && current != null) {
@@ -268,7 +274,7 @@ class MouseComponent extends JComponent{
 
             } else if (event.getButton() == MouseEvent.BUTTON1 && current == null && !chooseRect.isDragging) {
                 chooseRect.isSelected = false;
-                currents.clear();
+                clearSelect();
                 mousePos = event.getPoint();
                 chooseRect.setDrag(event.getPoint());
             }
@@ -302,8 +308,9 @@ class MouseComponent extends JComponent{
                     checkNodes();
                 } else {
                     if (chooseRect.isSelected) {
-                        for (EllipseNode node : currents)
-                            node.updatePos(mousePos);
+                        for (EllipseNode node : nodes)
+                            if (node.isSeleted)
+                                node.updatePos(mousePos);
                     } else {
                         current.updatePos(mousePos);
                     }
@@ -320,9 +327,9 @@ class MouseComponent extends JComponent{
     private void checkNodes() {
         for (EllipseNode node : nodes) {
             if (chooseRect.contains(node.getCenter())) {
-                currents.add(node);
+                node.isSeleted = true;
             } else {
-                currents.remove(node);
+                node.isSeleted = false;
             }
         }
     }

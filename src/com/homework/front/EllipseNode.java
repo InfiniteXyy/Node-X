@@ -10,6 +10,7 @@ class EllipseNode extends Ellipse2D.Double{
     public static final double WIDTH = 52;
     public static final double HEIGHT = 32.24;
 
+    public boolean isSeleted;
     double deltaX, deltaY;
 
     private Node node;
@@ -17,6 +18,7 @@ class EllipseNode extends Ellipse2D.Double{
     private EllipseNode(Node node) {
         super(getPosX(node), getPosY(node), WIDTH, HEIGHT);
         this.node = node;
+        isSeleted = false;
     }
 
     int getNodeId() {

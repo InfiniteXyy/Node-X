@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" afterPath="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -43,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/core/Node.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PositionChecker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/core/PositionChecker.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,18 +67,18 @@
       <file leaf-file-name="GuiCamera.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/front/GuiCamera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="1751">
               <caret line="119" column="15" lean-forward="false" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
+      <file leaf-file-name="EllipseNode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="311" column="71" lean-forward="false" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
+            <state relative-caret-position="291">
+              <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -110,6 +101,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
               <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="149" column="28" lean-forward="true" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -183,12 +184,12 @@
         <option value="$PROJECT_DIR$/src/com/homework/front/RightJPanel.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/GuiCamera.java" />
         <option value="$PROJECT_DIR$/src/com/homework/utils/ProbabilityManager.java" />
-        <option value="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/ChooseRect.java" />
         <option value="$PROJECT_DIR$/src/com/homework/core/NodeGraph.java" />
         <option value="$PROJECT_DIR$/src/com/homework/core/Node.java" />
         <option value="$PROJECT_DIR$/src/com/homework/core/PositionChecker.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/LeftJPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/homework/front/EllipseNode.java" />
         <option value="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" />
       </list>
     </option>
@@ -199,11 +200,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="39" />
-    <option name="y" value="48" />
-    <option name="width" value="1573" />
-    <option name="height" value="943" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="72" />
+    <option name="y" value="67" />
+    <option name="width" value="1680" />
+    <option name="height" value="944" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -510,7 +511,7 @@
       <workItem from="1515039204517" duration="132000" />
       <workItem from="1515048645656" duration="184000" />
       <workItem from="1515054865372" duration="132000" />
-      <workItem from="1515056270911" duration="1434000" />
+      <workItem from="1515056270911" duration="1878000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -736,11 +737,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515056765228</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="增加了移动时的小手图标">
+      <created>1515057722632</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1515057722632</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73747000" />
+    <option name="totallyTimeSpent" value="74191000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -752,12 +760,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="944" extended-state="6" />
+    <frame x="72" y="67" width="1680" height="944" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14174253" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32369146" sideWeight="0.48639217" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233945" sideWeight="0.48639217" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -802,7 +810,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="现在小数不会显示很多位了" />
     <MESSAGE value="设置说明信息" />
     <MESSAGE value="增加了撤销功能，但还不完善（不符合规范的输入也会加入撤销队列）" />
     <MESSAGE value="增加了文件读取的功能" />
@@ -827,7 +834,8 @@
     <MESSAGE value="增加了矩形选框的功能，和批量删除的功能" />
     <MESSAGE value="右键查看的时候不会重置节点图了！修复了一个删除节点后概率未刷新的bug" />
     <MESSAGE value="更加合理的用户操作，用左键来控制选框和移动，用中键来控制画布" />
-    <option name="LAST_COMMIT_MESSAGE" value="更加合理的用户操作，用左键来控制选框和移动，用中键来控制画布" />
+    <MESSAGE value="增加了移动时的小手图标" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了移动时的小手图标" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1115,14 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/core/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1226,16 +1226,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/GuiCamera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="1751">
           <caret line="119" column="15" lean-forward="false" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="311" column="71" lean-forward="false" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
+        <state relative-caret-position="424">
+          <caret line="149" column="28" lean-forward="true" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
           <folding />
         </state>
       </provider>
