@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="63a6b5c4-cb83-4e6f-aa32-da9351adaaab" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/core/PositionChecker.java" afterPath="$PROJECT_DIR$/src/com/homework/core/PositionChecker.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/homework/front/LeftJPanel.java" afterPath="$PROJECT_DIR$/src/com/homework/front/LeftJPanel.java" />
       <change beforePath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" afterPath="$PROJECT_DIR$/src/com/homework/front/MouseComponent.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,21 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EllipseNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/front/EllipseNode.java">
+      <file leaf-file-name="GuiCamera.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/GuiCamera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathFinder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/homework/core/PathFinder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="71" column="39" lean-forward="false" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+            <state relative-caret-position="532">
+              <caret line="119" column="15" lean-forward="false" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -98,8 +86,8 @@
       <file leaf-file-name="MouseComponent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="302" column="24" lean-forward="true" selection-start-line="302" selection-start-column="24" selection-end-line="302" selection-end-column="24" />
+            <state relative-caret-position="493">
+              <caret line="311" column="71" lean-forward="false" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -108,11 +96,31 @@
       <file leaf-file-name="ChooseRect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/homework/front/ChooseRect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
+            <state relative-caret-position="732">
               <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/homework/front/ListDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -502,7 +510,7 @@
       <workItem from="1515039204517" duration="132000" />
       <workItem from="1515048645656" duration="184000" />
       <workItem from="1515054865372" duration="132000" />
-      <workItem from="1515056270911" duration="457000" />
+      <workItem from="1515056270911" duration="1434000" />
     </task>
     <task id="LOCAL-00001" summary="all">
       <created>1512827947478</created>
@@ -721,11 +729,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514989691634</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="更加合理的用户操作，用左键来控制选框和移动，用中键来控制画布">
+      <created>1515056765228</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1515056765228</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72770000" />
+    <option name="totallyTimeSpent" value="73747000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -787,7 +802,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="没改什么" />
     <MESSAGE value="现在小数不会显示很多位了" />
     <MESSAGE value="设置说明信息" />
     <MESSAGE value="增加了撤销功能，但还不完善（不符合规范的输入也会加入撤销队列）" />
@@ -812,7 +826,8 @@
     <MESSAGE value="可以拖动画布了，并且设置为只有左键可以移动，下一步是矩形选框" />
     <MESSAGE value="增加了矩形选框的功能，和批量删除的功能" />
     <MESSAGE value="右键查看的时候不会重置节点图了！修复了一个删除节点后概率未刷新的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="右键查看的时候不会重置节点图了！修复了一个删除节点后概率未刷新的bug" />
+    <MESSAGE value="更加合理的用户操作，用左键来控制选框和移动，用中键来控制画布" />
+    <option name="LAST_COMMIT_MESSAGE" value="更加合理的用户操作，用左键来控制选框和移动，用中键来控制画布" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1007,13 +1022,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1.png" />
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/src.zip!/javax/swing/JFileChooser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -1040,6 +1048,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
           <caret line="202" column="29" lean-forward="false" selection-start-line="202" selection-start-column="29" selection-end-line="202" selection-end-column="29" />
+          <folding>
+            <element signature="e#1384#1815#0" expanded="false" />
+            <element signature="e#1856#3062#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1047,13 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/ListDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1089,13 +1094,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/GuiCamera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2240">
-          <caret line="119" column="15" lean-forward="false" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1104,16 +1105,6 @@
         <state relative-caret-position="1240">
           <caret line="71" column="39" lean-forward="false" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/homework/front/ChooseRect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1199,6 +1190,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/ChooseRect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/ListDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/LeftJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -1207,10 +1224,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/homework/front/GuiCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="119" column="15" lean-forward="false" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/homework/front/MouseComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="302" column="24" lean-forward="true" selection-start-line="302" selection-start-column="24" selection-end-line="302" selection-end-column="24" />
+        <state relative-caret-position="493">
+          <caret line="311" column="71" lean-forward="false" selection-start-line="311" selection-start-column="71" selection-end-line="311" selection-end-column="71" />
           <folding />
         </state>
       </provider>

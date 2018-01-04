@@ -309,6 +309,7 @@ class MouseComponent extends JComponent{
                     }
                 }
             } else if (event.getButton() == MouseEvent.BUTTON2) {
+                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
                 for (EllipseNode node : nodes) {
                     node.updatePos(mousePos);
                 }
