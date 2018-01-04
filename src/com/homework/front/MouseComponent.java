@@ -80,9 +80,10 @@ class MouseComponent extends JComponent{
             for (EllipseNode node : nodes) {
                 if (node.isSeleted) {
                     nodeGraph.deleteNode(node.getNodeId());
-                    nodes.remove(node);
                 }
             }
+            nodes.removeIf(x->x.isSeleted);
+
             probabilityMap = manager.getProbabilityMap();
             repaint();
         });
