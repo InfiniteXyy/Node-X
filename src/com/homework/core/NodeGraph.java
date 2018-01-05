@@ -277,4 +277,19 @@ public class NodeGraph {
         return output.toString();
     }
 
+    public boolean probabilityValidate(double probability, int a, int b) {
+        boolean result = true;
+        Node nodeA = getNode(a);
+        double allProbability = 0;
+        for (NodeEdge edge : nodeA.getNodeEdgeList()) {
+            if (edge.getNodeRight().getId() != b && edge.hasSetProbability()) {
+                allProbability += edge.getProbability();
+            }
+        }
+        if (allProbability + probability > 1.0)
+            result = false;
+        return result;
+
+
+    }
 }

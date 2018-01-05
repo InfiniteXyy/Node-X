@@ -60,7 +60,7 @@ class InputChecker {
 
     private void edgeAppend(int nodeA, int nodeB, double probability) {
         String info;
-        if (probability < 0) {
+        if (probability < 0 || !nodeGraph.probabilityValidate(probability, nodeA, nodeB)) {
             info = nodeGraph.addEdge(nodeA, nodeB);
         } else {
             info = nodeGraph.addEdge(nodeA, nodeB, probability);

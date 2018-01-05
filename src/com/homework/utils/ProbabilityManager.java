@@ -27,11 +27,11 @@ public class ProbabilityManager {
             String[] nodeInAndOut = data.split("->");
             //获取输入值
             data = dialog.getInputValue();
-            if (NodeGraph.isProbability(data)) {
+            int a = Integer.parseInt(nodeInAndOut[0]);
+            int b = Integer.parseInt(nodeInAndOut[1]);
+            if (NodeGraph.isProbability(data) && nodeGraph.probabilityValidate(Double.parseDouble(data), a, b)) {
                 nodeGraph.setProbability(
-                        Integer.parseInt(nodeInAndOut[0]),
-                        Integer.parseInt(nodeInAndOut[1]),
-                        Double.parseDouble(data)
+                        a, b, Double.parseDouble(data)
                 );
                 outPut.append("设置P(").append(item).append(") = ").append(dialog.getInputValue()).append("\n");
                 dialog.hide();
