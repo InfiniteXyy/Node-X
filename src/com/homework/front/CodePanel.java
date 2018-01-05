@@ -24,7 +24,7 @@ public class CodePanel extends JPanel {
         text.setText("");
         Map<String, Double> map = mouse.probabilityMap;
         List<EllipseNode> nodes = mouse.nodes;
-        if (nodes.isEmpty()) {text.append("请现在下方add框添加加点！"); return;}
+        if (nodes.isEmpty()) {text.append("请在下方add框添加节点！"); return;}
         for (EllipseNode node : nodes) {
             text.append("节点：" + String.valueOf(node.getNodeId())+"\n");
             for (String edge : map.keySet()) {
