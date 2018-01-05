@@ -35,6 +35,7 @@ class MouseComponent extends JComponent{
     public boolean displayProbability;
 
 
+    private int btnType;
     private ChooseRect chooseRect;
     private Point mousePos;
 
@@ -260,12 +261,13 @@ class MouseComponent extends JComponent{
         public void mousePressed(MouseEvent event) {
             current = find(event.getPoint());
             //若点击到空白处或者点击到别的节点，取消选区
+            btnType = event.getButton();
             if (current == null || !current.isSeleted) {
                 chooseRect.isSelected = false;
                 clearSelect();
             }
 
-            if (event.getButton() == MouseEvent.BUTTON3 && current != null) {
+            if (btnType == MouseEvent.BUTTON3 && current != null) {
                 //单个节点的菜单（查看、删除）
                 if (!chooseRect.isSelected)
                     menu.show(MouseComponent.this, event.getX(), event.getY());
@@ -273,7 +275,7 @@ class MouseComponent extends JComponent{
                 else
                     menu2.show(MouseComponent.this, event.getX(), event.getY());
 
-            } else if (event.getButton() == MouseEvent.BUTTON1 && current == null && !chooseRect.isDragging) {
+            } else if (btnType == MouseEvent.BUTTON1 && current == null && !chooseRect.isDragging) {
                 chooseRect.isSelected = false;
                 clearSelect();
                 mousePos = event.getPoint();
@@ -304,7 +306,8 @@ class MouseComponent extends JComponent{
 
         public void mouseDragged (MouseEvent event) {
             mousePos = event.getPoint();
-            if (event.getButton() == MouseEvent.BUTTON1) {
+
+            if (btnType == MouseEvent.BUTTON1) {
                 if (current == null) {
                     checkNodes();
                 } else {
@@ -316,8 +319,8 @@ class MouseComponent extends JComponent{
                         current.updatePos(mousePos);
                     }
                 }
-            } else if (event.getButton() == MouseEvent.BUTTON2) {
-                setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            } else if (btnType == MouseEvent.BUTTON2) {
+                setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));
                 for (EllipseNode node : nodes) {
                     node.updatePos(mousePos);
                 }
@@ -327,11 +330,7 @@ class MouseComponent extends JComponent{
     }
     private void checkNodes() {
         for (EllipseNode node : nodes) {
-            if (chooseRect.contains(node.getCenter())) {
-                node.isSeleted = true;
-            } else {
-                node.isSeleted = false;
-            }
+            node.isSeleted = chooseRect.contains(node.getCenter());
         }
     }
 }
