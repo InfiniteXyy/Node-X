@@ -24,11 +24,11 @@ class MouseComponent extends JComponent{
     };
     private static final int SIDELENGTH = 40;
     private static final Color LINECOLOR = new Color(131,175,155);
-    private ArrayList<EllipseNode> nodes;
+    public ArrayList<EllipseNode> nodes;
     private EllipseNode current;
     private NodeGraph nodeGraph;
     private ProbabilityManager manager;
-    private Map<String, Double> probabilityMap;
+    public Map<String, Double> probabilityMap;
 
     private JPopupMenu menu;
     private JPopupMenu menu2;

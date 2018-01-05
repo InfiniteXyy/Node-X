@@ -53,5 +53,21 @@ public class FileSaver {
         return false;
     }
 
-
+    public boolean saveText(String text, boolean justTry) {
+        try {
+            File writeName = new File(path);
+            boolean exist;
+            //若存在则exist = false
+            exist = writeName.createNewFile();
+            //如果文件存在或者只是尝试的话，返回true
+            if (!exist && justTry) return true;
+            BufferedWriter out = new BufferedWriter(new FileWriter(writeName));
+            out.write(text);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
